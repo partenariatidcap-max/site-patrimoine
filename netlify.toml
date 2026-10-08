@@ -1,0 +1,4 @@
+# Site publié depuis ce dossier, sans étape de build.
+[build]
+  publish = "."
+  command = ""

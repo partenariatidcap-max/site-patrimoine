@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6DFT6X8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4W6DFT6X8X');
+  gtag('config', 'AW-18294420606');
+</script>
+
+<!-- Google Ads: track Calendly clicks as conversions -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="calendly.com/partenariat-idcap"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      // Google Ads direct conversion
+      gtag('event', 'conversion', {'send_to': 'AW-18294420606/P1oXCKSH0sscEP7oupNE'});
+      // GA4 custom event
+      gtag('event', 'rdv_calendly', {
+        'event_category': 'engagement',
+        'event_label': 'calendly_click',
+        'value': 500,
+        'currency': 'EUR'
+      });
+    });
+  });
+});
+</script>
+
+<title>Politique de cookies | Aurélien Dewitte — Conseil en gestion de patrimoine</title>
+<meta name="description" content="Politique de gestion des cookies du site Aurélien Dewitte. Information sur les cookies utilisés et moyens de les paramétrer.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#A38346;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.25;color:var(--navy)}
+  h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;letter-spacing:-.02em}
+  h2{font-size:1.5rem;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--gold-light)}
+  h3{font-size:1.1rem;margin:1.5rem 0 .6rem;color:var(--gold-dark)}
+  p,li{color:var(--ink-soft);margin-bottom:.9rem}
+  a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold-light);text-underline-offset:3px}
+  a:hover{color:var(--gold-dark)}
+  ul,ol{padding-left:1.4rem;margin-bottom:1rem}
+  li{margin-bottom:.4rem}
+  strong{color:var(--ink)}
+  .container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.7rem;font-family:'Playfair Display';font-weight:700;font-size:1.25rem;color:var(--navy);text-decoration:none}
+  .logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 4px 12px rgba(20,37,64,.2)}
+  .logo small{display:block;font-size:.7rem;font-weight:400;color:var(--ink-soft);font-family:'Inter';letter-spacing:.05em;text-transform:uppercase;margin-top:-2px}
+  .back-link{font-size:.92rem;color:var(--ink-soft);text-decoration:none}
+  .back-link:hover{color:var(--gold-dark)}
+  .hero-legal{background:linear-gradient(180deg,var(--cream),#fff);padding:3.5rem 0 2rem;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--gold-dark);font-weight:600;margin-bottom:.8rem}
+  .meta{font-size:.85rem;color:var(--ink-soft);margin-top:.8rem;padding-top:.8rem;border-top:1px dashed var(--line)}
+  main{padding:3rem 0 5rem}
+  .info-block{background:var(--cream);border-left:4px solid var(--gold);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin:1.2rem 0}
+  .info-block p:last-child{margin-bottom:0}
+  table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.92rem}
+  th,td{padding:.8rem .9rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--cream);color:var(--navy);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+  .cookie-type{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.5rem;margin-bottom:1rem}
+  .cookie-type h3{margin-top:0;display:flex;align-items:center;gap:.6rem}
+  .pill{font-size:.7rem;padding:.25rem .6rem;border-radius:20px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .pill-required{background:#e8f5e9;color:#1e8449}
+  .pill-optional{background:#fdf3e6;color:#a36a1e}
+  footer{background:var(--navy-dark);color:rgba(255,255,255,.7);padding:2.5rem 0;text-align:center;font-size:.88rem}
+  footer a{color:var(--gold-light);text-decoration:none}
+  footer a:hover{color:#fff}
+  .footer-links{margin-top:.8rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+  @media (max-width:600px){h2{font-size:1.3rem}.hero-legal{padding:2.5rem 0 1.5rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="/" class="logo">
+      <span class="logo-mark">AD</span>
+      <span>Aurélien Dewitte<small>Conseil en patrimoine</small></span>
+    </a>
+    <a href="/" class="back-link">← Retour à l'accueil</a>
+  </div>
+</header>
+
+<section class="hero-legal">
+  <div class="container">
+    <span class="eyebrow">Vie privée</span>
+    <h1>Politique de cookies</h1>
+    <p>Cette page vous explique ce qu'est un cookie, quels cookies sont utilisés sur ce site et comment vous pouvez les paramétrer ou les refuser.</p>
+    <div class="meta">Dernière mise à jour : mai 2026</div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <h2>1. Qu'est-ce qu'un cookie ?</h2>
+    <p>Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, smartphone) lorsque vous consultez un site web. Il permet au site de mémoriser certaines informations relatives à votre navigation, soit pendant la durée de votre visite (cookie de session), soit pour une durée plus longue (cookie persistant).</p>
+    <p>Les cookies n'endommagent pas votre appareil et ne peuvent contenir de virus.</p>
+
+    <h2>2. Cookies utilisés sur ce site</h2>
+    <p>Ce site utilise un nombre limité de cookies, classés en deux catégories :</p>
+
+    <div class="cookie-type">
+      <h3><span class="pill pill-required">Strictement nécessaires</span> Cookies techniques</h3>
+      <p>Indispensables au bon fonctionnement du site. Ils ne nécessitent pas votre consentement.</p>
+      <table>
+        <tr><th>Nom du cookie</th><th>Finalité</th><th>Durée</th></tr>
+        <tr><td>Session HTTPS</td><td>Sécurité de la connexion et fonctionnement technique</td><td>Session</td></tr>
+        <tr><td>Préférences d'affichage</td><td>Mémoriser vos choix d'interface</td><td>30 jours</td></tr>
+      </table>
+    </div>
+
+    <div class="cookie-type">
+      <h3><span class="pill pill-optional">Tiers</span> Cookies des services intégrés</h3>
+      <p>Le site intègre des outils tiers pouvant déposer leurs propres cookies :</p>
+      <table>
+        <tr><th>Service</th><th>Finalité</th><th>Politique</th></tr>
+        <tr><td>Calendly</td><td>Prise de rendez-vous en ligne</td><td><a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener">Voir</a></td></tr>
+        <tr><td>Google Fonts</td><td>Affichage des polices d'écriture</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Voir</a></td></tr>
+        <tr><td>Formspree</td><td>Envoi des formulaires de contact</td><td><a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Voir</a></td></tr>
+      </table>
+    </div>
+
+    <h2>3. Votre consentement</h2>
+    <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience sans votre accord. Si un outil de statistiques (par exemple Google Analytics) est ajouté à l'avenir, un bandeau d'information vous permettra de l'accepter, de le refuser ou de le paramétrer lors de votre première visite.</p>
+
+    <div class="info-block">
+      <p><strong>Bon à savoir</strong> : refuser les cookies non essentiels n'affecte en rien votre navigation, ni le formulaire de contact, ni la prise de rendez-vous.</p>
+    </div>
+
+    <h2>4. Paramétrer vos cookies depuis votre navigateur</h2>
+    <p>Vous pouvez à tout moment paramétrer ou supprimer les cookies directement depuis les réglages de votre navigateur :</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/fr/kb/protection-renforcee-contre-pistage-firefox-ordinateur" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+      <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+    </ul>
+
+    <h2>5. Cadre légal</h2>
+    <p>Cette politique est conforme aux recommandations de la <strong>CNIL</strong> et au <strong>RGPD</strong>. Conformément à la délibération CNIL n° 2020-091 du 17 septembre 2020, les cookies non essentiels ne sont déposés qu'après votre consentement libre, éclairé et univoque.</p>
+
+    <h2>6. Pour en savoir plus</h2>
+    <p>Pour toute question relative à l'utilisation des cookies sur ce site, vous pouvez contacter Aurélien Dewitte à l'adresse <a href="mailto:aurelien.dewitte@id-cap-mia.fr">aurelien.dewitte@id-cap-mia.fr</a>.</p>
+    <p>Pour des informations générales sur la protection des données, consultez le site de la CNIL : <a href="https://www.cnil.fr/fr/cookies-et-traceurs" target="_blank" rel="noopener">www.cnil.fr/fr/cookies-et-traceurs</a>.</p>
+    <p>Consultez également notre <a href="confidentialite.html">politique de confidentialité</a> pour une vue d'ensemble de la protection de vos données personnelles.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Aurélien Dewitte · SIRET 848 640 298 00032 · ORIAS n° 19 002 4

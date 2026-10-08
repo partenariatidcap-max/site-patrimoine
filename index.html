@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<!-- build:2026-05-20T09-google-stats -->
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6DFT6X8X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4W6DFT6X8X');
+  gtag('config', 'AW-18294420606');
+</script>
+
+<!-- Google Ads + GA4: track Calendly clicks as conversions -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="calendly.com/partenariat-idcap"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      // Google Ads direct conversion
+      gtag('event', 'conversion', {'send_to': 'AW-18294420606/P1oXCKSH0sscEP7oupNE'});
+      // GA4 custom event (pour marquer en evenement cle dans GA4)
+      gtag('event', 'rdv_calendly', {
+        'event_category': 'engagement',
+        'event_label': 'calendly_click',
+        'value': 500,
+        'currency': 'EUR'
+      });
+    });
+  });
+});
+</script>
+
+<title>Conseiller en gestion de patrimoine indépendant – Gironde & Bordeaux | Aurélien Dewitte</title>
+<meta name="description" content="Cabinet indépendant CNCGP basé en Gironde. Audit patrimonial, optimisation fiscale, placement, transmission. Premier rendez-vous gratuit et sans engagement.">
+<meta name="author" content="Aurélien Dewitte">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Aurélien Dewitte — Conseiller en gestion de patrimoine indépendant">
+<meta property="og:description" content="Cabinet indépendant CNCGP en Gironde. Audit patrimonial, fiscalité, placement, transmission. Premier RDV gratuit.">
+<meta property="og:image" content="https://aurelien-dewitte-patrimoine.fr/og-image.png">
+<meta property="og:url" content="https://aurelien-dewitte-patrimoine.fr/">
+<link rel="canonical" href="https://aurelien-dewitte-patrimoine.fr/">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Aurélien Dewitte — Conseil en gestion de patrimoine",
+  "description": "Conseiller en gestion de patrimoine indépendant, membre CNCGP. Audit patrimonial, optimisation fiscale, placements, transmission. Intervention à domicile, en entreprise et en visioconférence dans toute la Gironde.",
+  "url": "https://aurelien-dewitte-patrimoine.fr/",
+  "telephone": "+33620880909",
+  "email": "aurelien.dewitte@id-cap-mia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20 rue Surson",
+    "postalCode": "33300",
+    "addressLocality": "Bordeaux",
+    "addressRegion": "Gironde",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bordeaux" },
+    { "@type": "AdministrativeArea", "name": "Bordeaux Métropole" },
+    { "@type": "AdministrativeArea", "name": "Gironde" }
+  ],
+  "founder": { "@type": "Person", "name": "Aurélien Dewitte" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy:#1F3A5F;
+    --navy-dark:#142540;
+    --navy-light:#2E5A89;
+    --gold:#C8A35C;
+    --gold-light:#D4B97D;
+    --gold-dark:#A38346;
+    --cream:#FAF7F1;
+    --paper:#FFFFFF;
+    --ink:#1A2238;
+    --ink-soft:#4A5468;
+    --line:#E5E0D5;
+    --shadow:0 4px 24px rgba(20,37,64,.08);
+    --shadow-lg:0 20px 60px rgba(20,37,64,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2;color:var(--navy)}
+  h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.02em}
+  h2{font-size:clamp(1.7rem,3.5vw,2.5rem);margin-bottom:.5rem;letter-spacing:-.01em}
+  h3{font-size:1.35rem;margin-bottom:.6rem}
+  p{color:var(--ink-soft)}
+  a{color:var(--navy);text-decoration:none;transition:color .2s}
+  a:hover{color:var(--gold-dark)}
+  img{max-width:100%;height:auto;display:block}
+
+  .container{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+  .section{padding:5rem 0}
+  .section-tight{padding:3.5rem 0}
+  .eyebrow{
+    display:inline-block;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.78rem;
+    color:var(--gold-dark);
+    font-weight:600;
+    margin-bottom:.85rem;
+  }
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+  .logo{display:flex;align-items:center;gap:.7rem;font-family:'Playfair Display';font-weight:700;font-size:1.35rem;color:var(--navy)}
+  .logo-mark{
+    width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg,var(--navy),var(--navy-light));
+    color:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.05rem;letter-spacing:.05em;
+    box-shadow:0 4px 12px rgba(20,37,64,.2);
+  }
+  .logo small{display:block;font-size:.7rem;font-weight:400;color:var(--ink-soft);font-family:'Inter';letter-spacing:.05em;text-transform:uppercase;margin-top:-2px}
+  .nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
+  .nav-links a{font-size:.95rem;font-weight:500;color:var(--ink);position:relative}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .btn{
+    display:inline-block;padding:.85rem 1.6rem;
+    border-radius:6px;font-weight:600;font-size:.95rem;
+    transition:all .25s;cursor:pointer;border:none;
+    text-align:center;
+  }
+  .btn-primary{background:var(--gold);color:#fff;box-shadow:0 4px 14px rgba(200,163,92,.35)}
+  .btn-primary:hover{background:var(--gold-dark);color:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,163,92,.45)}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:#fff}
+  .btn-ghost{background:transparent;color:var(--navy);padding:.6rem 0}
+  .btn-ghost:hover{color:var(--gold-dark)}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--navy)}
+
+  /* HERO */
+  .hero{
+    background:
+      radial-gradient(ellipse at top right, rgba(200,163,92,.10), transparent 50%),
+      linear-gradient(180deg,var(--cream) 0%,#fff 100%);
+    padding:5rem 0 6rem;
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;top:-100px;right:-100px;
+    width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(200,163,92,.08),transparent);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:center;position:relative}
+  .hero h1{margin-bottom:1.4rem;color:var(--navy)}
+  .hero h1 .accent{color:var(--gold-dark);font-style:italic}
+  .hero-lede{font-size:1.15rem;line-height:1.7;color:var(--ink-soft);margin-bottom:2rem;max-width:560px}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+  .hero-trust{display:flex;gap:2rem;flex-wrap:wrap;align-items:center;padding-top:1.8rem;border-top:1px solid var(--line)}
+  .trust-item{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--ink-soft)}
+  .trust-item svg{flex-shrink:0;color:var(--gold-dark)}
+  .trust-item strong{color:var(--navy);font-weight:600}
+
+  /* Portrait card */
+  .portrait-card{
+    position:relative;background:#fff;
+    border-radius:16px;overflow:hidden;
+    box-shadow:var(--shadow-lg);
+    transform:rotate(-1.5deg);
+    transition:transform .4s;
+  }
+  .portrait-card:hover{transform:rotate(0deg)}
+  .portrait-photo{
+    aspect-ratio:4/5;width:100%;
+    background:url('assets/photo-pro.jpg') center top/cover;
+    position:relative;
+  }
+  .portrait-info{padding:1.5rem;background:#fff}
+  .portrait-info h4{font-family:'Playfair Display';color:var(--navy);font-size:1.25rem;margin-bottom:.2rem}
+  .portrait-info p{font-size:.9rem;color:var(--ink-soft);margin-bottom:.8rem}
+  .portrait-badges{display:flex;gap:.5rem;flex-wrap:wrap}
+  .badge{
+    font-size:.7rem;padding:.3rem .6rem;border-radius:3px;
+    background:var(--cream);color:var(--navy);
+    font-weight:600;letter-spacing:.05em;
+    border:1px solid var(--line);
+  }
+
+  /* SECTION HEADERS */
+  .section-head{text-align:center;max-width:720px;margin:0 auto 3.5rem}
+  .section-head p{font-size:1.08rem;color:var(--ink-soft);margin-top:.8rem}
+
+  /* TRUST STRIP */
+  .trust-strip{
+    background:var(--navy);color:#fff;
+    padding:2.5rem 0;
+  }
+  .trust-strip-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:2rem;text-align:center;
+  }
+  .trust-stat .num{
+    font-family:'Playfair Display';
+    font-size:2.4rem;color:var(--gold-light);
+    font-weight:600;display:block;line-height:1;
+  }
+  .trust-stat .lbl{font-size:.85rem;color:rgba(255,255,255,.7);margin-top:.4rem;display:block}
+
+  /* EXPERTISES */
+  .expertises{background:var(--cream)}
+  .expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .expertise-card{
+    background:#fff;border-radius:12px;padding:2rem;
+    box-shadow:var(--shadow);transition:all .3s;
+    border:1px solid transparent;position:relative;
+  }
+  .expertise-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--gold-light)}
+  .expertise-icon{
+    width:50px;height:50px;border-radius:10px;
+    background:linear-gradient(135deg,var(--navy),var(--navy-light));
+    color:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:1.2rem;
+  }
+  .expertise-card h3{margin-bottom:.6rem;font-size:1.2rem}
+  .expertise-card p{font-size:.95rem;line-height:1.6}
+
+  /* METHOD */
+  .method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative;margin-top:2rem}
+  .method-grid::before{
+    content:'';position:absolute;top:30px;left:5%;right:5%;
+    height:2px;background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-light));
+    z-index:0;
+  }
+  .step{text-align:center;position:relative;z-index:1}
+  .step-num{
+    width:60px;height:60px;border-radius:50%;
+    background:#fff;color:var(--navy);
+    border:3px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display';font-weight:700;font-size:1.4rem;
+    margin:0 auto 1rem;box-shadow:var(--shadow);
+  }
+  .step h4{font-family:'Playfair Display';color:var(--navy);font-size:1.05rem;margin-bottom:.4rem}
+  .step p{font-size:.85rem;line-height:1.5;color:var(--ink-soft)}
+
+  /* AUDIENCE / WHY */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .audience-list{list-style:none;margin-top:1.5rem}
+  .audience-list li{
+    padding:1.1rem 0;border-bottom:1px solid var(--line);
+    display:flex;gap:1rem;align-items:flex-start;
+  }
+  .audience-list li:last-child{border-bottom:none}
+  .audience-list .check{
+    flex-shrink:0;width:28px;height:28px;border-radius:50%;
+    background:var(--cream);color:var(--gold-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;
+  }
+  .audience-list strong{display:block;color:var(--navy);font-weight:600;margin-bottom:.2rem}
+  .audience-list span{font-size:.92rem;color:var(--ink-soft)}
+
+  .why-card{
+    background:linear-gradient(160deg,var(--navy),var(--navy-dark));
+    color:#fff;padding:3rem;border-radius:14px;
+    position:relative;overflow:hidden;
+  }
+  .why-card::before{
+    content:'';position:absolute;top:-50px;right:-50px;
+    width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,rgba(200,163,92,.2),transparent);
+  }
+  .why-card h2{color:#fff}
+  .why-card .eyebrow{color:var(--gold-light)}
+  .why-list{list-style:none;margin-top:1.5rem;position:relative}
+  .why-list li{padding:.9rem 0;display:flex;gap:1rem;align-items:flex-start;color:rgba(255,255,255,.9);font-size:.95rem}
+  .why-list li::before{content:'✓';color:var(--gold-light);font-weight:bold;font-size:1.1rem}
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--cream)}
+  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .testimonial{
+    background:#fff;border-radius:12px;padding:2rem;
+    box-shadow:var(--shadow);position:relative;
+  }
+  .testimonial::before{
+    content:'"';position:absolute;top:.5rem;left:1.2rem;
+    font-family:'Playfair Display';font-size:4rem;
+    color:var(--gold-light);line-height:1;opacity:.5;
+  }
+  .testimonial p{font-style:italic;color:var(--ink);position:relative;margin-bottom:1.2rem;line-height:1.6}
+  .testimonial-author{display:flex;gap:.9rem;align-items:center;padding-top:1rem;border-top:1px solid var(--line)}
+  .testimonial-avatar{
+    width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg,var(--navy),var(--navy-light));
+    color:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:.95rem;
+  }
+  .testimonial-author strong{display:block;color:var(--navy);font-size:.95rem}
+  .testimonial-author span{font-size:.82rem;color:var(--ink-soft)}
+
+  /* Google avis CTA */
+  .google-cta{
+    margin-top:2rem;background:#fff;border-radius:14px;padding:1.6rem 2rem;
+    box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;
+    gap:1.5rem;flex-wrap:wrap;border:1px solid var(--line);
+  }
+  .google-cta-left{display:flex;align-items:center;gap:1.2rem;flex:1;min-width:280px}
+  .google-logo{flex-shrink:0}
+  .google-cta-stars{color:#F4B400;font-size:1.2rem;letter-spacing:.1em;line-height:1;margin-bottom:.3rem}
+  .google-cta-text{font-size:.95rem;color:var(--ink-soft);line-height:1.45}
+  .google-cta-text strong{color:var(--navy);font-weight:600}
+  .google-cta .btn{flex-shrink:0}
+  @media (max-width:680px){
+    .google-cta{padding:1.4rem 1.5rem;text-align:center}
+    .google-cta-left{flex-direction:column;text-align:center}
+    .google-cta .btn{width:100%}
+  }
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  details{
+    background:#fff;border:1px solid var(--line);
+    border-radius:10px;margin-bottom:.8rem;
+    transition:all .25s;
+  }
+  details[open]{box-shadow:var(--shadow);border-color:var(--gold-light)}
+  summary{
+    padding:1.2rem 1.5rem;cursor:pointer;
+    font-weight:600;color:var(--navy);font-size:1.02rem;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:'+';color:var(--gold-dark);font-size:1.5rem;font-weight:300;transition:transform .25s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details > div{padding:0 1.5rem 1.3rem;color:var(--ink-soft);line-height:1.7}
+
+  /* CONTACT */
+  .contact{background:linear-gradient(180deg,#fff,var(--cream))}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+  .contact-info > div{margin-bottom:2rem}
+  .contact-info h3{color:var(--navy);margin-bottom:.4rem;font-family:'Inter';font-size:1rem;text-transform:uppercase;letter-spacing:.08em}
+  .contact-info p, .contact-info a{font-size:1.08rem;color:var(--ink);line-height:1.5}
+  .contact-info a:hover{color:var(--gold-dark)}
+  .calendly-box{
+    background:#fff;border-radius:14px;padding:2rem;
+    box-shadow:var(--shadow);text-align:center;
+    border:2px dashed var(--gold-light);
+  }
+  .calendly-box h3{color:var(--navy);margin-bottom:.6rem;font-family:'Playfair Display';font-size:1.5rem}
+  .calendly-box p{margin-bottom:1.3rem;font-size:.95rem}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .form-grid input, .form-grid select, form textarea{
+    width:100%;padding:.85rem 1rem;
+    border:1px solid var(--line);border-radius:6px;
+    font-family:inherit;font-size:.95rem;background:#fff;
+    transition:border-color .2s,box-shadow .2s;
+  }
+  form textarea{min-height:120px;resize:vertical;grid-column:1/-1}
+  form input:focus, form select:focus, form textarea:focus{
+    outline:none;border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(200,163,92,.15);
+  }
+  .form-meta{font-size:.78rem;color:var(--ink-soft);text-align:center;margin-top:.8rem}
+
+  /* FOOTER */
+  footer{background:var(--navy-dark);color:rgba(255,255,255,.75);padding:3.5rem 0 1.5rem}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:2.5rem;margin-bottom:2.5rem}
+  footer h4{color:#fff;font-family:'Inter';font-size:.95rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:.5rem}
+  footer a{color:rgba(255,255,255,.75);font-size:.92rem}
+  footer a:hover{color:var(--gold-light)}
+  .footer-logo{color:#fff;font-family:'Playfair Display';font-size:1.3rem;font-weight:700;margin-bottom:.6rem}
+  .footer-logo small{display:block;color:var(--gold-light);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-family:'Inter';font-weight:500}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:1.5rem;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.5);
+  }
+  .compliance-badges{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+  .compliance-badge{
+    font-size:.7rem;padding:.4rem .7rem;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    border-radius:4px;color:rgba(255,255,255,.85);font-weight:500;
+    letter-spacing:.05em;
+  }
+
+  /* STICKY MOBILE CTA */
+  .mobile-cta{
+    display:none;position:fixed;bottom:0;left:0;right:0;
+    background:#fff;padding:.8rem 1rem;
+    box-shadow:0 -4px 20px rgba(0,0,0,.1);
+    z-index:90;border-top:1px solid var(--line);
+  }
+  .mobile-cta .btn{width:100%}
+
+  /* MOBILE */
+  @media (max-width:900px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1.2rem;box-shadow:var(--shadow);border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-toggle{display:block}
+    .hero-grid,.two-col,.contact-grid,.testimonial-grid,.expertise-grid{grid-template-columns:1fr;gap:2rem}
+    .method-grid{grid-template-columns:repeat(2,1fr);gap:2rem 1rem}
+    .method-grid::before{display:none}
+    .trust-strip-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+    .section{padding:3.5rem 0}
+    .form-grid{grid-template-columns:1fr}
+    .mobile-cta{display:block}
+    body{padding-bottom:80px}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr}
+  }
+  .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem}
+  .article-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.7rem;display:flex;flex-direction:column;gap:.85rem;transition:transform .2s, box-shadow .2s;text-decoration:none}
+  .article-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+  .article-card .cat{font-size:.72rem;font-weight:600;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.12em}
+  .article-card h3{color:var(--navy);font-family:'Playfair Display';font-size:1.2rem;line-height:1.3;margin:0}
+  .article-card p{color:var(--ink-soft);font-size:.94rem;flex:1;line-height:1.6;margin:0}
+  .article-card .card-link{color:var(--navy);font-weight:600;font-size:.88rem;margin-top:auto}
+  .article-card:hover .card-link{color:var(--gold-dark)}
+  .home-articles-all{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)}
+  @media (max-width:400px){.articles-grid{grid-template-columns:1fr}}
+
+  /* A PROPOS */
+  .about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem;align-items:center}
+  .about-photo{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:16px;box-shadow:var(--shadow-lg)}
+  .about p{color:var(--ink-soft);margin-bottom:1rem;line-height:1.75}
+  .about-status{font-size:.92rem;background:var(--cream);border-left:3px solid var(--gold);padding:.9rem 1.1rem;border-radius:0 8px 8px 0;margin:1.4rem 0 1.6rem}
+  .audience-list span a{color:var(--navy);font-weight:600;white-space:nowrap}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-photo{max-width:360px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">
+      <span class="logo-mark">AD</span>
+      <span>Aurélien Dewitte<small>Conseil en patrimoine</small></span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#expertises">Expertises</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#temoignages">Avis clients</a></li>
+        <li><a href="#contact" class="btn btn-primary" style="padding:.65rem 1.2rem">Prendre RDV</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Conseiller en gestion de patrimoine · Membre CNCGP</span>
+      <h1>Votre patrimoine mérite un conseiller <span class="accent">qui vous connaît vraiment.</span></h1>
+      <p class="hero-lede">
+        Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, transparent sur ma rémunération, et <strong>sans honoraires dans la grande majorité des cas</strong>.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Réserver un premier échange · 30 min gratuit</a>
+        <a href="#expertises" class="btn btn-outline">Voir mes expertises</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <span><strong>ORIAS</strong> n° 19 002 406</span>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 7v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V7l-8-5z"/></svg>
+          <span>Membre <strong>CNCGP</strong></span>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span><strong>Cabinet</strong> en Gironde</span>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Réponse <strong>sous 24 h</strong></span>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span><strong>Sans honoraires</strong> dans la plupart des cas</span>
+        </div>
+      </div>
+    </div>
+    <div class="portrait-card">
+      <div class="portrait-photo" aria-label="Portrait professionnel d'Aurélien Dewitte"></div>
+      <div class="portrait-info">
+        <h4>Aurélien Dewitte</h4>
+        <p>Conseiller en gestion de patrimoine indépendant</p>
+        <div class="portrait-badges">
+          <span class="badge">CNCGP 2023</span>
+          <span class="badge">ORIAS MIA</span>
+          <span class="badge">Gironde · France</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP / STATS -->
+<section class="trust-strip">
+  <div class="container trust-strip-grid">
+    <div class="trust-stat"><span class="num">400+</span><span class="lbl">Familles & dirigeants accompagnés</span></div>
+    <div class="trust-stat"><span class="num">★★★★★</span><span class="lbl">5,0 · 40 avis Google</span></div>
+    <div class="trust-stat"><span class="num">24 h</span><span class="lbl">Délai de réponse moyen</span></div>
+    <div class="trust-stat"><span class="num">1</span><span class="lbl">Interlocuteur unique, de l'audit au suivi</span></div>
+  </div>
+</section>
+
+<!-- EXPERTISES -->
+<section class="section expertises" id="expertises">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Mes domaines d'intervention</span>
+      <h2>Une approche patrimoniale 360°</h2>
+      <p>Six domaines traités de manière intégrée, parce qu'une bonne stratégie patrimoniale ne se découpe pas en silos.</p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="expertise-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H1v3h8v3l4-4-4-4v2zm10-7l-4 4 4 4V13h8v-3h-8V7z"/></svg>
+        </div>
+        <h3>Audit patrimonial global</h3>
+        <p>Cartographie complète de votre situation actuelle et idéale, identification des angles morts, plan d'action pour combler les écarts.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Optimisation fiscale</h3>
+        <p>Diagnostic de votre fiscalité actuelle face à son potentiel optimisé. Mise en place des leviers adaptés : PER, déficit foncier, démembrement, holding, IFI.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Placements & épargne</h3>
+        <p>Audit de votre allocation actuelle face à votre profil de risque réel. Arbitrages et nouvelles solutions : assurance-vie, SCPI, private equity, comptes-titres.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Immobilier d'investissement</h3>
+        <p>Évaluation de votre patrimoine immobilier actuel et de la stratégie cible. Sélection rigoureuse des opportunités : LMNP, nue-propriété, SCPI, locatif direct.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Prévoyance & protection</h3>
+        <p>Mesure de l'écart entre votre couverture actuelle et le niveau de protection idéal pour vos proches et votre activité : capital décès, invalidité, perte d'autonomie.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Transmission & succession</h3>
+        <p>État des lieux de la transmission actuelle face à votre structure cible : donations, démembrement, pacte Dutreil, assurance-vie pour transmettre sereinement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DERNIERS ARTICLES -->
+<section class="section" id="articles">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Derniers articles</span>
+      <h2>Comprendre avant de décider</h2>
+      <p>Des analyses claires sur l'épargne, la fiscalité et la transmission, mises à jour au fil de l'actualité.</p>
+    </div>
+    <div class="articles-grid">
+<a href="donation-100000-euros.html" class="article-card">
+  <span class="cat">TRANSMISSION</span>
+  <h3>Donation 100 000 € par parent : le mode d'emploi complet</h3>
+  <p>L'abattement de 100 000 € par parent et par enfant tous les 15 ans, le don TEPA, le démembrement, le Pacte Dutreil : tout ce qu'il faut savoir pour transmettre jusqu'à 1,2 M€ en franchise fiscale.</p>
+  <span class="card-link">Lire l'article →</span>
+</a>
+<a href="per-vs-assurance-vie.html" class="article-card">
+  <span class="cat">COMPARATIF</span>
+  <h3>PER ou Assurance-vie : lequel choisir en 2026 ?</h3>
+  <p>Fiscalité, disponibilité, transmission : le comparatif détaillé pour choisir la bonne enveloppe selon votre tranche d'imposition et votre horizon. Cas concrets par profil.</p>
+  <span class="card-link">Lire l'article →</span>
+</a>
+<a href="rentree-patrimoniale.html" class="article-card">
+  <span class="cat">RENTRÉE</span>
+  <h3>Rentrée patrimoniale : les 5 vérifications à faire avant le 31 décembre</h3>
+  <p>PER, assurance-vie, donations, fiscalité, prévoyance : les 5 leviers patrimoniaux à activer entre septembre et décembre pour optimiser votre fin d'année et préparer 2027 sereinement.</p>
+  <span class="card-link">Lire l'article →</span>
+</a>
+    </div>
+    <p style="text-align:center;margin-top:2rem"><a href="articles.html" class="home-articles-all">Voir tous les articles →</a></p>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section" id="methode">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Comment je procède</span>
+      <h2>Une méthode claire, en 5 étapes</h2>
+      <p>De la première discussion au suivi annuel, chaque étape est cadrée pour vous offrir lisibilité et résultats mesurables.</p>
+    </div>
+    <div class="method-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Premier échange</h4>
+        <p>30 min, gratuit, sans engagement. Téléphone ou visio.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Audit approfondi</h4>
+        <p>Collecte documentaire, analyse fiscale et de vos projets.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Stratégie</h4>
+        <p>Rapport écrit + restitution orale d'un plan priorisé.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Mise en œuvre</h4>
+        <p>Souscriptions, arbitrages, formalités — j'orchestre.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h4>Suivi annuel</h4>
+        <p>Point patrimonial annuel + ajustements à chaque étape de vie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section class="section about" id="a-propos">
+  <div class="container about-grid">
+    <img src="assets/photo-pro.jpg" alt="Aurélien Dewitte, conseiller en gestion de patrimoine à Bordeaux" class="about-photo" width="420" height="525" loading="lazy">
+    <div>
+      <span class="eyebrow">À propos</span>
+      <h2>Aurélien Dewitte, votre conseiller à Bordeaux</h2>
+      <p>J'exerce le conseil en gestion de patrimoine depuis 2019, et je suis membre de la CNCGP depuis 2023. En sept ans, j'ai accompagné plus de 400 familles, dirigeants et professionnels libéraux, principalement à Bordeaux et en Gironde, où je vis.</p>
+      <p>Mon parcours n'a rien de classique. Avant la gestion de patrimoine, j'ai été électricien et agent de maintenance dans l'industrie et le bâtiment, puis j'ai construit et entretenu des piscines chez des particuliers, avant de travailler en détection de fuites pour des experts d'assurance, des assureurs et des syndics. J'ai ensuite rejoint le réseau Capfinances, puis ID CAP, au sein du même groupe Premium. De ces années de terrain, j'ai gardé le goût du concret, un langage simple et une vraie proximité avec les artisans, les indépendants et les familles que j'accompagne aujourd'hui.</p>
+      <p>Ma conviction est simple : la gestion de patrimoine ne doit pas être réservée aux gros patrimoines. J'accompagne aussi bien un jeune actif qui démarre une épargne à 50 € par mois qu'un dirigeant qui prépare la cession de son entreprise, avec la même exigence.</p>
+      <p>Ma façon de travailler : je viens à vous, chez vous, sur votre lieu de travail ou à mon bureau de la rue Surson. Je prends le temps de comprendre votre situation avant de proposer quoi que ce soit, et je reste votre interlocuteur unique dans la durée, avec au minimum un point par an.</p>
+      <p class="about-status"><strong>Mon statut, en toute transparence :</strong> mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, ORIAS n° 19 002 406, membre de la CNCGP, sous le contrôle de l'ACPR.</p>
+      <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener">Échanger 30 minutes avec moi</a>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE + WHY -->
+<section class="section" style="background:var(--cream)" id="pour-qui">
+  <div class="container two-col">
+    <div>
+      <span class="eyebrow">À qui je m'adresse</span>
+      <h2>Des accompagnements taillés sur mesure</h2>
+      <ul class="audience-list">
+        <li>
+          <span class="check">✓</span>
+          <div><strong>Particuliers & familles</strong><span>Structurer son épargne, préparer sa retraite, organiser sa succession.</span></div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div><strong>Chefs d'entreprise & dirigeants</strong><span>Optimisation de la rémunération, holding, préparation de la cession.</span></div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div><strong>Professions libérales</strong><span>Médecins, kinés, avocats, experts-comptables : fiscalité, prévoyance, immobilier. <a href="cgp-professions-liberales-bordeaux.html">Mon accompagnement dédié →</a></span></div>
+        </li>
+        <li>
+          <span class="check">✓</span>
+          <div><strong>Investisseurs avertis</strong><span>Diversification via SCPI, private equity et solutions de gestion sur mesure.</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-card">
+      <span class="eyebrow">Pourquoi un CGP plutôt que sa banque ?</span>
+      <h2>4 raisons concrètes</h2>
+      <ul class="why-list">
+        <li>Libre choix des partenaires — salarié d'aucune banque ni compagnie, je compare plusieurs solutions avant de recommander.</li>
+        <li>Approche 360° — fiscalité, placements, immobilier, transmission traités ensemble.</li>
+        <li>Suivi long terme — au moins un point annuel et un ajustement à chaque étape de vie.</li>
+        <li>Réglementation stricte — ORIAS, CNCGP, RCP de 1,56 M€, contrôle ACPR.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="temoignages">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Ce qu'en disent mes clients</span>
+      <h2>La confiance se construit dans la durée</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>Super contact avec Aurélien depuis maintenant 3 ans ! C’est un conseiller bienveillant, professionnel, discret et à l’écoute des différents projets ! Je recommande sans hésiter 😊</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SN</div>
+          <div><strong>Sophie N.</strong><span>Agent immobilier · Bordeaux</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>J’ai laissé Aurélien s’occuper de mon épargne pour ma retraite et pour l’avenir de mes enfants. Je recommande chaleureusement, autant pour les compétences que pour sa sympathie.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MH</div>
+          <div><strong>Matthieu H.</strong><span>Commercial automobile · Bordeaux</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>Aurélien est très professionnel, bienveillant, à l’écoute des attentes. Je le recommande sans hésiter, il vous apportera une aide et des conseils de grande qualité.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LD</div>
+          <div><strong>Laure D.</strong><span>Dirigeante d’entreprise · Rouen</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Encart Google Business -->
+    <div class="google-cta">
+      <div class="google-cta-left">
+        <svg class="google-logo" viewBox="0 0 48 48" width="44" height="44" aria-label="Google">
+          <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917"/>
+          <path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691"/>
+          <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44"/>
+          <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917"/>
+        </svg>
+        <div>
+          <div class="google-cta-stars">★★★★★</div>
+          <div class="google-cta-text"><strong>5,0 sur 40 avis vérifiés Google</strong><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</div>
+        </div>
+      </div>
+      <a href="https://share.google/KvCwFTLLdypbulPEu" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Voir nos avis sur Google et en laisser un">Voir nos avis Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2>Tout ce que vous avez voulu demander</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Combien coûte un accompagnement patrimonial ?</summary>
+        <div>Le premier échange de 30 minutes est gratuit et sans engagement. Au-delà, <strong>dans la grande majorité des cas, mon accompagnement reste gratuit pour vous</strong> : je suis rémunéré par les compagnies d'assurance et les partenaires financiers via des commissions, perçues uniquement si vous décidez de mettre en place une solution. Vous bénéficiez ainsi d'un conseil complet — audit, stratégie, mise en œuvre, suivi annuel — sans débourser un centime. Quelques missions très spécifiques peuvent exceptionnellement faire l'objet d'honoraires forfaitaires (audit pur sans souscription, dossier successoral complexe à fort enjeu) ; ils sont toujours présentés et signés avant tout démarrage, conformément au code de déontologie CNCGP.</div>
+      </details>
+      <details>
+        <summary>Qu'est-ce qu'un CGP « indépendant » concrètement ?</summary>
+        <div>Cela signifie que je ne suis salarié d'aucune banque ni compagnie d'assurance. Je sélectionne pour chaque client, parmi une large gamme de partenaires, les solutions les mieux adaptées à votre profil. Mes recommandations ne sont jamais dictées par un quota commercial. En toute transparence : j'exerce en tant que mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, et je suis rémunéré principalement par commissions, comme expliqué ci-dessus.</div>
+      </details>
+      <details>
+        <summary>Comment se passe un premier rendez-vous ?</summary>
+        <div>Le premier rendez-vous dure environ 30 minutes, par téléphone ou en visioconférence. Il se déroule en trois temps. <strong>D'abord, je me présente</strong> ainsi que le cabinet, ses partenaires et son cadre réglementaire. <strong>Ensuite, nous définissons ensemble votre situation idéale</strong> — vos projets, vos objectifs patrimoniaux à court et long terme. <strong>Enfin, nous établissons votre situation actuelle</strong> : organisation patrimoniale, revenus, fiscalité, contraintes spécifiques. Ce premier échange sert à collecter les informations nécessaires à l'étude de votre dossier. <strong>Un second rendez-vous est ensuite organisé pour vous présenter un bilan complet et des recommandations concrètes</strong> — sans aucun engagement de votre part.</div>
+      </details>
+      <details>
+        <summary>À partir de quel patrimoine est-ce pertinent ?</summary>
+        <div><strong>Aucun seuil minimum.</strong> Mon ambition est de rendre la gestion de patrimoine accessible à tous, quel que soit votre niveau de revenus ou de patrimoine. Mon premier contrat d'épargne pour un nouveau client peut démarrer à <strong>50 €/mois</strong>. L'accompagnement s'adapte aussi bien aux jeunes actifs qui commencent à se constituer un patrimoine qu'aux dirigeants préparant la cession de leur entreprise. Le bon moment pour s'occuper de son patrimoine, c'est dès que l'on commence à se poser la question.</div>
+      </details>
+      <details>
+        <summary>Travaillez-vous à distance ?</summary>
+        <div>Oui. <strong>Je viens à votre rencontre</strong> : à votre domicile, sur votre lieu de travail, ou dans mon bureau accessible au <strong>20 rue Surson, 33300 Bordeaux</strong>. Pour les échanges à distance ou si vous habitez en dehors de la métropole bordelaise, les rendez-vous se font en <strong>visioconférence</strong>, partout en France. Mon siège social est situé à Pujols-sur-Ciron (sud-Gironde) — c'est ma résidence personnelle, je privilégie toujours le déplacement vers vous ou un rendez-vous au bureau de Bordeaux.</div>
+      </details>
+      <details>
+        <summary>Quelles garanties réglementaires ?</summary>
+        <div>Je suis inscrit à l'ORIAS sous le n° 19 002 406 en qualité de Mandataire d'Intermédiaire en Assurance, mandataire d'ID CAP. Membre de la CNCGP depuis 2023. Mon activité est soumise au contrôle de l'ACPR. Responsabilité civile professionnelle MSIG Europe SE : 1 565 000 € par sinistre.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Prenons rendez-vous</span>
+      <h2>Un premier échange de 30 minutes, offert</h2>
+      <p>Aucun engagement, juste un temps de qualité pour faire le point sur votre situation et voir si nous pouvons travailler ensemble.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div>
+          <h3>Téléphone</h3>
+          <p><a href="tel:+33620880909">06 20 88 09 09</a></p>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:aurelien.dewitte@id-cap-mia.fr">aurelien.dewitte@id-cap-mia.fr</a></p>
+        </div>
+        <div>
+          <h3>Où se rencontrer</h3>
+          <p>Bureau : 20 rue Surson, 33300 Bordeaux (<a href="https://www.google.com/maps/search/?api=1&amp;query=20+rue+Surson+33300+Bordeaux" target="_blank" rel="noopener">voir le plan</a>)<br>Ou à votre domicile · lieu de travail · visio<br><span style="font-size:.85rem;color:var(--ink-soft)">(Siège social : 107 Route du Sauvignon, 33210 Pujols-sur-Ciron)</span></p>
+        </div>
+        <div>
+          <h3>Disponibilités</h3>
+          <p>Lundi – vendredi : 9 h – 20 h<br>Samedi : sur rendez-vous</p>
+        </div>
+      </div>
+      <div>
+        <div class="calendly-box">
+          <h3>Réservez votre créneau en ligne</h3>
+          <p>Choisissez directement l'horaire qui vous arrange. Confirmation immédiate par email.</p>
+          <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener">Ouvrir le calendrier de RDV</a>
+        </div>
+        <form action="https://formspree.io/f/xqejaavq" method="POST">
+          <h3 style="font-family:'Playfair Display';margin-bottom:1.2rem">Ou écrivez-moi</h3>
+          <input type="hidden" name="_subject" value="Nouvelle demande depuis le site">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="form-grid">
+            <input type="text" name="nom" placeholder="Prénom & nom" autocomplete="name" required>
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+            <input type="tel" name="telephone" placeholder="Téléphone" autocomplete="tel">
+            <select name="sujet" required>
+              <option value="">Sujet de votre demande…</option>
+              <option>Audit patrimonial global</option>
+              <option>Optimisation fiscale</option>
+              <option>Placements & épargne</option>
+              <option>Immobilier d'investissement</option>
+              <option>Prévoyance & protection</option>
+              <option>Transmission & succession</option>
+              <option>Autre</option>
+            </select>
+            <textarea name="message" placeholder="Quelques mots sur votre situation et vos objectifs…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1rem">Envoyer ma demande</button>
+          <p class="form-meta">Vos données servent uniquement à vous répondre et ne sont jamais cédées (<a href="confidentialite.html">politique de confidentialité</a>) · réponse sous 24 h ouvrées.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Aurélien Dewitte<small>Conseil en gestion de patrimoine</small></div>
+        <p style="font-size:.92rem;line-height:1.6">Conseil en gestion de patrimoine à Bordeaux et en Gironde, membre de la CNCGP. Accompagnement patrimonial 360° pour particuliers, dirigeants et professions libérales.</p>
+        <div class="compliance-badges">
+          <span class="compliance-badge">ORIAS n° 19 002 406</span>
+          <span class="compliance-badge">CNCGP</span>
+          <span class="compliance-badge">ACPR</span>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#expertises">Expertises</a></li>
+          <li><a href="#methode">Méthode</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#temoignages">Avis clients</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+33620880909">06 20 88 09 09</a></li>
+          <li><a href="mailto:aurelien.dewitte@id-cap-mia.fr">Écrire un email</a></li>
+          <li>Bureau : 20 rue Surson<br>33300 Bordeaux</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informations légales</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          <li><a href="cookies.html">Gestion des cookies</a></li>
+          <li><a href="https://www.orias.fr" target="_blank" rel="noopener">Vérifier sur ORIAS</a></li>
+          <li><a href="https://www.mediation-assurance.org" target="_blank" rel="noopener">Médiation de l'assurance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aurélien Dewitte · SIRET 848 640 298 00032 · Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('

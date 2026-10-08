@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Pages légales : non indexées (noindex déjà présent dans le HTML)
+Disallow: /mentions-legales.html
+Disallow: /confidentialite.html
+Disallow: /cookies.html
+
+Sitemap: https://aurelien-dewitte-patrimoine.fr/sitemap.xml
