@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6DFT6X8X"></script>
+<!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4W6DFT6X8X');
-  gtag('config', 'AW-18294420606');
 </script>
+<script src="/assets/consent.js" defer></script>
 
 <!-- Google Ads: track Calendly clicks as conversions -->
 <script>
@@ -100,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="eyebrow">Vie privée</span>
     <h1>Politique de cookies</h1>
     <p>Cette page vous explique ce qu'est un cookie, quels cookies sont utilisés sur ce site et comment vous pouvez les paramétrer ou les refuser.</p>
-    <div class="meta">Dernière mise à jour : mai 2026</div>
+    <div class="meta">Dernière mise à jour : octobre 2026</div>
   </div>
 </section>
 
@@ -135,8 +133,19 @@ document.addEventListener('DOMContentLoaded', function() {
       </table>
     </div>
 
+    <div class="cookie-type">
+      <h3><span class="pill pill-optional">Avec votre accord</span> Mesure d'audience et publicité</h3>
+      <p>Ces cookies ne sont déposés que si vous cliquez sur « Accepter » dans le bandeau affiché lors de votre première visite.</p>
+      <table>
+        <tr><th>Service</th><th>Finalité</th><th>Durée</th></tr>
+        <tr><td>Google Analytics 4 (_ga, _ga_*)</td><td>Mesurer la fréquentation du site et les demandes de rendez-vous</td><td>13 mois</td></tr>
+        <tr><td>Google Ads (_gcl_au)</td><td>Mesurer l'efficacité des annonces Google</td><td>90 jours</td></tr>
+      </table>
+    </div>
+
     <h2>3. Votre consentement</h2>
-    <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience sans votre accord. Si un outil de statistiques (par exemple Google Analytics) est ajouté à l'avenir, un bandeau d'information vous permettra de l'accepter, de le refuser ou de le paramétrer lors de votre première visite.</p>
+    <p>Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience sans votre accord. Lors de votre première visite, un bandeau vous permet d'accepter ou de refuser Google Analytics et Google Ads, aussi simplement dans un cas que dans l'autre. Votre choix est conservé 6 mois, puis vous est redemandé.</p>
+    <p>Vous pouvez modifier votre choix à tout moment : <a href="#" data-consent-open>paramétrer mes cookies</a>.</p>
 
     <div class="info-block">
       <p><strong>Bon à savoir</strong> : refuser les cookies non essentiels n'affecte en rien votre navigation, ni le formulaire de contact, ni la prise de rendez-vous.</p>
@@ -164,4 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <footer>
   <div class="container">
-    <div>© 2026 Aurélien Dewitte · SIRET 848 640 298 00032 · ORIAS n° 19 002 4
+    <div>© 2026 Aurélien Dewitte · SIRET 848 640 298 00032 · ORIAS n° 19 002 406 · Membre CNCGP</div>
+    <div><a href="/">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="cookies.html">Cookies</a> · <a href="#" data-consent-open>Paramétrer mes cookies</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

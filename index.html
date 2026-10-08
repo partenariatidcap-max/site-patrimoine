@@ -6,14 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6DFT6X8X"></script>
+<!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4W6DFT6X8X');
-  gtag('config', 'AW-18294420606');
 </script>
+<script src="/assets/consent.js" defer></script>
 
 <!-- Google Ads + GA4: track Calendly clicks as conversions -->
 <script>
@@ -697,11 +695,11 @@ document.addEventListener('DOMContentLoaded', function() {
       <ul class="audience-list">
         <li>
           <span class="check">✓</span>
-          <div><strong>Particuliers & familles</strong><span>Structurer son épargne, préparer sa retraite, organiser sa succession.</span></div>
+          <div><strong>Particuliers & familles</strong><span>Structurer son épargne, préparer sa retraite, organiser sa succession. <a href="cgp-retraites-bordeaux.html">Retraités : mon accompagnement dédié →</a></span></div>
         </li>
         <li>
           <span class="check">✓</span>
-          <div><strong>Chefs d'entreprise & dirigeants</strong><span>Optimisation de la rémunération, holding, préparation de la cession.</span></div>
+          <div><strong>Chefs d'entreprise & dirigeants</strong><span>Optimisation de la rémunération, holding, préparation de la cession. <a href="cgp-chefs-entreprise-bordeaux.html">Mon accompagnement dédié →</a></span></div>
         </li>
         <li>
           <span class="check">✓</span>
@@ -911,6 +909,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <li><a href="mentions-legales.html">Mentions légales</a></li>
           <li><a href="confidentialite.html">Politique de confidentialité</a></li>
           <li><a href="cookies.html">Gestion des cookies</a></li>
+          <li><a href="#" data-consent-open>Paramétrer mes cookies</a></li>
           <li><a href="https://www.orias.fr" target="_blank" rel="noopener">Vérifier sur ORIAS</a></li>
           <li><a href="https://www.mediation-assurance.org" target="_blank" rel="noopener">Médiation de l'assurance</a></li>
         </ul>
@@ -931,4 +930,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>

@@ -20,14 +20,12 @@
 
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4W6DFT6X8X"></script>
+<!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4W6DFT6X8X');
-  gtag('config', 'AW-18294420606');
 </script>
+<script src="/assets/consent.js" defer></script>
 
 <!-- Google Ads: track Calendly clicks as conversions -->
 <script>
@@ -253,6 +251,7 @@ footer a:hover{color:#fff}
           <li><a href="mentions-legales.html">Mentions légales</a></li>
           <li><a href="confidentialite.html">Politique de confidentialité</a></li>
           <li><a href="cookies.html">Gestion des cookies</a></li>
+          <li><a href="#" data-consent-open>Paramétrer mes cookies</a></li>
         </ul>
       </div>
     </div>
