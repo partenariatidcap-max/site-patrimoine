@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilan patrimonial offert à Bordeaux | Aurélien Dewitte</title>
+<meta name="description" content="Premier échange patrimonial de 30 minutes offert et sans engagement, en visio ou au bureau à Bordeaux. Réservez votre créneau en ligne.">
+<meta name="author" content="Aurélien Dewitte">
+<!-- Page d'arrivée des annonces Google Ads : à ne pas référencer, hors menu et hors sitemap. -->
+<meta name="robots" content="noindex, follow">
+
+<!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+</script>
+<script src="/assets/consent.js" defer></script>
+<script src="/assets/calendly.js" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#A38346;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5;--shadow:0 4px 24px rgba(20,37,64,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--navy);line-height:1.25}
+h1{font-size:clamp(1.75rem,6vw,2.6rem);margin-bottom:.9rem;letter-spacing:-.02em}
+h2{font-size:clamp(1.35rem,4.5vw,1.75rem);margin-bottom:1rem;letter-spacing:-.01em}
+h3{font-size:1.05rem;margin-bottom:.35rem}
+p{color:var(--ink-soft)}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold-light);text-underline-offset:3px}
+a:hover{color:var(--gold-dark)}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:760px;margin:0 auto;padding:0 1.25rem}
+.container-wide{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+section{padding:2.5rem 0}
+#rdv{scroll-margin-top:60px}
+.alt{background:var(--cream)}
+
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display';font-weight:700;font-size:1.15rem;color:var(--navy);text-decoration:none}
+.logo-mark{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.btn-nav{padding:.6rem 1.1rem;background:var(--navy);color:#fff !important;border-radius:8px;text-decoration:none;font-size:.92rem;font-weight:600}
+
+.hero{background:linear-gradient(180deg,var(--cream),#fff);padding:2rem 0 2.2rem}
+.trust{font-size:.88rem;font-weight:600;color:var(--gold-dark);letter-spacing:.02em;margin-bottom:1rem}
+.lede{font-size:1.02rem;margin-bottom:1.4rem}
+.btn{display:inline-block;padding:1rem 1.6rem;background:var(--navy);color:#fff !important;border-radius:10px;font-weight:600;text-decoration:none;font-size:1rem;text-align:center}
+.btn:hover{background:var(--navy-dark)}
+.hero .btn{display:block;width:100%;max-width:420px}
+.phone{margin-top:1rem;font-size:1rem}
+.phone a{font-weight:700;text-decoration:none;white-space:nowrap}
+
+.checks{list-style:none}
+.checks li{position:relative;padding:.85rem 1rem .85rem 2.6rem;background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:.6rem;color:var(--ink)}
+.checks li::before{content:"✓";position:absolute;left:1rem;top:.85rem;color:var(--gold-dark);font-weight:700}
+
+.steps{list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding-left:3.1rem;margin-bottom:1.3rem}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--navy);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem}
+.note{font-size:.95rem;font-weight:600;color:var(--navy)}
+
+.cal-intro{margin-bottom:1rem}
+.calendly-box{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;min-height:120px}
+.calendly-inline{min-width:280px;height:700px}
+.calendly-inline[hidden]{display:none}
+.calendly-fallback{display:block;margin:1.2rem}
+.cal-alt{margin-top:1rem;font-size:.95rem;text-align:center}
+
+.about{display:flex;gap:1.2rem;align-items:flex-start}
+.about img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0}
+.about p{font-size:.98rem;margin-bottom:.6rem}
+.status{font-size:.85rem}
+
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:.6rem;padding:.9rem 1rem}
+.faq summary{cursor:pointer;font-weight:600;color:var(--navy);list-style-position:outside}
+.faq details p{margin-top:.6rem;font-size:.96rem}
+.final{text-align:center}
+
+footer{background:var(--navy-dark);color:rgba(255,255,255,.75);padding:2.2rem 0 1.4rem;font-size:.9rem}
+footer p{color:rgba(255,255,255,.75);margin-bottom:.8rem}
+footer a{color:var(--gold-light);text-decoration:none}
+footer a:hover{color:#fff}
+.footer-links{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:1rem 0}
+.footer-bottom{padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;color:rgba(255,255,255,.55)}
+
+@media (min-width:700px){section{padding:3.5rem 0}.hero{padding:3.5rem 0}}
+@media (max-width:420px){.logo span:last-child{font-size:1rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container-wide nav">
+    <a href="/" class="logo">
+      <span class="logo-mark">AD</span>
+      <span>Aurélien Dewitte</span>
+    </a>
+    <a href="#rdv" class="btn-nav">Prendre RDV</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Bilan patrimonial offert avec un CGP indépendant à Bordeaux</h1>
+    <p class="trust">Indépendant · ORIAS 19 002 406 · Membre CNCGP</p>
+    <p class="lede">Un premier échange de 30 minutes pour faire le point sur votre situation, en visio ou à mon bureau de Bordeaux. Gratuit et sans engagement.</p>
+    <a href="#rdv" class="btn">Réserver mon échange de 30 min</a>
+    <p class="phone">Ou appelez-moi : <a href="tel:+33620880909">06 20 88 09 09</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Pour qui ?</h2>
+    <ul class="checks">
+      <li>Vous payez beaucoup d'impôts et voulez comprendre vos leviers.</li>
+      <li>Vous préparez votre retraite et voulez savoir où vous en êtes.</li>
+      <li>Vous pensez à la transmission de votre patrimoine à vos proches.</li>
+      <li>Vous êtes chef d'entreprise et voulez organiser patrimoine privé et professionnel.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Comment ça se passe</h2>
+    <ol class="steps">
+      <li><h3>Un échange offert de 30 minutes</h3><p>En visio ou à mon bureau, 20 rue Surson à Bordeaux. Vous me parlez de votre situation et de vos objectifs.</p></li>
+      <li><h3>L'analyse de votre situation</h3><p>Si vous souhaitez aller plus loin, j'étudie votre patrimoine, vos revenus, votre fiscalité et vos contrats existants.</p></li>
+      <li><h3>Des recommandations écrites</h3><p>Je vous remets des propositions claires, que vous êtes libre de suivre ou non.</p></li>
+    </ol>
+    <p class="note">Sans engagement, à chaque étape.</p>
+  </div>
+</section>
+
+<section id="rdv">
+  <div class="container">
+    <h2>Réservez votre créneau</h2>
+    <p class="cal-intro">Choisissez l'horaire qui vous arrange. Confirmation immédiate par email.</p>
+    <div class="calendly-box">
+      <div id="calendly-inline" class="calendly-inline" data-url="https://calendly.com/partenariat-idcap/30min" hidden></div>
+      <a href="https://calendly.com/partenariat-idcap/30min" class="btn calendly-fallback" target="_blank" rel="noopener">Ouvrir le calendrier de RDV</a>
+    </div>
+    <p class="cal-alt">Vous préférez appeler ? <a href="tel:+33620880909">06 20 88 09 09</a></p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Qui suis-je ?</h2>
+    <div class="about">
+      <img src="/assets/photo-pro-240.jpg" alt="Aurélien Dewitte" width="96" height="96" loading="lazy">
+      <div>
+        <p><strong>Aurélien Dewitte</strong>, conseiller en gestion de patrimoine à Bordeaux depuis 2019, membre de la CNCGP depuis 2023. J'accompagne des familles, des dirigeants et des professionnels libéraux en Gironde, avec un interlocuteur unique dans la durée.</p>
+        <p class="status">Mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, ORIAS n° 19 002 406, membre de la CNCGP, sous le contrôle de l'ACPR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>Questions fréquentes</h2>
+    <details>
+      <summary>Est-ce vraiment gratuit ?</summary>
+      <p>Oui. Le premier échange de 30 minutes et le bilan ne vous sont pas facturés. Je suis rémunéré principalement par des commissions versées par les compagnies d'assurance et les partenaires financiers, uniquement si vous décidez de mettre en place une solution.</p>
+    </details>
+    <details>
+      <summary>Suis-je engagé ?</summary>
+      <p>Non. Vous restez libre de donner suite ou non, à chaque étape. Cet échange ne constitue ni un conseil personnalisé ni un engagement contractuel.</p>
+    </details>
+    <details>
+      <summary>Visio ou cabinet ?</summary>
+      <p>Comme vous préférez : en visio, à mon bureau du 20 rue Surson à Bordeaux, ou chez vous en Gironde. Vous pouvez le préciser au moment de la réservation.</p>
+    </details>
+    <details>
+      <summary>Quelles informations préparer ?</summary>
+      <p>Rien d'obligatoire pour ce premier échange. Si vous les avez sous la main, votre dernier avis d'imposition et la liste de vos placements et contrats (assurance-vie, PER, livrets, crédits) permettent d'aller plus vite.</p>
+    </details>
+    <p class="final" style="margin-top:1.6rem"><a href="#rdv" class="btn">Réserver mon échange de 30 min</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Aurélien Dewitte, conseil en gestion de patrimoine à Bordeaux. Mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, ORIAS n° 19 002 406 (<a href="https://www.orias.fr" target="_blank" rel="noopener">orias.fr</a>), membre de la CNCGP, sous le contrôle de l'ACPR.</p>
+    <p>Bureau : 20 rue Surson, 33300 Bordeaux · <a href="tel:+33620880909">06 20 88 09 09</a></p>
+    <p>Vous ne souhaitez pas réserver en ligne ? <a href="/#contact">Écrivez-moi via le formulaire de contact</a>.</p>
+    <div class="footer-links">
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/confidentialite.html">Politique de confidentialité</a>
+      <a href="/cookies.html">Gestion des cookies</a>
+      <a href="#" data-consent-open>Paramétrer mes cookies</a>
+    </div>
+    <div class="footer-bottom">© 2026 Aurélien Dewitte · SIRET 848 640 298 00032</div>
+  </div>
+</footer>
+
+</body>
+</html>

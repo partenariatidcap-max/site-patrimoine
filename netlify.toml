@@ -12,3 +12,9 @@
   to = "/r/index.html"
   status = 200
   force = true
+
+# Page d'arrivée des annonces Google Ads, servie sans .html.
+[[redirects]]
+  from = "/bilan-patrimonial-offert"
+  to = "/bilan-patrimonial-offert.html"
+  status = 200
