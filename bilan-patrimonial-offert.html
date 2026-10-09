@@ -65,8 +65,9 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border
 .note{font-size:.95rem;font-weight:600;color:var(--navy)}
 
 .cal-intro{margin-bottom:1rem}
-.calendly-box{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;min-height:120px}
-.calendly-inline{min-width:280px;height:700px}
+.calendly-box{min-height:120px}
+.calendly-inline{min-width:280px}
+.calendly-inline iframe{display:block;min-height:660px}
 .calendly-inline[hidden]{display:none}
 .calendly-fallback{display:block;margin:1.2rem}
 .cal-alt{margin-top:1rem;font-size:.95rem;text-align:center}
@@ -143,7 +144,7 @@ footer a:hover{color:#fff}
     <h2>Réservez votre créneau</h2>
     <p class="cal-intro">Choisissez l'horaire qui vous arrange. Confirmation immédiate par email.</p>
     <div class="calendly-box">
-      <div id="calendly-inline" class="calendly-inline" data-url="https://calendly.com/partenariat-idcap/30min?hide_event_type_details=1" hidden></div>
+      <div id="calendly-inline" class="calendly-inline" data-resize="true" data-url="https://calendly.com/partenariat-idcap/30min?hide_event_type_details=1" hidden></div>
       <a href="https://calendly.com/partenariat-idcap/30min" class="btn calendly-fallback" target="_blank" rel="noopener">Ouvrir le calendrier de RDV</a>
     </div>
     <p class="cal-alt">Vous préférez appeler ? <a href="tel:+33620880909">06 20 88 09 09</a></p>

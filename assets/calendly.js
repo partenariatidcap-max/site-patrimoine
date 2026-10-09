@@ -112,7 +112,9 @@
       loadWidget(function () {
         window.Calendly.initInlineWidget({
           url: withSource(box.getAttribute('data-url')),
-          parentElement: box
+          parentElement: box,
+          /* data-resize : le calendrier prend sa hauteur réelle, sans barre de défilement */
+          resize: box.hasAttribute('data-resize')
         });
         box.hidden = false;
         var fb = document.querySelector('.calendly-fallback');
