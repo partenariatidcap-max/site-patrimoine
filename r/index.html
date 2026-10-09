@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vous m'avez été recommandé | Aurélien Dewitte</title>
+<meta name="description" content="Une personne qui me fait confiance a pensé à vous. Premier échange patrimonial gratuit et sans engagement de 30 minutes.">
+<meta name="author" content="Aurélien Dewitte">
+<!-- Page d'arrivée des liens de recommandation /r/CODE : à ne pas référencer. -->
+<meta name="robots" content="noindex, follow">
+
+<!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+</script>
+<script src="/assets/consent.js" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+<style>
+:root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#A38346;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5;--shadow:0 4px 24px rgba(20,37,64,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--navy);line-height:1.25}
+h1{font-size:clamp(2rem,4.5vw,2.6rem);margin-bottom:1rem;letter-spacing:-.02em}
+h2{font-size:clamp(1.3rem,3vw,1.6rem);margin-bottom:.4rem;letter-spacing:-.01em}
+p{color:var(--ink-soft)}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold-light);text-underline-offset:3px}
+a:hover{color:var(--gold-dark)}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:760px;margin:0 auto;padding:0 1.5rem}
+.container-wide{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;font-family:'Playfair Display';font-weight:700;font-size:1.25rem;color:var(--navy);text-decoration:none}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 4px 12px rgba(20,37,64,.2)}
+.logo small{display:block;font-size:.7rem;font-weight:400;color:var(--ink-soft);font-family:'Inter';letter-spacing:.05em;text-transform:uppercase;margin-top:-2px}
+.btn-nav{padding:.65rem 1.2rem;background:var(--navy);color:#fff !important;border-radius:8px;text-decoration:none;font-size:.95rem;font-weight:500}
+.btn-nav:hover{background:var(--navy-dark)}
+
+.hero{background:linear-gradient(180deg,var(--cream),#fff);padding:3.5rem 0 2rem}
+.badge{display:inline-block;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600;color:var(--gold-dark);background:rgba(200,163,92,.15);padding:.35rem .8rem;border-radius:20px;margin-bottom:1.1rem}
+.lede{font-size:1.1rem;max-width:56ch}
+
+main{padding:1rem 0 3rem}
+.profile{display:flex;align-items:center;gap:1.1rem;padding:1.2rem 1.4rem;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin-bottom:2rem}
+.profile img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--gold);flex-shrink:0}
+.profile-name{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.1rem;color:var(--navy)}
+.profile-title{font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+.profile-orias{font-size:.82rem;color:var(--ink-soft);margin-top:.15rem}
+
+.services{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:2.5rem}
+.service{background:var(--cream);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:.75rem 1rem;font-size:.95rem;font-weight:600;color:var(--navy)}
+
+.cta-sub{font-size:.95rem;margin-bottom:1.2rem}
+.calendly-inline-widget{min-width:280px;height:700px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;position:relative}
+.calendly-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:1.5rem}
+.calendly-fallback p{font-size:.95rem;max-width:38ch}
+.btn{display:inline-block;padding:.9rem 1.6rem;background:var(--navy);color:#fff !important;border-radius:8px;font-weight:600;text-decoration:none;font-size:.95rem}
+.btn:hover{background:var(--navy-dark)}
+.phone-fallback{margin-top:1.4rem;text-align:center;font-size:.95rem}
+.phone-fallback a{font-weight:600}
+.disclaimer{margin-top:2rem;font-size:.85rem;font-style:italic;border-left:3px solid var(--line);padding-left:.9rem}
+
+footer{background:var(--navy-dark);color:rgba(255,255,255,.75);padding:3rem 0 1.5rem;margin-top:2rem}
+footer h4{color:#fff;font-family:'Playfair Display';font-size:1.05rem;margin-bottom:1rem}
+footer p{color:rgba(255,255,255,.75)}
+footer ul{list-style:none;padding:0}
+footer li{margin-bottom:.5rem;color:rgba(255,255,255,.75)}
+footer a{color:var(--gold-light);text-decoration:none}
+footer a:hover{color:#fff}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.footer-logo{font-family:'Playfair Display';font-weight:700;font-size:1.2rem;color:#fff;margin-bottom:.8rem}
+.footer-logo small{display:block;font-size:.75rem;font-weight:400;color:rgba(255,255,255,.6);font-family:'Inter';letter-spacing:.05em;text-transform:uppercase;margin-top:-2px}
+.compliance-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.compliance-badge{display:inline-block;background:rgba(200,163,92,.15);color:var(--gold-light);padding:.3rem .7rem;border-radius:4px;font-size:.8rem;font-weight:500}
+.footer-bottom{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);font-size:.85rem;color:rgba(255,255,255,.55)}
+
+@media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.footer-grid{grid-template-columns:1fr}.services{grid-template-columns:1fr}.hero{padding:2.5rem 0 1.5rem}}
+@media (max-width:420px){.logo small{display:none}.btn-nav{padding:.55rem .9rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container-wide nav">
+    <a href="/" class="logo">
+      <span class="logo-mark">AD</span>
+      <span>Aurélien Dewitte<small>Conseil en patrimoine</small></span>
+    </a>
+    <a href="#rdv" class="btn-nav">Prendre RDV</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">Mis en relation par recommandation</span>
+    <h1>Faisons connaissance, sans engagement</h1>
+    <p class="lede">Une personne qui me fait confiance a pensé à vous. Je vous propose un premier échange gratuit pour faire le point sur votre situation. Vous jugerez ensuite librement si un accompagnement vous est utile.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="profile">
+      <img src="/assets/photo-pro.jpg" alt="Aurélien Dewitte" width="72" height="72">
+      <div>
+        <div class="profile-name">Aurélien Dewitte</div>
+        <div class="profile-title">Conseiller en gestion de patrimoine indépendant à Bordeaux, partenaire ID CAP</div>
+        <div class="profile-orias">ORIAS n° 19 002 406 · Membre CNCGP</div>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="service">Épargne &amp; placements</div>
+      <div class="service">Retraite</div>
+      <div class="service">Fiscalité</div>
+      <div class="service">Transmission de patrimoine</div>
+    </div>
+
+    <h2 id="rdv">Réservez votre échange</h2>
+    <p class="cta-sub">30 minutes, en visio ou par téléphone, gratuit et sans engagement.</p>
+
+    <div class="calendly-inline-widget" id="calendlyWidget" data-url="https://calendly.com/partenariat-idcap/30min">
+      <div class="calendly-fallback" id="calendlyFallback">
+        <p>Le calendrier est en cours de chargement. Vous pouvez aussi réserver directement ici :</p>
+        <a id="calendlyFallbackLink" class="btn" href="https://calendly.com/partenariat-idcap/30min" target="_blank" rel="noopener">Ouvrir le calendrier</a>
+      </div>
+    </div>
+
+    <p class="phone-fallback">Vous préférez appeler directement ? <a href="tel:+33620880909">06 20 88 09 09</a></p>
+
+    <p class="disclaimer">Cet échange ne constitue ni un conseil personnalisé ni un engagement contractuel.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Aurélien Dewitte<small>Conseil en gestion de patrimoine</small></div>
+        <p style="font-size:.92rem;line-height:1.6">Conseiller en gestion de patrimoine indépendant à Bordeaux, mandataire d'intermédiaire en assurance pour ID CAP, membre de la CNCGP.</p>
+        <div class="compliance-badges">
+          <span class="compliance-badge">ORIAS n° 19 002 406</span>
+          <span class="compliance-badge">CNCGP</span>
+          <span class="compliance-badge">ACPR</span>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+33620880909">06 20 88 09 09</a></li>
+          <li><a href="mailto:aurelien.dewitte@id-cap-mia.fr">Écrire un email</a></li>
+          <li>Bureau : 20 rue Surson<br>33300 Bordeaux</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informations légales</h4>
+        <ul>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/confidentialite.html">Politique de confidentialité</a></li>
+          <li><a href="/cookies.html">Gestion des cookies</a></li>
+          <li><a href="#" data-consent-open>Paramétrer mes cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aurélien Dewitte · SIRET 848 640 298 00032</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    // Lien de recommandation /r/CODE : le code est transmis à Calendly dans utm_content.
+    // Le workflow n8n lit utm_content pour retrouver le parrain : ne pas renommer ce paramètre.
+    // Indépendant de l'accord cookies : rien n'est stocké, le code va directement au calendrier.
+    var parts = window.location.pathname.split("/").filter(Boolean);
+    var code = (parts.length === 2 && parts[0] === "r" && parts[1] !== "index.html") ? parts[1] : "";
+    var widget = document.getElementById("calendlyWidget");
+    var url = widget.getAttribute("data-url");
+    if(code){
+      url += "?utm_source=recommandation&utm_campaign=parrainage&utm_content=" + encodeURIComponent(code);
+    }
+    widget.setAttribute("data-url", url);
+    document.getElementById("calendlyFallbackLink").href = url;
+
+    // Masque le message de secours dès que le calendrier Calendly est affiché.
+    var fallback = document.getElementById("calendlyFallback");
+    var observer = new MutationObserver(function(){
+      if(widget.querySelector("iframe")){
+        fallback.style.display = "none";
+        observer.disconnect();
+      }
+    });
+    observer.observe(widget, {childList:true});
+
+    // Le widget est chargé après la mise à jour de data-url, pour qu'il lise toujours l'adresse avec le code.
+    var s = document.createElement("script");
+    s.src = "https://assets.calendly.com/assets/external/widget.js";
+    s.async = true;
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>
