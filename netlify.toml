@@ -4,10 +4,17 @@
   command = ""
 
 # Liens de recommandation envoyés par n8n (WhatsApp/SMS) : /r/CODE.
-# Redirection directe vers Calendly, pour que le code arrive dans utm_content
-# même si le filleul refuse les cookies. Le workflow n8n lit utm_content.
+# Réécriture (l'adresse reste /r/CODE) vers la page d'atterrissage r/index.html,
+# dont le script transmet CODE à Calendly dans utm_content. Le workflow n8n lit
+# utm_content pour retrouver le parrain : ne pas renommer ce paramètre.
 [[redirects]]
-  from = "/r/:code"
-  to = "https://calendly.com/partenariat-idcap/30min?utm_source=recommandation&utm_medium=whatsapp&utm_content=:code"
-  status = 302
+  from = "/r/*"
+  to = "/r/index.html"
+  status = 200
   force = true
+
+# Page d'arrivée des annonces Google Ads, servie sans .html.
+[[redirects]]
+  from = "/bilan-patrimonial-offert"
+  to = "/bilan-patrimonial-offert.html"
+  status = 200
