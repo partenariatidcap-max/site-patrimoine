@@ -2,3 +2,12 @@
 [build]
   publish = "."
   command = ""
+
+# Liens de recommandation envoyés par n8n (WhatsApp/SMS) : /r/CODE.
+# Redirection directe vers Calendly, pour que le code arrive dans utm_content
+# même si le filleul refuse les cookies. Le workflow n8n lit utm_content.
+[[redirects]]
+  from = "/r/:code"
+  to = "https://calendly.com/partenariat-idcap/30min?utm_source=recommandation&utm_medium=whatsapp&utm_content=:code"
+  status = 302
+  force = true
