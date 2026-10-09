@@ -35,7 +35,14 @@
       ad_personalization: 'granted', analytics_storage: 'granted'
     });
     gtag('js', new Date());
-    gtag('config', GA);
+    /* ?debug=1 dans l'adresse : les événements apparaissent dans GA4 > DebugView
+       pendant toute la visite (pour les tests uniquement). */
+    var debug = false;
+    try {
+      if (/[?&]debug=1(&|$)/.test(location.search)) sessionStorage.setItem('adp_debug', '1');
+      debug = sessionStorage.getItem('adp_debug') === '1';
+    } catch (e) {}
+    gtag('config', GA, debug ? { debug_mode: true } : {});
     gtag('config', ADS);
     var s = document.createElement('script');
     s.async = true;
