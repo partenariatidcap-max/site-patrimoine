@@ -12,25 +12,8 @@
   function gtag(){dataLayer.push(arguments);}
 </script>
 <script src="/assets/consent.js" defer></script>
+<script src="/assets/calendly.js" defer></script>
 
-<!-- Google Ads + GA4: track Calendly clicks as conversions -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href*="calendly.com/partenariat-idcap"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      // Google Ads direct conversion
-      gtag('event', 'conversion', {'send_to': 'AW-18294420606/P1oXCKSH0sscEP7oupNE'});
-      // GA4 custom event (pour marquer en evenement cle dans GA4)
-      gtag('event', 'rdv_calendly', {
-        'event_category': 'engagement',
-        'event_label': 'calendly_click',
-        'value': 500,
-        'currency': 'EUR'
-      });
-    });
-  });
-});
-</script>
 
 <title>Conseiller en gestion de patrimoine indépendant – Gironde & Bordeaux | Aurélien Dewitte</title>
 <meta name="description" content="Cabinet indépendant CNCGP basé en Gironde. Audit patrimonial, optimisation fiscale, placement, transmission. Premier rendez-vous gratuit et sans engagement.">
@@ -375,6 +358,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   .calendly-box h3{color:var(--navy);margin-bottom:.6rem;font-family:'Playfair Display';font-size:1.5rem}
   .calendly-box p{margin-bottom:1.3rem;font-size:.95rem}
+  .calendly-inline{min-width:280px;height:700px;margin:0 -1rem}
+  .calendly-inline[hidden]{display:none}
   .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
   .form-grid input, .form-grid select, form textarea{
     width:100%;padding:.85rem 1rem;
@@ -841,7 +826,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="calendly-box">
           <h3>Réservez votre créneau en ligne</h3>
           <p>Choisissez directement l'horaire qui vous arrange. Confirmation immédiate par email.</p>
-          <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener">Ouvrir le calendrier de RDV</a>
+          <div id="calendly-inline" class="calendly-inline" data-url="https://calendly.com/partenariat-idcap/30min" hidden></div>
+          <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary calendly-fallback" target="_blank" rel="noopener">Ouvrir le calendrier de RDV</a>
         </div>
         <form action="https://formspree.io/f/xqejaavq" method="POST">
           <h3 style="font-family:'Playfair Display';margin-bottom:1.2rem">Ou écrivez-moi</h3>

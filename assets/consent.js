@@ -47,6 +47,10 @@
     if (started) gtag('event', name, params || {});
   }
 
+  /* Utilisés par assets/calendly.js */
+  window.adpTrack = track;
+  window.adpConsent = { granted: function () { return readChoice() === 'granted'; } };
+
   /* --- Bandeau --- */
   var css =
     '#adp-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:760px;margin:0 auto;' +
@@ -84,6 +88,7 @@
       saveChoice('granted');
       box.remove();
       startTracking();
+      document.dispatchEvent(new Event('adp:consent-granted'));
     });
     box.querySelector('.adp-no').addEventListener('click', function () {
       var wasStarted = started;
@@ -93,7 +98,7 @@
     });
   }
 
-  /* --- Suivi des prises de contact (en plus des clics Calendly) --- */
+  /* --- Suivi des prises de contact (les réservations Calendly sont dans calendly.js) --- */
   document.addEventListener('click', function (e) {
     var el = e.target.closest ? e.target.closest('a, [data-consent-open]') : null;
     if (!el) return;
@@ -107,11 +112,36 @@
     else if (href.indexOf('mailto:') === 0) track('clic_email', { page: location.pathname });
   });
 
+  /* --- Formulaire de contact ---
+     Envoi à Formspree sans quitter la page. form_submit n'est envoyé qu'une
+     fois Formspree ayant confirmé la réception. En cas d'échec, le formulaire
+     repart par l'envoi classique pour ne perdre aucun message (sans mesure). */
   document.addEventListener('submit', function (e) {
     var f = e.target;
-    if (f && (f.getAttribute('action') || '').indexOf('formspree.io') !== -1) {
-      track('generate_lead', { method: 'formulaire_contact', page: location.pathname, transport_type: 'beacon' });
-    }
+    if (!f || (f.getAttribute('action') || '').indexOf('formspree.io') === -1) return;
+    if (!window.fetch || !window.FormData) return;
+    e.preventDefault();
+    if (f.getAttribute('data-sending')) return;
+    f.setAttribute('data-sending', '1');
+    var btn = f.querySelector('[type="submit"]');
+    var label = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Envoi en cours…'; }
+    fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error('Formspree ' + r.status);
+        track('form_submit', { method: 'formulaire_contact', page: location.pathname });
+        var done = document.createElement('div');
+        done.setAttribute('role', 'status');
+        done.style.cssText = 'padding:2rem 1rem;text-align:center';
+        done.innerHTML = '<h3 style="font-family:\'Playfair Display\';margin-bottom:.8rem">Merci, votre demande est bien envoyée</h3>' +
+          '<p>Je vous réponds sous 24 h ouvrées. Pour une question urgente : <a href="tel:+33620880909">06 20 88 09 09</a>.</p>';
+        f.innerHTML = '';
+        f.appendChild(done);
+      })
+      .catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+        HTMLFormElement.prototype.submit.call(f);
+      });
   });
 
   function init() {

@@ -26,25 +26,8 @@
   function gtag(){dataLayer.push(arguments);}
 </script>
 <script src="/assets/consent.js" defer></script>
+<script src="/assets/calendly.js" defer></script>
 
-<!-- Google Ads: track Calendly clicks as conversions -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href*="calendly.com/partenariat-idcap"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      // Google Ads direct conversion
-      gtag('event', 'conversion', {'send_to': 'AW-18294420606/P1oXCKSH0sscEP7oupNE'});
-      // GA4 custom event
-      gtag('event', 'rdv_calendly', {
-        'event_category': 'engagement',
-        'event_label': 'calendly_click',
-        'value': 500,
-        'currency': 'EUR'
-      });
-    });
-  });
-});
-</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
