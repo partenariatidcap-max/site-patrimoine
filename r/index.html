@@ -127,7 +127,7 @@ footer a:hover{color:#fff}
     <h2 id="rdv">Réservez votre échange</h2>
     <p class="cta-sub">30 minutes, en visio ou par téléphone, gratuit et sans engagement.</p>
 
-    <div class="calendly-inline-widget" id="calendlyWidget" data-url="https://calendly.com/partenariat-idcap/30min">
+    <div class="calendly-inline-widget" id="calendlyWidget" data-url="https://calendly.com/partenariat-idcap/30min?hide_event_type_details=1">
       <div class="calendly-fallback" id="calendlyFallback">
         <p>Le calendrier est en cours de chargement. Vous pouvez aussi réserver directement ici :</p>
         <a id="calendlyFallbackLink" class="btn" href="https://calendly.com/partenariat-idcap/30min" target="_blank" rel="noopener">Ouvrir le calendrier</a>
@@ -186,7 +186,7 @@ footer a:hover{color:#fff}
     var widget = document.getElementById("calendlyWidget");
     var url = widget.getAttribute("data-url");
     if(code){
-      url += "?utm_source=recommandation&utm_campaign=parrainage&utm_content=" + encodeURIComponent(code);
+      url += "&utm_source=recommandation&utm_campaign=parrainage&utm_content=" + encodeURIComponent(code);
     }
     widget.setAttribute("data-url", url);
     document.getElementById("calendlyFallbackLink").href = url;
