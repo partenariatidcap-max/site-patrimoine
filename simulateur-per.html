@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur PER 2026 : calculez votre économie d'impôt | Aurélien Dewitte — Conseil en gestion de patrimoine</title>
+<meta name="description" content="Simulateur PER gratuit : économie d'impôt, plafond de déduction 2026 (salarié ou TNS), effort d'épargne réel. Barème officiel, quotient familial et décote inclus.">
+<meta name="author" content="Aurélien Dewitte">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Simulateur PER 2026 : calculez votre économie d'impôt | Aurélien Dewitte">
+<meta property="og:description" content="Simulateur PER gratuit : économie d'impôt, plafond de déduction 2026 (salarié ou TNS), effort d'épargne réel. Barème officiel, quotient familial et décote inclus.">
+<meta property="og:image" content="https://aurelien-dewitte-patrimoine.fr/og-image.png">
+<meta property="og:url" content="https://aurelien-dewitte-patrimoine.fr/simulateur-per.html">
+<link rel="canonical" href="https://aurelien-dewitte-patrimoine.fr/simulateur-per.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Simulateur PER 2026 : économie d'impôt",
+  "description": "Simulateur PER gratuit : économie d'impôt, plafond de déduction 2026 (salarié ou TNS), effort d'épargne réel. Barème officiel, quotient familial et décote inclus.",
+  "url": "https://aurelien-dewitte-patrimoine.fr/simulateur-per.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Tous",
+  "inLanguage": "fr-FR",
+  "isAccessibleForFree": true,
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+  "author": {"@type": "Person", "name": "Aurélien Dewitte"},
+  "dateModified": "2026-10-14"
+}
+</script>
+
+<!-- Google Analytics -->
+<!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+</script>
+<script src="/assets/consent.js" defer></script>
+<script src="/assets/calendly.js" defer></script>
+<script src="/assets/simulateur-per.js" defer></script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+:root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#A38346;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5;--shadow:0 4px 24px rgba(20,37,64,.08);--shadow-lg:0 20px 60px rgba(20,37,64,.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--navy);line-height:1.25}
+h1{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:1.2rem;letter-spacing:-.02em}
+h2{font-size:clamp(1.45rem,3vw,1.85rem);margin:2.6rem 0 1rem;letter-spacing:-.01em}
+h3{font-size:1.2rem;margin:1.5rem 0 .7rem}
+p{margin-bottom:1.15rem;color:var(--ink-soft)}
+a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold-light);text-underline-offset:3px}
+a:hover{color:var(--gold-dark)}
+strong{color:var(--ink)}
+ul,ol{padding-left:1.4rem;margin-bottom:1.15rem}
+li{margin-bottom:.4rem;color:var(--ink-soft)}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:820px;margin:0 auto;padding:0 1.5rem}
+.container-wide{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;font-family:'Playfair Display';font-weight:700;font-size:1.25rem;color:var(--navy);text-decoration:none}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 4px 12px rgba(20,37,64,.2)}
+.logo small{display:block;font-size:.7rem;font-weight:400;color:var(--ink-soft);font-family:'Inter';letter-spacing:.05em;text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;gap:1.8rem;align-items:center;list-style:none}
+.nav-links a{font-size:.95rem;font-weight:500;color:var(--ink);text-decoration:none;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.btn-nav{padding:.65rem 1.2rem;background:var(--navy);color:#fff !important;border-radius:8px;text-decoration:none}
+.btn-nav::after{display:none !important}
+.btn-nav:hover{background:var(--navy-dark)}
+
+.article-hero{background:linear-gradient(180deg,var(--cream),#fff);padding:3.5rem 0 2rem;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--gold-dark);font-weight:600;margin-bottom:.9rem}
+.breadcrumbs{font-size:.88rem;color:var(--ink-soft);margin-bottom:.4rem}
+.breadcrumbs a{text-decoration:none;color:var(--ink-soft)}
+.breadcrumbs a:hover{color:var(--gold-dark)}
+
+.article{padding:3rem 0 4rem}
+.article-cta{background:var(--cream);border-left:4px solid var(--gold);padding:1.5rem 1.75rem;margin:2.5rem 0;border-radius:0 8px 8px 0}
+.article-cta p{margin-bottom:1rem;color:var(--ink)}
+.btn{display:inline-block;padding:.85rem 1.6rem;background:var(--navy);color:#fff !important;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem;transition:background .2s}
+.btn:hover{background:var(--navy-dark)}
+
+.compare-table{border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:1.5rem 0;background:#fff}
+.compare-table table{width:100%;border-collapse:collapse;font-size:.95rem}
+.compare-table th,.compare-table td{padding:.9rem 1rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.compare-table th{background:var(--cream);font-weight:600;color:var(--navy);font-family:'Inter';font-size:.9rem}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table td:first-child{font-weight:600;color:var(--ink)}
+
+.article-nav{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.article-nav a{text-decoration:none;color:var(--navy);font-weight:500}
+.article-nav a:hover{color:var(--gold-dark)}
+.related-articles{background:var(--cream);border-radius:12px;padding:2rem;margin:3rem 0 2rem}
+.related-articles h3{margin-top:0;color:var(--navy);font-size:1.3rem;margin-bottom:1.2rem}
+.related-articles ul{list-style:none;padding:0;margin:0}
+.related-articles li{margin-bottom:.9rem;padding-left:0}
+.related-articles li a{display:block;padding:.9rem 1.2rem;background:#fff;border-radius:8px;border:1px solid var(--line);text-decoration:none;color:var(--navy);font-weight:500;transition:all .2s}
+.related-articles li a:hover{border-color:var(--gold);background:#fffdf5;transform:translateX(4px)}
+.related-articles li a::before{content:"→ ";color:var(--gold);font-weight:700;margin-right:.3rem}
+
+
+footer{background:var(--navy-dark);color:#fff;padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.footer-logo{font-family:'Playfair Display';font-weight:700;font-size:1.3rem;color:var(--gold-light);margin-bottom:.9rem}
+.footer-logo small{display:block;font-size:.72rem;font-weight:400;color:#a3b8d1;font-family:'Inter';letter-spacing:.05em;text-transform:uppercase;margin-top:-2px}
+footer h4{color:var(--gold-light);font-size:.95rem;margin-bottom:.9rem;font-family:'Inter';font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+footer ul{list-style:none;padding:0}
+footer li{margin-bottom:.5rem;color:#c9d4e2;font-size:.93rem}
+footer a{color:#c9d4e2;text-decoration:none}
+footer a:hover{color:var(--gold-light)}
+.compliance-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.compliance-badge{background:rgba(255,255,255,.08);padding:.35rem .7rem;border-radius:4px;font-size:.78rem;color:#c9d4e2}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.82rem;color:#8fa1bd;flex-wrap:wrap;gap:.5rem}
+
+@media(max-width:900px){.nav-links{display:none}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}.compare-table{font-size:.88rem}.compare-table th,.compare-table td{padding:.7rem .6rem}}
+.article-date{font-size:.9rem;color:var(--ink-soft);margin-top:.9rem}
+.author-box{display:flex;gap:1.3rem;align-items:center;margin-top:2.5rem;padding:1.5rem;border:1px solid var(--line);border-radius:12px;background:#fff}
+.author-box img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0}
+.author-box p{margin:0;font-size:.94rem}
+.author-box strong{display:block;font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.08rem;margin-bottom:.25rem}
+.example-note{font-size:.85rem;font-style:italic;border-left:3px solid var(--line);padding-left:.9rem}
+@media (max-width:560px){.author-box{flex-direction:column;text-align:center}}
+
+.sim{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:1.75rem;margin:0 0 2rem}
+.sim fieldset{border:none;margin:0 0 1.6rem;padding:0;min-width:0}
+.sim legend{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:.9rem}
+.sim label{display:block;font-size:.93rem;font-weight:500;color:var(--ink);margin-bottom:1rem}
+.sim input[type=text],.sim input[type=number],.sim select{display:block;width:100%;margin-top:.35rem;padding:.7rem .8rem;border:1px solid var(--line);border-radius:8px;background:#fff;font:400 1rem 'Inter',system-ui,sans-serif;color:var(--ink)}
+.sim input:focus,.sim select:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.sim small{display:block;font-weight:400;font-size:.82rem;color:var(--ink-soft);margin-top:.3rem;line-height:1.5}
+.sim-grille{display:grid;grid-template-columns:1fr 1fr;gap:0 1.2rem}
+.sim-case,.sim-choix label{display:flex !important;gap:.55rem;align-items:flex-start;font-weight:400 !important}
+.sim-case input,.sim-choix input{margin-top:.35rem;accent-color:var(--navy)}
+.sim-choix{display:flex;flex-wrap:wrap;gap:0 1.5rem;margin-bottom:.4rem}
+.sim [hidden]{display:none !important}
+.sim-btn{border:none;cursor:pointer;width:100%;font-size:1rem;padding:1rem}
+.sim-resultat{background:#fff;border:2px solid var(--gold);border-radius:12px;padding:1.75rem;margin:0 0 2rem;scroll-margin-top:90px}
+.sim-resultat h3{margin-top:0}
+.sim-chiffres{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0 1.4rem}
+.sim-cle{background:var(--cream);border-radius:10px;padding:1rem 1.2rem}
+.sim-cle span{display:block;font-size:.85rem;color:var(--ink-soft)}
+.sim-cle strong{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;color:var(--navy)}
+.sim-table{width:100%;border-collapse:collapse;font-size:.95rem;margin-bottom:1rem}
+.sim-table td{padding:.55rem 0;border-bottom:1px solid var(--line)}
+.sim-table td:last-child{text-align:right;font-weight:600;color:var(--ink);white-space:nowrap}
+.sim-notes li{font-size:.92rem}
+.sim-mention{font-size:.85rem;font-style:italic;border-left:3px solid var(--line);padding-left:.9rem}
+.sim-alerte{margin:0;color:var(--ink)}
+.sim-cta{background:var(--cream);border-left:4px solid var(--gold);padding:1.2rem 1.4rem;border-radius:0 8px 8px 0}
+.sim-cta p{color:var(--ink)}
+.sim-sources{font-size:.82rem}
+@media(max-width:600px){.sim{padding:1.2rem}.sim-grille,.sim-chiffres{grid-template-columns:1fr}.sim-cle strong{font-size:1.6rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container-wide nav">
+    <a href="/" class="logo">
+      <span class="logo-mark">AD</span>
+      <span>Aurélien Dewitte<small>Conseil en patrimoine</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#expertises">Expertises</a></li>
+      <li><a href="/#methode">Méthode</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="/#a-propos">À propos</a></li>
+      <li><a href="/#contact" class="btn-nav">Prendre RDV</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="breadcrumbs"><a href="/">Accueil</a> · Simulateur PER</div>
+    <span class="eyebrow">OUTIL GRATUIT · RÈGLES 2026</span>
+    <h1>Simulateur PER : votre économie d'impôt en 2026</h1>
+    <p>Combien un versement sur un Plan d'Épargne Retraite réduit-il votre impôt ? Le simulateur applique le barème officiel, le quotient familial, la décote et les plafonds de déduction de 2026, pour un résultat chiffré en une minute.</p>
+  </div>
+</section>
+
+<main class="article">
+  <div class="container">
+    <form id="sim-per" class="sim" novalidate>
+      <fieldset>
+        <legend>1. Votre foyer fiscal</legend>
+        <div class="sim-grille">
+          <label>Situation
+            <select name="situation">
+              <option value="seul">Célibataire, divorcé(e) ou veuf(ve)</option>
+              <option value="couple">Marié(e) ou pacsé(e)</option>
+            </select>
+          </label>
+          <label>Enfants à charge
+            <input name="enfants" type="number" min="0" max="12" step="1" value="0" inputmode="numeric">
+          </label>
+        </div>
+        <label class="sim-case" id="bloc-parent-isole" hidden><input type="checkbox" name="parent_isole"> Je vis seul(e) avec mes enfants (case T)</label>
+        <label>Revenu net imposable du foyer (€ par an)
+          <input name="revenu_foyer" type="text" inputmode="decimal" placeholder="ex. 60 000" autocomplete="off">
+          <small>Ligne « revenu net imposable » de votre avis d'imposition, ou votre estimation pour 2026 (salaires après abattement de 10 %).</small>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Votre plafond de déduction</legend>
+        <div class="sim-choix">
+          <label><input type="radio" name="mode_plafond" value="estime" checked> Je l'estime ici</label>
+          <label><input type="radio" name="mode_plafond" value="connu"> Je le connais (avis d'imposition)</label>
+        </div>
+
+        <div id="bloc-plafond-connu" hidden>
+          <label>Plafond disponible pour 2026, déclarant 1 (€)
+            <input name="plafond_connu" type="text" inputmode="decimal" placeholder="ex. 12 450">
+            <small>Rubrique « Plafond épargne retraite » de l'avis d'imposition 2026. Il inclut déjà les plafonds non utilisés des années précédentes.</small>
+          </label>
+          <label id="bloc-conjoint-connu" hidden>Plafond disponible pour 2026, déclarant 2 (€)
+            <input name="plafond_connu_conjoint" type="text" inputmode="decimal" placeholder="ex. 4 710">
+          </label>
+        </div>
+
+        <div id="bloc-plafond-estime">
+          <div class="sim-grille">
+            <label>Votre activité
+              <select name="statut">
+                <option value="salarie">Salarié(e), fonctionnaire, dirigeant assimilé salarié</option>
+                <option value="tns">Indépendant(e), profession libérale, gérant majoritaire (TNS)</option>
+                <option value="autre">Retraité(e) ou sans revenus d'activité</option>
+              </select>
+            </label>
+            <label id="bloc-revenu"><span id="label-revenu">Salaire net imposable de 2025, avant abattement de 10 % (€)</span>
+              <input name="revenu_pro" type="text" inputmode="decimal" placeholder="ex. 55 000">
+            </label>
+          </div>
+          <div id="bloc-conjoint-estime" class="sim-grille" hidden>
+            <label>Activité de votre conjoint
+              <select name="statut_conjoint">
+                <option value="salarie">Salarié(e), fonctionnaire, dirigeant assimilé salarié</option>
+                <option value="tns">Indépendant(e), profession libérale, gérant majoritaire (TNS)</option>
+                <option value="autre">Retraité(e) ou sans revenus d'activité</option>
+              </select>
+            </label>
+            <label id="bloc-revenu_conjoint"><span id="label-revenu_conjoint">Salaire net imposable de 2025, avant abattement de 10 % (€)</span>
+              <input name="revenu_pro_conjoint" type="text" inputmode="decimal" placeholder="ex. 35 000">
+            </label>
+          </div>
+          <label>Plafonds non utilisés des années précédentes (€, facultatif)
+            <input name="plafonds_reportes" type="text" inputmode="decimal" placeholder="0">
+            <small>Ils figurent sur votre avis d'imposition. Laissez vide si vous ne les connaissez pas.</small>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Votre versement</legend>
+        <label>Montant que vous envisagez de verser en 2026 (€)
+          <input name="versement" type="text" inputmode="decimal" placeholder="ex. 5 000">
+        </label>
+        <label class="sim-case"><input type="checkbox" name="age70"> Le titulaire du PER aura 70 ans ou plus au moment du versement</label>
+      </fieldset>
+
+      <button type="submit" class="btn sim-btn">Calculer mon économie d'impôt</button>
+    </form>
+
+    <div id="sim-resultat" class="sim-resultat" aria-live="polite" hidden></div>
+
+    <h2>Comment le calcul est fait</h2>
+    <p>Le simulateur calcule votre impôt deux fois, sans puis avec le versement, et affiche la différence. Il applique le barème de l'impôt sur les revenus 2025 (0 %, 11 %, 30 %, 41 % et 45 %), le nombre de parts de votre foyer, le plafonnement du quotient familial et la décote pour les impôts modestes. C'est plus juste qu'une simple multiplication par votre tranche marginale : un versement important peut vous faire changer de tranche, et la décote peut augmenter l'économie.</p>
+    <p>Les versements de 2026 seront déduits de vos revenus 2026, imposés en 2027 avec un barème qui n'est pas encore voté. Le barème le plus récent sert donc d'approximation.</p>
+
+    <h2>Le plafond de déduction en 2026</h2>
+    <ul>
+      <li><strong>Salariés et fonctionnaires</strong> : 10 % des revenus d'activité de 2025, après abattement de 10 %, avec un minimum de 4 710 € et un maximum de 37 680 €. Les cotisations de retraite supplémentaire payées par l'employeur viennent en déduction.</li>
+      <li><strong>Indépendants et professions libérales</strong> : 10 % du bénéfice imposable de 2026, plus 15 % de la part comprise entre 48 060 € et 384 480 €, avec un minimum de 4 806 € et un maximum de 88 911 €.</li>
+      <li><strong>Retraités et personnes sans revenus d'activité</strong> : 4 710 €.</li>
+      <li><strong>Plafonds non utilisés</strong> : ils sont désormais reportables sur les cinq années suivantes au lieu de trois. Un couple marié ou pacsé peut additionner ses plafonds.</li>
+      <li><strong>À partir de 70 ans</strong> : depuis le 1<sup>er</sup> janvier 2026, les versements ne sont plus déductibles.</li>
+    </ul>
+
+    <h2>Ce que le simulateur ne dit pas</h2>
+    <p>La déduction n'est pas un cadeau fiscal définitif, c'est un report : les sommes déduites seront imposées à la sortie, en capital ou en rente. L'intérêt du PER dépend donc de l'écart entre votre tranche d'aujourd'hui et celle que vous aurez à la retraite, de votre horizon de placement et du besoin de garder l'épargne disponible. Le PER est bloqué jusqu'à la retraite, sauf cas de déblocage anticipé comme l'achat de la résidence principale. Ces points sont détaillés dans <a href="per-vs-assurance-vie.html">PER ou assurance-vie : lequel choisir en 2026 ?</a></p>
+    <p>Le calcul ne tient pas compte des réductions et crédits d'impôt, des revenus taxés à part (plus-values, dividendes au prélèvement forfaitaire), de la contribution sur les hauts revenus, ni pour les indépendants de l'effet de la déduction sur les cotisations sociales.</p>
+
+    <div class="article-cta">
+      <p><strong>Vous voulez savoir combien verser, et sur quel PER ?</strong> En 30 minutes, nous vérifions votre plafond réel, le montant le plus efficace et la fiscalité de sortie adaptée à votre projet. Premier rendez-vous offert, sans engagement.</p>
+      <a href="https://calendly.com/partenariat-idcap/30min" class="btn" target="_blank" rel="noopener">Réservez un créneau ici →</a>
+    </div>
+
+    <p class="sim-sources">Sources : loi n° 2026-103 du 19 février 2026 de finances pour 2026 (barème, quotient familial, décote, report des plafonds sur cinq ans, fin de la déduction à 70 ans) ; articles 163 quatervicies et 154 bis du Code général des impôts ; plafond annuel de la Sécurité sociale (47 100 € en 2025, 48 060 € en 2026). Mise à jour : octobre 2026.</p>
+
+    <div class="author-box">
+      <img src="assets/photo-pro.jpg" alt="Aurélien Dewitte" width="84" height="84" loading="lazy">
+      <p><strong>Aurélien Dewitte</strong>Conseiller en gestion de patrimoine à Bordeaux depuis 2019, membre de la CNCGP. J'accompagne plus de 400 familles, dirigeants et professionnels libéraux en Gironde. <a href="/#a-propos">En savoir plus</a></p>
+    </div>
+    <div class="related-articles">
+      <h3>📚 Pour aller plus loin</h3>
+      <ul>
+        <li><a href="per-vs-assurance-vie.html">PER ou Assurance-vie : lequel choisir en 2026 ?</a></li>
+        <li><a href="preparer-retraite.html">Préparer sa retraite à 50 ans : les leviers à activer maintenant</a></li>
+        <li><a href="optimisation-fiscale.html">PER, déficit foncier, démembrement : quel levier fiscal pour votre situation ?</a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Aurélien Dewitte<small>Conseil en gestion de patrimoine</small></div>
+        <p style="font-size:.92rem;line-height:1.6">Conseil en gestion de patrimoine à Bordeaux et en Gironde, membre de la CNCGP. Accompagnement patrimonial 360° pour particuliers, dirigeants et professions libérales.</p>
+        <div class="compliance-badges">
+          <span class="compliance-badge">ORIAS n° 19 002 406</span>
+          <span class="compliance-badge">CNCGP</span>
+          <span class="compliance-badge">ACPR</span>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/#expertises">Expertises</a></li>
+          <li><a href="/#methode">Méthode</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="/#a-propos">À propos</a></li>
+          <li><a href="/#temoignages">Avis clients</a></li>
+          <li><a href="simulateur-per.html">Simulateur PER</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+33620880909">06 20 88 09 09</a></li>
+          <li><a href="mailto:aurelien.dewitte@id-cap-mia.fr">Écrire un email</a></li>
+          <li>Bureau : 20 rue Surson<br>33300 Bordeaux</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informations légales</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+          <li><a href="cookies.html">Gestion des cookies</a></li>
+          <li><a href="#" data-consent-open>Paramétrer mes cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aurélien Dewitte · SIRET 848 640 298 00032</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
