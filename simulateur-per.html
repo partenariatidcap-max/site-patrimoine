@@ -30,7 +30,7 @@
   "isAccessibleForFree": true,
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
   "author": {"@type": "Person", "name": "Aurélien Dewitte"},
-  "dateModified": "2026-10-14"
+  "dateModified": "2026-10-26"
 }
 </script>
 
@@ -136,35 +136,50 @@ footer a:hover{color:var(--gold-light)}
 .example-note{font-size:.85rem;font-style:italic;border-left:3px solid var(--line);padding-left:.9rem}
 @media (max-width:560px){.author-box{flex-direction:column;text-align:center}}
 
-.sim{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:1.75rem;margin:0 0 2rem}
-.sim fieldset{border:none;margin:0 0 1.6rem;padding:0;min-width:0}
-.sim legend{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin-bottom:.9rem}
-.sim label{display:block;font-size:.93rem;font-weight:500;color:var(--ink);margin-bottom:1rem}
-.sim input[type=text],.sim input[type=number],.sim select{display:block;width:100%;margin-top:.35rem;padding:.7rem .8rem;border:1px solid var(--line);border-radius:8px;background:#fff;font:400 1rem 'Inter',system-ui,sans-serif;color:var(--ink)}
-.sim input:focus,.sim select:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
-.sim small{display:block;font-weight:400;font-size:.82rem;color:var(--ink-soft);margin-top:.3rem;line-height:1.5}
-.sim-grille{display:grid;grid-template-columns:1fr 1fr;gap:0 1.2rem}
-.sim-case,.sim-choix label{display:flex !important;gap:.55rem;align-items:flex-start;font-weight:400 !important}
-.sim-case input,.sim-choix input{margin-top:.35rem;accent-color:var(--navy)}
-.sim-choix{display:flex;flex-wrap:wrap;gap:0 1.5rem;margin-bottom:.4rem}
+.sim{background:var(--cream);border:1px solid var(--line);border-radius:14px 14px 0 0;padding:1.75rem 1.75rem .5rem}
+.sim-q{margin-bottom:1.5rem}
+.sim-label{display:block;font-weight:600;color:var(--navy);font-size:1rem;margin-bottom:.55rem}
+.sim small{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:.4rem;line-height:1.5}
 .sim [hidden]{display:none !important}
-.sim-btn{border:none;cursor:pointer;width:100%;font-size:1rem;padding:1rem}
-.sim-resultat{background:#fff;border:2px solid var(--gold);border-radius:12px;padding:1.75rem;margin:0 0 2rem;scroll-margin-top:90px}
-.sim-resultat h3{margin-top:0}
-.sim-chiffres{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0 1.4rem}
-.sim-cle{background:var(--cream);border-radius:10px;padding:1rem 1.2rem}
-.sim-cle span{display:block;font-size:.85rem;color:var(--ink-soft)}
-.sim-cle strong{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;color:var(--navy)}
-.sim-table{width:100%;border-collapse:collapse;font-size:.95rem;margin-bottom:1rem}
-.sim-table td{padding:.55rem 0;border-bottom:1px solid var(--line)}
-.sim-table td:last-child{text-align:right;font-weight:600;color:var(--ink);white-space:nowrap}
-.sim-notes li{font-size:.92rem}
+.sim input[type=text]{width:100%;padding:.8rem .9rem;border:1px solid var(--line);border-radius:10px;background:#fff;font:500 1.1rem 'Inter',system-ui,sans-serif;color:var(--ink)}
+.sim input:focus-visible,.sim button:focus-visible,.sim-seg input:focus-visible+span,.sim summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.sim-euro{position:relative}
+.sim-euro::after{content:'€';position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--ink-soft);font-weight:500}
+.sim-euro input{padding-right:2.2rem !important}
+.sim-seg{display:flex;flex-wrap:wrap;gap:.5rem}
+.sim-seg label{flex:1 1 160px;cursor:pointer}
+.sim-seg input{position:absolute;opacity:0;pointer-events:none}
+.sim-seg span{display:block;text-align:center;padding:.75rem .9rem;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:500;color:var(--ink);transition:all .15s}
+.sim-seg input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+.sim-pas{display:inline-flex;align-items:center;gap:.5rem}
+.sim-pas button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.4rem;line-height:1;color:var(--navy);cursor:pointer}
+.sim-pas button:hover{border-color:var(--gold)}
+.sim-pas input{width:64px !important;text-align:center}
+.sim-puces{display:flex;gap:.4rem;margin-bottom:.6rem}
+.sim-puces button{flex:1 1 0;min-width:0;white-space:nowrap;padding:.65rem .3rem;border:1px solid var(--line);border-radius:999px;background:#fff;font:500 .95rem 'Inter',system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.sim-puces button:hover{border-color:var(--gold)}
+.sim-puces button.actif{background:var(--gold);border-color:var(--gold);color:var(--navy-dark);font-weight:600}
+.sim-case{display:flex;gap:.55rem;align-items:flex-start;font-size:.93rem;color:var(--ink);margin:.7rem 0;cursor:pointer}
+.sim-case input{margin-top:.3rem;accent-color:var(--navy)}
+.sim-plus{border-top:1px solid var(--line);padding:.9rem 0 1rem}
+.sim-plus summary{cursor:pointer;font-size:.93rem;color:var(--navy);font-weight:500}
+.sim-plus .sim-label{margin-top:1rem;font-size:.93rem}
+.sim-resultat{background:#fff;border:2px solid var(--gold);border-top:none;border-radius:0 0 14px 14px;padding:1.5rem 1.75rem;margin:0 0 2.5rem}
+.sim-attente{margin:0;color:var(--ink-soft);text-align:center}
+.sim-chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.1rem}
+.sim-cle{background:var(--cream);border-radius:10px;padding:.9rem 1rem}
+.sim-cle span{display:block;font-size:.82rem;color:var(--ink-soft)}
+.sim-cle strong{font-family:'Playfair Display',Georgia,serif;font-size:1.65rem;color:var(--navy)}
+.sim-cle-or{background:var(--navy)}
+.sim-cle-or span{color:#c9d4e2}
+.sim-cle-or strong{color:var(--gold-light)}
+.sim-phrase{color:var(--ink);font-size:1.02rem}
+.sim-detail{font-size:.9rem}
 .sim-mention{font-size:.85rem;font-style:italic;border-left:3px solid var(--line);padding-left:.9rem}
-.sim-alerte{margin:0;color:var(--ink)}
 .sim-cta{background:var(--cream);border-left:4px solid var(--gold);padding:1.2rem 1.4rem;border-radius:0 8px 8px 0}
 .sim-cta p{color:var(--ink)}
 .sim-sources{font-size:.82rem}
-@media(max-width:600px){.sim{padding:1.2rem}.sim-grille,.sim-chiffres{grid-template-columns:1fr}.sim-cle strong{font-size:1.6rem}}
+@media(max-width:600px){.sim{padding:1.2rem 1.2rem .3rem}.sim-resultat{padding:1.2rem}.sim-chiffres{grid-template-columns:1fr 1fr}.sim-cle-or{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -190,97 +205,63 @@ footer a:hover{color:var(--gold-light)}
     <div class="breadcrumbs"><a href="/">Accueil</a> · Simulateur PER</div>
     <span class="eyebrow">OUTIL GRATUIT · RÈGLES 2026</span>
     <h1>Simulateur PER : votre économie d'impôt en 2026</h1>
-    <p>Combien un versement sur un Plan d'Épargne Retraite réduit-il votre impôt ? Le simulateur applique le barème officiel, le quotient familial, la décote et les plafonds de déduction de 2026, pour un résultat chiffré en une minute.</p>
+    <p>Quatre questions, un résultat immédiat : combien un versement sur un PER réduit votre impôt, et ce qu'il vous coûte vraiment.</p>
   </div>
 </section>
 
 <main class="article">
   <div class="container">
     <form id="sim-per" class="sim" novalidate>
-      <fieldset>
-        <legend>1. Votre foyer fiscal</legend>
-        <div class="sim-grille">
-          <label>Situation
-            <select name="situation">
-              <option value="seul">Célibataire, divorcé(e) ou veuf(ve)</option>
-              <option value="couple">Marié(e) ou pacsé(e)</option>
-            </select>
-          </label>
-          <label>Enfants à charge
-            <input name="enfants" type="number" min="0" max="12" step="1" value="0" inputmode="numeric">
-          </label>
+      <div class="sim-q">
+        <span class="sim-label">Vous déclarez</span>
+        <div class="sim-seg" role="radiogroup" aria-label="Situation">
+          <label><input type="radio" name="situation" value="seul" checked><span>Seul(e)</span></label>
+          <label><input type="radio" name="situation" value="couple"><span>En couple (marié, pacsé)</span></label>
         </div>
-        <label class="sim-case" id="bloc-parent-isole" hidden><input type="checkbox" name="parent_isole"> Je vis seul(e) avec mes enfants (case T)</label>
-        <label>Revenu net imposable du foyer (€ par an)
-          <input name="revenu_foyer" type="text" inputmode="decimal" placeholder="ex. 60 000" autocomplete="off">
-          <small>Ligne « revenu net imposable » de votre avis d'imposition, ou votre estimation pour 2026 (salaires après abattement de 10 %).</small>
-        </label>
-      </fieldset>
+      </div>
 
-      <fieldset>
-        <legend>2. Votre plafond de déduction</legend>
-        <div class="sim-choix">
-          <label><input type="radio" name="mode_plafond" value="estime" checked> Je l'estime ici</label>
-          <label><input type="radio" name="mode_plafond" value="connu"> Je le connais (avis d'imposition)</label>
+      <div class="sim-q">
+        <span class="sim-label" id="lbl-enfants">Enfants à charge</span>
+        <div class="sim-pas">
+          <button type="button" data-pas="-1" aria-label="Un enfant de moins">−</button>
+          <input name="enfants" type="text" inputmode="numeric" value="0" aria-labelledby="lbl-enfants">
+          <button type="button" data-pas="1" aria-label="Un enfant de plus">+</button>
         </div>
+        <label class="sim-case" id="bloc-parent-isole" hidden><input type="checkbox" name="parent_isole"> Je vis seul(e) avec mes enfants</label>
+      </div>
 
-        <div id="bloc-plafond-connu" hidden>
-          <label>Plafond disponible pour 2026, déclarant 1 (€)
-            <input name="plafond_connu" type="text" inputmode="decimal" placeholder="ex. 12 450">
-            <small>Rubrique « Plafond épargne retraite » de l'avis d'imposition 2026. Il inclut déjà les plafonds non utilisés des années précédentes.</small>
-          </label>
-          <label id="bloc-conjoint-connu" hidden>Plafond disponible pour 2026, déclarant 2 (€)
-            <input name="plafond_connu_conjoint" type="text" inputmode="decimal" placeholder="ex. 4 710">
-          </label>
+      <div class="sim-q">
+        <label class="sim-label" for="revenu_foyer">Revenu net imposable du foyer, par an</label>
+        <div class="sim-euro"><input id="revenu_foyer" name="revenu_foyer" type="text" inputmode="numeric" placeholder="60 000" autocomplete="off" data-montant></div>
+        <small>C'est le montant indiqué sur votre avis d'imposition. À défaut : vos salaires nets annuels moins 10 %.</small>
+      </div>
+
+      <div class="sim-q">
+        <label class="sim-label" for="versement">Montant à verser sur le PER</label>
+        <div class="sim-puces">
+          <button type="button" data-versement="1000">1 000 €</button>
+          <button type="button" data-versement="3000">3 000 €</button>
+          <button type="button" data-versement="5000">5 000 €</button>
+          <button type="button" data-versement="10000">10 000 €</button>
         </div>
+        <div class="sim-euro"><input id="versement" name="versement" type="text" inputmode="numeric" placeholder="ou un autre montant" autocomplete="off" data-montant></div>
+      </div>
 
-        <div id="bloc-plafond-estime">
-          <div class="sim-grille">
-            <label>Votre activité
-              <select name="statut">
-                <option value="salarie">Salarié(e), fonctionnaire, dirigeant assimilé salarié</option>
-                <option value="tns">Indépendant(e), profession libérale, gérant majoritaire (TNS)</option>
-                <option value="autre">Retraité(e) ou sans revenus d'activité</option>
-              </select>
-            </label>
-            <label id="bloc-revenu"><span id="label-revenu">Salaire net imposable de 2025, avant abattement de 10 % (€)</span>
-              <input name="revenu_pro" type="text" inputmode="decimal" placeholder="ex. 55 000">
-            </label>
-          </div>
-          <div id="bloc-conjoint-estime" class="sim-grille" hidden>
-            <label>Activité de votre conjoint
-              <select name="statut_conjoint">
-                <option value="salarie">Salarié(e), fonctionnaire, dirigeant assimilé salarié</option>
-                <option value="tns">Indépendant(e), profession libérale, gérant majoritaire (TNS)</option>
-                <option value="autre">Retraité(e) ou sans revenus d'activité</option>
-              </select>
-            </label>
-            <label id="bloc-revenu_conjoint"><span id="label-revenu_conjoint">Salaire net imposable de 2025, avant abattement de 10 % (€)</span>
-              <input name="revenu_pro_conjoint" type="text" inputmode="decimal" placeholder="ex. 35 000">
-            </label>
-          </div>
-          <label>Plafonds non utilisés des années précédentes (€, facultatif)
-            <input name="plafonds_reportes" type="text" inputmode="decimal" placeholder="0">
-            <small>Ils figurent sur votre avis d'imposition. Laissez vide si vous ne les connaissez pas.</small>
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>3. Votre versement</legend>
-        <label>Montant que vous envisagez de verser en 2026 (€)
-          <input name="versement" type="text" inputmode="decimal" placeholder="ex. 5 000">
-        </label>
-        <label class="sim-case"><input type="checkbox" name="age70"> Le titulaire du PER aura 70 ans ou plus au moment du versement</label>
-      </fieldset>
-
-      <button type="submit" class="btn sim-btn">Calculer mon économie d'impôt</button>
+      <details class="sim-plus">
+        <summary>Affiner (indépendant, plafond connu, 70 ans et plus)</summary>
+        <label class="sim-case"><input type="checkbox" name="tns"> Je suis indépendant(e) ou profession libérale (TNS)</label>
+        <label class="sim-case"><input type="checkbox" name="age70"> J'aurai 70 ans ou plus au moment du versement</label>
+        <label class="sim-label" for="plafond_connu">Mon plafond épargne retraite (avis d'imposition)</label>
+        <div class="sim-euro"><input id="plafond_connu" name="plafond_connu" type="text" inputmode="numeric" placeholder="facultatif" autocomplete="off" data-montant></div>
+        <small>Sans cette information, le plafond est estimé à partir de votre revenu.</small>
+      </details>
     </form>
 
-    <div id="sim-resultat" class="sim-resultat" aria-live="polite" hidden></div>
+    <div id="sim-resultat" class="sim-resultat" aria-live="polite"></div>
 
     <h2>Comment le calcul est fait</h2>
     <p>Le simulateur calcule votre impôt deux fois, sans puis avec le versement, et affiche la différence. Il applique le barème de l'impôt sur les revenus 2025 (0 %, 11 %, 30 %, 41 % et 45 %), le nombre de parts de votre foyer, le plafonnement du quotient familial et la décote pour les impôts modestes. C'est plus juste qu'une simple multiplication par votre tranche marginale : un versement important peut vous faire changer de tranche, et la décote peut augmenter l'économie.</p>
+    <p>Si vous ne saisissez pas votre plafond, il est estimé à 10 % du revenu du foyer, avec le minimum et le maximum de chaque déclarant (formule des indépendants si vous cochez l'option). Le plafond exact, qui inclut les plafonds non utilisés des années précédentes, figure sur votre avis d'imposition.</p>
     <p>Les versements de 2026 seront déduits de vos revenus 2026, imposés en 2027 avec un barème qui n'est pas encore voté. Le barème le plus récent sert donc d'approximation.</p>
 
     <h2>Le plafond de déduction en 2026</h2>

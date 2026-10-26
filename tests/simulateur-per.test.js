@@ -52,6 +52,15 @@ test('plafonds 2026', () => {
   assert.strictEqual(s.plafondPersonne({ statut: 'tns', revenu: 1000000 }), 88911);
 });
 
+test('plafond estimé depuis le revenu du foyer', () => {
+  assert.strictEqual(s.plafondEstime(60000, false, false), 6000);
+  assert.strictEqual(s.plafondEstime(30000, false, false), 4710);
+  assert.strictEqual(s.plafondEstime(500000, false, false), 37680);
+  assert.strictEqual(s.plafondEstime(80000, true, false), 9420);   // 2 × plancher (10 % × 40 000 < 4 710)
+  assert.strictEqual(s.plafondEstime(120000, true, false), 12000); // 2 × 6 000
+  assert.strictEqual(s.plafondEstime(100000, false, true), 17791); // TNS
+});
+
 test('salarié TMI 30 % : 5 000 € versés → 1 500 € d\'économie', () => {
   const r = s.simuler({ couple: false, enfants: 0, revenu: 50000, plafond: 5400, versement: 5000 });
   assert.strictEqual(r.economie, 1500);

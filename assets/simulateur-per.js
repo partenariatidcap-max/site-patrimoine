@@ -100,6 +100,19 @@
     return Math.round(plancherSal); // sans revenus d'activité : plancher de 10 % du PASS
   }
 
+  /* Plafond estimé à partir du seul revenu du foyer : 10 % du revenu net imposable,
+     entre le plancher et le maximum salarié de chaque déclarant (revenu partagé à parts
+     égales dans un couple). Option TNS : formule de l'art. 154 bis pour le déclarant 1. */
+  function plafondEstime(revenu, couple, tns) {
+    revenu = Math.max(0, revenu || 0);
+    var n = couple ? 2 : 1;
+    var parPersonne = revenu / n;
+    var sal = function (r) { return Math.min(8 * R.pass2025 * 0.10, Math.max(0.10 * R.pass2025, 0.10 * r)); };
+    var total = tns ? plafondPersonne({ statut: 'tns', revenu: parPersonne }) : sal(parPersonne);
+    if (couple) total += sal(parPersonne);
+    return Math.round(total);
+  }
+
   function simuler(e) {
     var foyer = { couple: !!e.couple, enfants: e.enfants || 0, parentIsole: !!e.parentIsole };
     var plafond = e.plafond70ans ? 0 : Math.max(0, e.plafond || 0);
@@ -124,128 +137,104 @@
     };
   }
 
-  var api = { regles: R, nombreParts: nombreParts, impotRevenu: impotRevenu, plafondPersonne: plafondPersonne, simuler: simuler };
+  var api = { regles: R, nombreParts: nombreParts, impotRevenu: impotRevenu, plafondPersonne: plafondPersonne, plafondEstime: plafondEstime, simuler: simuler };
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (typeof document === 'undefined') return;
 
-  /* ---------- Page ---------- */
+  /* ---------- Page : calcul en direct, sans bouton ---------- */
   var form = document.getElementById('sim-per');
   if (!form) return;
   var out = document.getElementById('sim-resultat');
-  var dejaMesure = false;
+  var dejaMesure = false, minuteur = null;
 
   function nombre(name) {
     var el = form.elements[name];
     if (!el) return 0;
-    var v = parseFloat(String(el.value).replace(/\s/g, '').replace(',', '.'));
+    var v = parseFloat(String(el.value).replace(/[\s  €]/g, '').replace(',', '.'));
     return isFinite(v) && v > 0 ? v : 0;
   }
-  function valeur(name) {
-    var el = form.elements[name];
-    return el ? el.value : '';
-  }
-  function euros(n) {
-    return Math.round(n).toLocaleString('fr-FR') + ' €';
-  }
-  function pct(t) {
-    return Math.round(t * 100) + ' %';
-  }
-  function montrer(id, oui) {
-    var el = document.getElementById(id);
-    if (el) el.hidden = !oui;
-  }
+  function coche(name) { var el = form.elements[name]; return !!(el && el.checked); }
+  function euros(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+  function pct(t) { return Math.round(t * 100) + ' %'; }
+
+  function couple() { var el = form.querySelector('[name=situation]:checked'); return !!el && el.value === 'couple'; }
 
   function majFormulaire() {
-    var couple = valeur('situation') === 'couple';
-    var enfants = nombre('enfants');
-    montrer('bloc-parent-isole', !couple && enfants > 0);
-    var connu = valeur('mode_plafond') === 'connu';
-    montrer('bloc-plafond-connu', connu);
-    montrer('bloc-plafond-estime', !connu);
-    montrer('bloc-conjoint-connu', connu && couple);
-    montrer('bloc-conjoint-estime', !connu && couple);
-    ['', '_conjoint'].forEach(function (s) {
-      var statut = valeur('statut' + s);
-      var lab = document.getElementById('label-revenu' + s);
-      var bloc = document.getElementById('bloc-revenu' + s);
-      if (bloc) bloc.hidden = statut === 'autre';
-      if (lab) lab.textContent = statut === 'tns'
-        ? 'Bénéfice imposable estimé pour 2026 (€)'
-        : 'Salaire net imposable de 2025, avant abattement de 10 % (€)';
+    var isole = document.getElementById('bloc-parent-isole');
+    if (isole) isole.hidden = couple() || nombre('enfants') === 0;
+    var v = nombre('versement');
+    form.querySelectorAll('[data-versement]').forEach(function (b) {
+      b.classList.toggle('actif', Number(b.getAttribute('data-versement')) === v);
     });
   }
 
-  function lirePlafond() {
-    var couple = valeur('situation') === 'couple';
-    if (valeur('mode_plafond') === 'connu') {
-      return nombre('plafond_connu') + (couple ? nombre('plafond_connu_conjoint') : 0);
-    }
-    var p = plafondPersonne({ statut: valeur('statut'), revenu: nombre('revenu_pro') });
-    if (couple) p += plafondPersonne({ statut: valeur('statut_conjoint'), revenu: nombre('revenu_pro_conjoint') });
-    return p + nombre('plafonds_reportes');
-  }
-
-  function calculer(mesurer) {
-    var e = {
-      couple: valeur('situation') === 'couple',
-      enfants: nombre('enfants'),
-      parentIsole: form.elements.parent_isole && form.elements.parent_isole.checked,
-      revenu: nombre('revenu_foyer'),
-      plafond: lirePlafond(),
-      plafond70ans: form.elements.age70 && form.elements.age70.checked,
-      versement: nombre('versement')
-    };
-    if (!e.revenu || !e.versement) {
-      out.hidden = false;
-      out.innerHTML = '<p class="sim-alerte">Indiquez au moins le revenu net imposable du foyer et le montant du versement envisagé.</p>';
+  function calculer() {
+    var revenu = nombre('revenu_foyer'), versement = nombre('versement');
+    if (!revenu || !versement) {
+      out.innerHTML = '<p class="sim-attente">Indiquez votre revenu et un montant de versement : le résultat s\'affiche ici.</p>';
       return;
     }
-    var r = simuler(e);
-    var notes = [];
-    if (e.plafond70ans) notes.push('Depuis le 1<sup>er</sup> janvier 2026, les versements effectués à partir de 70 ans ne sont plus déductibles.');
-    else if (r.nonDeductible > 0) notes.push(euros(r.nonDeductible) + ' dépassent votre plafond : cette part ne réduit pas votre impôt.');
-    if (r.plafonnementQF) notes.push('Votre foyer est concerné par le plafonnement du quotient familial : le calcul en tient compte.');
-    if (r.tmiAvant === 0) notes.push('Votre foyer n\'est pas imposable dans cette simulation : la déduction ne procure pas d\'économie d\'impôt.');
+    var connu = nombre('plafond_connu');
+    var plafond = connu || plafondEstime(revenu, couple(), coche('tns'));
+    var r = simuler({
+      couple: couple(), enfants: nombre('enfants'), parentIsole: coche('parent_isole'),
+      revenu: revenu, plafond: plafond, plafond70ans: coche('age70'), versement: versement
+    });
 
-    out.hidden = false;
+    var phrase;
+    if (coche('age70')) phrase = 'À partir de 70 ans, les versements ne sont plus déductibles : ce versement ne réduit pas votre impôt.';
+    else if (r.tmiAvant === 0) phrase = 'Votre foyer n\'est pas imposable : un versement sur un PER ne réduit pas votre impôt.';
+    else phrase = 'Pour <strong>' + euros(versement) + '</strong> versés, votre impôt baisse de <strong>' + euros(r.economie) + '</strong>. Le versement ne vous coûte donc réellement que <strong>' + euros(r.effort) + '</strong>.';
+
+    var notes = [];
+    if (!coche('age70') && r.nonDeductible > 0) notes.push(euros(r.nonDeductible) + ' dépassent votre plafond ' + (connu ? '' : 'estimé ') + '(' + euros(r.plafond) + ') et ne réduisent pas l\'impôt.');
+    if (!coche('age70') && !r.nonDeductible && r.tmiAvant > 0) notes.push('Plafond de déduction ' + (connu ? 'saisi' : 'estimé') + ' : ' + euros(r.plafond) + '.');
+    if (r.tmiApres < r.tmiAvant && r.tmiApres > 0) notes.push('Ce versement vous fait passer de la tranche à ' + pct(r.tmiAvant) + ' à celle à ' + pct(r.tmiApres) + '.');
+
     out.innerHTML =
-      '<h3>Résultat de votre simulation</h3>' +
       '<div class="sim-chiffres">' +
-        '<div class="sim-cle"><span>Économie d\'impôt estimée</span><strong>' + euros(r.economie) + '</strong></div>' +
-        '<div class="sim-cle"><span>Effort d\'épargne réel</span><strong>' + euros(r.effort) + '</strong></div>' +
+        '<div class="sim-cle sim-cle-or"><span>Économie d\'impôt</span><strong>' + euros(r.economie) + '</strong></div>' +
+        '<div class="sim-cle"><span>Coût réel du versement</span><strong>' + euros(r.effort) + '</strong></div>' +
+        '<div class="sim-cle"><span>Votre tranche d\'imposition</span><strong>' + pct(r.tmiAvant) + '</strong></div>' +
       '</div>' +
-      '<table class="sim-table"><tbody>' +
-        '<tr><td>Nombre de parts</td><td>' + String(r.parts).replace('.', ',') + '</td></tr>' +
-        '<tr><td>Plafond de déduction retenu</td><td>' + euros(r.plafond) + '</td></tr>' +
-        '<tr><td>Montant déduit du revenu</td><td>' + euros(r.deduit) + '</td></tr>' +
-        '<tr><td>Impôt sans versement</td><td>' + euros(r.impotAvant) + '</td></tr>' +
-        '<tr><td>Impôt avec versement</td><td>' + euros(r.impotApres) + '</td></tr>' +
-        '<tr><td>Tranche marginale (avant / après)</td><td>' + pct(r.tmiAvant) + ' / ' + pct(r.tmiApres) + '</td></tr>' +
-        '<tr><td>Économie pour 100 € déduits</td><td>' + euros(r.tauxEconomie * 100) + '</td></tr>' +
-      '</tbody></table>' +
-      (notes.length ? '<ul class="sim-notes"><li>' + notes.join('</li><li>') + '</li></ul>' : '') +
-      '<p class="sim-mention">Estimation indicative, pas un conseil. Elle repose sur le barème des revenus 2025 et ne tient pas compte des réductions et crédits d\'impôt, ni des autres revenus taxés à part. L\'économie d\'impôt à l\'entrée est un différé : les sommes déduites seront imposées à la sortie du PER.</p>' +
-      '<div class="sim-cta"><p><strong>Pour un chiffrage personnalisé, réservons 30 minutes.</strong> Nous vérifions ensemble votre plafond réel, le bon montant à verser et la fiscalité de sortie. Premier rendez-vous offert.</p>' +
+      '<p class="sim-phrase">' + phrase + '</p>' +
+      '<p class="sim-detail">Impôt estimé : ' + euros(r.impotAvant) + ' sans versement, ' + euros(r.impotApres) + ' avec.' + (notes.length ? ' ' + notes.join(' ') : '') + '</p>' +
+      '<p class="sim-mention">Estimation indicative, pas un conseil. L\'économie d\'aujourd\'hui est un report : les sommes déduites seront imposées à la sortie du PER.</p>' +
+      '<div class="sim-cta"><p><strong>Pour un chiffrage personnalisé, réservons 30 minutes.</strong> Plafond réel, bon montant, fiscalité de sortie : on fait le point ensemble. Premier rendez-vous offert.</p>' +
       '<a href="https://calendly.com/partenariat-idcap/30min" class="btn" target="_blank" rel="noopener">Réserver 30 min →</a></div>';
 
-    if (mesurer && !dejaMesure && typeof window.adpTrack === 'function') {
-      dejaMesure = true;
-      window.adpTrack('simulation_per', { tmi: Math.round(r.tmiAvant * 100), page: location.pathname });
+    /* Mesure GA4 : une seule fois, quand le visiteur a obtenu un résultat et s'est arrêté de saisir. */
+    if (!dejaMesure) {
+      clearTimeout(minuteur);
+      minuteur = setTimeout(function () {
+        if (dejaMesure || typeof window.adpTrack !== 'function') return;
+        dejaMesure = true;
+        window.adpTrack('simulation_per', { tmi: Math.round(r.tmiAvant * 100), page: location.pathname });
+      }, 2000);
     }
   }
 
-  form.addEventListener('submit', function (ev) {
+  function maj() { majFormulaire(); calculer(); }
+
+  form.addEventListener('submit', function (ev) { ev.preventDefault(); });
+  form.addEventListener('input', maj);
+  form.addEventListener('change', maj);
+  form.addEventListener('click', function (ev) {
+    var b = ev.target.closest && ev.target.closest('button');
+    if (!b) return;
+    if (b.hasAttribute('data-versement')) {
+      form.elements.versement.value = Number(b.getAttribute('data-versement')).toLocaleString('fr-FR');
+    } else if (b.hasAttribute('data-pas')) {
+      var champ = form.elements.enfants;
+      champ.value = Math.max(0, Math.min(12, nombre('enfants') + Number(b.getAttribute('data-pas'))));
+    } else return;
     ev.preventDefault();
-    calculer(true);
-    out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    maj();
   });
-  form.addEventListener('input', function () {
-    majFormulaire();
-    if (!out.hidden) calculer(false);
+  /* Espaces de milliers à la sortie d'un champ montant. */
+  form.addEventListener('focusout', function (ev) {
+    var el = ev.target;
+    if (el.getAttribute && el.getAttribute('data-montant') !== null && nombre(el.name)) el.value = Math.round(nombre(el.name)).toLocaleString('fr-FR');
   });
-  form.addEventListener('change', function () {
-    majFormulaire();
-    if (!out.hidden) calculer(false);
-  });
-  majFormulaire();
+  maj();
 })(this);
