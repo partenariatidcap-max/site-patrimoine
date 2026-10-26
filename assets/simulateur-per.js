@@ -140,6 +140,7 @@
   var api = { regles: R, nombreParts: nombreParts, impotRevenu: impotRevenu, plafondPersonne: plafondPersonne, plafondEstime: plafondEstime, simuler: simuler };
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (typeof document === 'undefined') return;
+  root.adpImpot = api; // réutilisé par assets/simulateur-tranche.js
 
   /* ---------- Page : calcul en direct, sans bouton ---------- */
   var form = document.getElementById('sim-per');
