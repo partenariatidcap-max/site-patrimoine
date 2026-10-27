@@ -70,7 +70,10 @@
     'border:1px solid #C8A35C}' +
     '#adp-consent .adp-yes{background:#C8A35C;color:#1F3A5F}' +
     '#adp-consent .adp-no{background:transparent;color:#FAF7F1}' +
-    '#adp-consent button:focus-visible{outline:2px solid #FAF7F1;outline-offset:2px}';
+    '#adp-consent button:focus-visible{outline:2px solid #FAF7F1;outline-offset:2px}' +
+    /* Sur mobile, bandeau compact : il ne doit pas masquer le bouton principal du haut de page */
+    '@media (max-width:600px){#adp-consent{left:8px;right:8px;bottom:8px;padding:12px 14px;font-size:.82rem;line-height:1.4}' +
+    '#adp-consent p{margin-bottom:8px}#adp-consent button{flex:1 1 0;padding:9px 10px;font-size:.88rem}}';
 
   function showBanner() {
     if (document.getElementById('adp-consent')) return;
@@ -136,12 +139,18 @@
     fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
       .then(function (r) {
         if (!r.ok) throw new Error('Formspree ' + r.status);
-        track('form_submit', { method: 'formulaire_contact', page: location.pathname });
+        track('form_submit', { method: f.getAttribute('data-form') || 'formulaire_contact', page: location.pathname });
+        /* data-success="Titre|Texte" : message de confirmation propre à un formulaire */
+        var msg = (f.getAttribute('data-success') || '').split('|');
+        var title = msg[0] || 'Merci, votre demande est bien envoyée';
+        var text = msg[1] || 'Je vous réponds sous 24 h ouvrées.';
         var done = document.createElement('div');
         done.setAttribute('role', 'status');
         done.style.cssText = 'padding:2rem 1rem;text-align:center';
-        done.innerHTML = '<h3 style="font-family:\'Playfair Display\';margin-bottom:.8rem">Merci, votre demande est bien envoyée</h3>' +
-          '<p>Je vous réponds sous 24 h ouvrées. Pour une question urgente : <a href="tel:+33620880909">06 20 88 09 09</a>.</p>';
+        done.innerHTML = '<h3 style="font-family:\'Playfair Display\';margin-bottom:.8rem"></h3>' +
+          '<p><span></span> Pour une question urgente : <a href="tel:+33620880909">06 20 88 09 09</a>.</p>';
+        done.querySelector('h3').textContent = title;
+        done.querySelector('span').textContent = text;
         f.innerHTML = '';
         f.appendChild(done);
       })

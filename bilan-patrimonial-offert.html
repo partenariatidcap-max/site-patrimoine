@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Bilan patrimonial offert à Bordeaux | Aurélien Dewitte</title>
 <meta name="description" content="Premier échange patrimonial de 30 minutes offert et sans engagement, en visio ou au bureau à Bordeaux. Réservez votre créneau en ligne.">
 <meta name="author" content="Aurélien Dewitte">
@@ -22,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#A38346;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5;--shadow:0 4px 24px rgba(20,37,64,.08)}
+:root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#866A33;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5;--shadow:0 4px 24px rgba(20,37,64,.08)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
@@ -47,7 +50,9 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border
 .btn-nav{padding:.6rem 1.1rem;background:var(--navy);color:#fff !important;border-radius:8px;text-decoration:none;font-size:.92rem;font-weight:600}
 
 .hero{background:linear-gradient(180deg,var(--cream),#fff);padding:2rem 0 2.2rem}
-.trust{font-size:.88rem;font-weight:600;color:var(--gold-dark);letter-spacing:.02em;margin-bottom:1rem}
+.trust{font-size:.88rem;font-weight:600;color:var(--navy);letter-spacing:.01em;margin-bottom:1rem;line-height:1.5}
+.trust a{color:var(--navy);text-decoration-color:var(--gold)}
+.trust .stars{color:var(--gold-dark);letter-spacing:.05em}
 .lede{font-size:1.02rem;margin-bottom:1.4rem}
 .btn{display:inline-block;padding:1rem 1.6rem;background:var(--navy);color:#fff !important;border-radius:10px;font-weight:600;text-decoration:none;font-size:1rem;text-align:center}
 .btn:hover{background:var(--navy-dark)}
@@ -71,6 +76,23 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border
 .calendly-inline[hidden]{display:none}
 .calendly-fallback{display:block;margin:1.2rem}
 .cal-alt{margin-top:1rem;font-size:.95rem;text-align:center}
+.quotes{display:grid;gap:.8rem;margin:0 0 1.4rem}
+.quote{background:var(--cream);border-left:3px solid var(--gold);border-radius:8px;padding:.9rem 1rem}
+.quote p{font-size:.95rem;color:var(--ink);font-style:italic}
+.quote footer,.quote .who{display:block;margin-top:.45rem;font-size:.85rem;font-style:normal;color:var(--ink-soft)}
+.quote .who strong{color:var(--navy)}
+.callback{margin-top:2rem;padding:1.4rem 1.2rem;border:1px solid var(--line);border-radius:12px;background:#fff}
+.callback h3{font-size:1.15rem;margin-bottom:.3rem}
+.callback .hint{font-size:.92rem;margin-bottom:1rem}
+.callback label{display:block;font-size:.9rem;font-weight:600;color:var(--navy);margin:.7rem 0 .3rem}
+.callback input,.callback select{width:100%;padding:.75rem .85rem;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:1rem;color:var(--ink);background:#fff}
+.callback input:focus,.callback select:focus{outline:2px solid var(--gold);outline-offset:1px}
+.callback button{margin-top:1.1rem;width:100%;border:0;cursor:pointer;font-family:inherit}
+.callback .meta{font-size:.82rem;margin-top:.8rem}
+.checks .more{display:block;margin-top:.35rem;font-size:.9rem;color:var(--ink-soft)}
+.checks .more a{font-size:.88rem}
+.not-ready{text-align:center}
+@media (min-width:700px){.quotes{grid-template-columns:1fr 1fr}}
 
 .about{display:flex;gap:1.2rem;align-items:flex-start}
 .about img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0}
@@ -108,7 +130,7 @@ footer a:hover{color:#fff}
 <section class="hero">
   <div class="container">
     <h1>Bilan patrimonial offert avec un conseiller en patrimoine à Bordeaux</h1>
-    <p class="trust">ORIAS n° 19 002 406 · Membre CNCGP · Bureau à Bordeaux</p>
+    <p class="trust"><a href="https://share.google/KvCwFTLLdypbulPEu" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span> 5,0/5, 42 avis Google</a> · 400+ clients accompagnés · ORIAS 19 002 406 · Membre CNCGP</p>
     <p class="lede">Un premier échange de 30 minutes pour faire le point sur votre situation, en visio ou à mon bureau de Bordeaux. Gratuit et sans engagement.</p>
     <a href="#rdv" class="btn">Réserver mon échange de 30 min</a>
     <p class="phone">Ou appelez-moi : <a href="tel:+33620880909">06 20 88 09 09</a></p>
@@ -119,10 +141,10 @@ footer a:hover{color:#fff}
   <div class="container">
     <h2>Pour qui ?</h2>
     <ul class="checks">
-      <li>Vous payez beaucoup d'impôts et voulez comprendre vos leviers.</li>
-      <li>Vous préparez votre retraite et voulez savoir où vous en êtes.</li>
-      <li>Vous pensez à la transmission de votre patrimoine à vos proches.</li>
-      <li>Vous êtes chef d'entreprise et voulez organiser patrimoine privé et professionnel.</li>
+      <li>Vous payez beaucoup d'impôts et voulez comprendre vos leviers.<span class="more">Exemple : à un taux marginal de 41 %, un versement de 8 000 € sur un PER réduit l'impôt d'environ 3 280 €, dans la limite des plafonds. <a href="/optimisation-fiscale.html" target="_blank" rel="noopener">Lire l'article</a></span></li>
+      <li>Vous préparez votre retraite et voulez savoir où vous en êtes.<span class="more">Exemple : combler 700 € par mois sur vingt-cinq ans de retraite représente environ 210 000 € de capital à constituer. <a href="/preparer-retraite.html" target="_blank" rel="noopener">Lire l'article</a></span></li>
+      <li>Vous pensez à la transmission de votre patrimoine à vos proches.<span class="more">Exemple : chaque parent peut donner 100 000 € à chacun de ses enfants sans droits, et recommencer tous les quinze ans. <a href="/transmission-succession.html" target="_blank" rel="noopener">Lire l'article</a></span></li>
+      <li>Vous êtes chef d'entreprise et voulez organiser patrimoine privé et professionnel.<span class="more">Exemple : les indemnités de la Sécurité sociale sont plafonnées ; un arrêt de travail long peut fragiliser à la fois votre foyer et votre activité. <a href="/prevoyance-protection.html" target="_blank" rel="noopener">Lire l'article</a></span></li>
     </ul>
   </div>
 </section>
@@ -143,11 +165,43 @@ footer a:hover{color:#fff}
   <div class="container">
     <h2>Réservez votre créneau</h2>
     <p class="cal-intro">Choisissez l'horaire qui vous arrange. Confirmation immédiate par email.</p>
+    <div class="quotes">
+      <blockquote class="quote">
+        <p>« J'ai fait appel à Aurélien Dewitte pour un bilan patrimonial complet. Il a pris le temps de comprendre ma situation avant de me proposer des solutions adaptées […] »</p>
+        <span class="who"><strong>Pierre T.</strong> · Avis Google, septembre 2026</span>
+      </blockquote>
+      <blockquote class="quote">
+        <p>« Analyse très pertinente de notre situation et propositions concrètes pour avancer. Très bonne approche et bon contact. »</p>
+        <span class="who"><strong>Fabien L.</strong> · Avis Google, septembre 2026</span>
+      </blockquote>
+    </div>
     <div class="calendly-box">
-      <div id="calendly-inline" class="calendly-inline" data-resize="true" data-url="https://calendly.com/partenariat-idcap/30min?hide_event_type_details=1" hidden></div>
+      <!-- data-lazy : le calendrier ne se charge qu'à l'approche de cette section (voir assets/calendly.js) -->
+      <div id="calendly-inline" class="calendly-inline" data-resize="true" data-lazy data-url="https://calendly.com/partenariat-idcap/30min?hide_event_type_details=1" hidden></div>
       <a href="https://calendly.com/partenariat-idcap/30min" class="btn calendly-fallback" target="_blank" rel="noopener">Ouvrir le calendrier de RDV</a>
     </div>
     <p class="cal-alt">Vous préférez appeler ? <a href="tel:+33620880909">06 20 88 09 09</a></p>
+
+    <!-- Envoi à Formspree géré par assets/consent.js : form_submit n'est envoyé qu'après un envoi réussi. -->
+    <form class="callback" action="https://formspree.io/f/xqejaavq" method="POST" data-form="rappel_annonce" data-success="Merci, votre demande de rappel est bien envoyée|Je vous rappelle sous 24 h (jours ouvrés) sur le créneau indiqué.">
+      <h3>Être rappelé</h3>
+      <p class="hint">Laissez votre numéro, je vous rappelle. Réponse sous 24 h (jours ouvrés).</p>
+      <input type="hidden" name="_subject" value="Demande de rappel (page bilan patrimonial offert)">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <label for="cb-prenom">Prénom</label>
+      <input type="text" id="cb-prenom" name="prenom" autocomplete="given-name" required>
+      <label for="cb-tel">Téléphone</label>
+      <input type="tel" id="cb-tel" name="telephone" autocomplete="tel" inputmode="tel" required>
+      <label for="cb-creneau">Créneau préféré</label>
+      <select id="cb-creneau" name="creneau" required>
+        <option value="">Choisir…</option>
+        <option>Matin</option>
+        <option>Après-midi</option>
+        <option>Soir</option>
+      </select>
+      <button type="submit" class="btn">Être rappelé</button>
+      <p class="meta">Aurélien Dewitte utilise ces données uniquement pour vous rappeler à votre demande. Elles ne sont jamais cédées et sont supprimées après 3 ans sans suite. Vous pouvez y accéder, les rectifier ou les faire effacer à tout moment : <a href="/confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.</p>
+    </form>
   </div>
 </section>
 
@@ -158,6 +212,7 @@ footer a:hover{color:#fff}
       <img src="/assets/photo-pro-240.jpg" alt="Aurélien Dewitte" width="96" height="96" loading="lazy">
       <div>
         <p><strong>Aurélien Dewitte</strong>, conseiller en gestion de patrimoine à Bordeaux depuis 2019, membre de la CNCGP depuis 2023. J'accompagne des familles, des dirigeants et des professionnels libéraux en Gironde, avec un interlocuteur unique dans la durée.</p>
+        <p>Bureau à Bordeaux, rendez-vous aussi à Mérignac, Pessac, Talence, Le Bouscat, Saint-Médard-en-Jalles, ou en visio.</p>
         <p class="status">Mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, ORIAS n° 19 002 406, membre de la CNCGP, sous le contrôle de l'ACPR.</p>
       </div>
     </div>
@@ -184,6 +239,13 @@ footer a:hover{color:#fff}
       <p>Rien d'obligatoire pour ce premier échange. Si vous les avez sous la main, votre dernier avis d'imposition et la liste de vos placements et contrats (assurance-vie, PER, livrets, crédits) permettent d'aller plus vite.</p>
     </details>
     <p class="final" style="margin-top:1.6rem"><a href="#rdv" class="btn">Réserver mon échange de 30 min</a></p>
+  </div>
+</section>
+
+<section class="alt not-ready">
+  <div class="container">
+    <h2>Pas encore prêt à échanger ?</h2>
+    <p><a href="/quiz-patrimoine.html" target="_blank" rel="noopener">Faites le point en 2 minutes</a> avec le quiz patrimoine.</p>
   </div>
 </section>
 

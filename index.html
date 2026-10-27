@@ -4,6 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <!-- Google Analytics -->
 <!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
@@ -15,16 +18,16 @@
 <script src="/assets/calendly.js" defer></script>
 
 
-<title>Conseiller en gestion de patrimoine indépendant – Gironde & Bordeaux | Aurélien Dewitte</title>
-<meta name="description" content="Cabinet indépendant CNCGP basé en Gironde. Audit patrimonial, optimisation fiscale, placement, transmission. Premier rendez-vous gratuit et sans engagement.">
+<title>Conseiller en gestion de patrimoine à Bordeaux | Aurélien Dewitte</title>
+<meta name="description" content="Conseiller en gestion de patrimoine à Bordeaux, membre CNCGP. Audit patrimonial, optimisation fiscale, placements, transmission. Premier rendez-vous gratuit et sans engagement.">
 <meta name="author" content="Aurélien Dewitte">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Aurélien Dewitte — Conseiller en gestion de patrimoine indépendant">
-<meta property="og:description" content="Cabinet indépendant CNCGP en Gironde. Audit patrimonial, fiscalité, placement, transmission. Premier RDV gratuit.">
+<meta property="og:title" content="Aurélien Dewitte — Conseiller en gestion de patrimoine à Bordeaux">
+<meta property="og:description" content="Conseil en gestion de patrimoine à Bordeaux et en Gironde, membre CNCGP. Audit patrimonial, fiscalité, placements, transmission. Premier RDV gratuit.">
 <meta property="og:image" content="https://aurelien-dewitte-patrimoine.fr/og-image.png">
 <meta property="og:url" content="https://aurelien-dewitte-patrimoine.fr/">
 <link rel="canonical" href="https://aurelien-dewitte-patrimoine.fr/">
@@ -33,26 +36,101 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FinancialService",
-  "name": "Aurélien Dewitte — Conseil en gestion de patrimoine",
-  "description": "Conseiller en gestion de patrimoine indépendant, membre CNCGP. Audit patrimonial, optimisation fiscale, placements, transmission. Intervention à domicile, en entreprise et en visioconférence dans toute la Gironde.",
-  "url": "https://aurelien-dewitte-patrimoine.fr/",
-  "telephone": "+33620880909",
-  "email": "aurelien.dewitte@id-cap-mia.fr",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "20 rue Surson",
-    "postalCode": "33300",
-    "addressLocality": "Bordeaux",
-    "addressRegion": "Gironde",
-    "addressCountry": "FR"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Bordeaux" },
-    { "@type": "AdministrativeArea", "name": "Bordeaux Métropole" },
-    { "@type": "AdministrativeArea", "name": "Gironde" }
-  ],
-  "founder": { "@type": "Person", "name": "Aurélien Dewitte" }
+  "@graph": [
+    {
+      "@type": "FinancialService",
+      "name": "Aurélien Dewitte — Conseil en gestion de patrimoine",
+      "description": "Conseiller en gestion de patrimoine à Bordeaux, membre CNCGP. Audit patrimonial, optimisation fiscale, placements, transmission. Intervention à domicile, en entreprise et en visioconférence dans toute la Gironde.",
+      "url": "https://aurelien-dewitte-patrimoine.fr/",
+      "telephone": "+33620880909",
+      "email": "aurelien.dewitte@id-cap-mia.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "20 rue Surson",
+        "postalCode": "33300",
+        "addressLocality": "Bordeaux",
+        "addressRegion": "Gironde",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Bordeaux"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Bordeaux Métropole"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Gironde"
+        }
+      ],
+      "founder": {
+        "@id": "https://aurelien-dewitte-patrimoine.fr/#aurelien"
+      },
+      "@id": "https://aurelien-dewitte-patrimoine.fr/#cabinet",
+      "image": "https://aurelien-dewitte-patrimoine.fr/assets/photo-pro.jpg",
+      "logo": "https://aurelien-dewitte-patrimoine.fr/assets/logo-ad-512.png",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=20+rue+Surson+33300+Bordeaux",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "20:00"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aurelien-dewitte-patrimoine.fr/#aurelien",
+      "name": "Aurélien Dewitte",
+      "jobTitle": "Conseiller en gestion de patrimoine",
+      "url": "https://aurelien-dewitte-patrimoine.fr/#a-propos",
+      "image": "https://aurelien-dewitte-patrimoine.fr/assets/photo-pro.jpg",
+      "telephone": "+33620880909",
+      "worksFor": {
+        "@id": "https://aurelien-dewitte-patrimoine.fr/#cabinet"
+      },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Chambre nationale des conseils en gestion de patrimoine (CNCGP)",
+        "url": "https://www.cncgp.fr"
+      },
+      "knowsAbout": [
+        "Gestion de patrimoine",
+        "Assurance-vie",
+        "Plan d'épargne retraite",
+        "Transmission de patrimoine",
+        "Prévoyance"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "20 rue Surson",
+        "postalCode": "33300",
+        "addressLocality": "Bordeaux",
+        "addressRegion": "Gironde",
+        "addressCountry": "FR"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aurelien-dewitte-patrimoine.fr/#site",
+      "url": "https://aurelien-dewitte-patrimoine.fr/",
+      "name": "Aurélien Dewitte, conseil en gestion de patrimoine",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": "https://aurelien-dewitte-patrimoine.fr/#cabinet"
+      }
+    }
+  ]
 }
 </script>
 
@@ -67,7 +145,7 @@
     --navy-light:#2E5A89;
     --gold:#C8A35C;
     --gold-light:#D4B97D;
-    --gold-dark:#A38346;
+    --gold-dark:#866A33;
     --cream:#FAF7F1;
     --paper:#FFFFFF;
     --ink:#1A2238;
@@ -136,8 +214,8 @@
     transition:all .25s;cursor:pointer;border:none;
     text-align:center;
   }
-  .btn-primary{background:var(--gold);color:#fff;box-shadow:0 4px 14px rgba(200,163,92,.35)}
-  .btn-primary:hover{background:var(--gold-dark);color:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,163,92,.45)}
+  .btn-primary{background:var(--gold);color:var(--navy-dark);box-shadow:0 4px 14px rgba(200,163,92,.35)}
+  .btn-primary:hover{background:var(--navy);color:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,163,92,.45)}
   .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
   .btn-outline:hover{background:var(--navy);color:#fff}
   .btn-ghost{background:transparent;color:var(--navy);padding:.6rem 0}
@@ -161,6 +239,7 @@
   .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:center;position:relative}
   .hero h1{margin-bottom:1.4rem;color:var(--navy)}
   .hero h1 .accent{color:var(--gold-dark);font-style:italic}
+  .hero-tagline{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--navy);margin:-.6rem 0 1.2rem;line-height:1.4}
   .hero-lede{font-size:1.15rem;line-height:1.7;color:var(--ink-soft);margin-bottom:2rem;max-width:560px}
   .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
   .hero-trust{display:flex;gap:2rem;flex-wrap:wrap;align-items:center;padding-top:1.8rem;border-top:1px solid var(--line)}
@@ -231,6 +310,13 @@
   }
   .expertise-card h3{margin-bottom:.6rem;font-size:1.2rem}
   .expertise-card p{font-size:.95rem;line-height:1.6}
+  .secteurs-list{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;max-width:900px;margin:0 auto}
+  .secteurs-list a{display:inline-block;padding:.55rem 1rem;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.93rem;font-weight:500;color:var(--navy)}
+  .secteurs-list a:hover{border-color:var(--gold);color:var(--gold-dark)}
+  .two-col>*,.hero-grid>*,.contact-grid>*{min-width:0}
+  @media (max-width:600px){.hero{padding:2rem 0 3rem}.hero h1{margin-bottom:.8rem}.hero-tagline{margin:-.2rem 0 .9rem}.hero-lede{font-size:1rem;line-height:1.6;margin-bottom:1.4rem}}
+  .expertise-link{display:inline-block;margin-top:.9rem;font-size:.92rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold)}
+  .expertise-link:hover{color:var(--gold-dark)}
 
   /* METHOD */
   .method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative;margin-top:2rem}
@@ -259,6 +345,7 @@
     display:flex;gap:1rem;align-items:flex-start;
   }
   .audience-list li:last-child{border-bottom:none}
+  .audience-list li>div{min-width:0}
   .audience-list .check{
     flex-shrink:0;width:28px;height:28px;border-radius:50%;
     background:var(--cream);color:var(--gold-dark);
@@ -441,7 +528,7 @@
   .about-photo{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:16px;box-shadow:var(--shadow-lg)}
   .about p{color:var(--ink-soft);margin-bottom:1rem;line-height:1.75}
   .about-status{font-size:.92rem;background:var(--cream);border-left:3px solid var(--gold);padding:.9rem 1.1rem;border-radius:0 8px 8px 0;margin:1.4rem 0 1.6rem}
-  .audience-list span a{color:var(--navy);font-weight:600;white-space:nowrap}
+  .audience-list span a{color:var(--navy);font-weight:600}
   @media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:2rem}.about-photo{max-width:360px}}
 </style>
 </head>
@@ -449,7 +536,7 @@
 
 <header>
   <div class="container nav">
-    <a href="#" class="logo">
+    <a href="/" class="logo">
       <span class="logo-mark">AD</span>
       <span>Aurélien Dewitte<small>Conseil en patrimoine</small></span>
     </a>
@@ -474,8 +561,9 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Conseiller en gestion de patrimoine · Membre CNCGP</span>
-      <h1>Votre patrimoine mérite un conseiller <span class="accent">qui vous connaît vraiment.</span></h1>
+      <span class="eyebrow">Bordeaux · Gironde · Membre CNCGP</span>
+      <h1>Conseiller en gestion de patrimoine <span class="accent">à Bordeaux</span></h1>
+      <p class="hero-tagline">Votre patrimoine mérite un conseiller qui vous connaît vraiment.</p>
       <p class="hero-lede">
         Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, transparent sur ma rémunération, et <strong>sans honoraires dans la grande majorité des cas</strong>.
       </p>
@@ -510,7 +598,7 @@
       <div class="portrait-photo" aria-label="Portrait professionnel d'Aurélien Dewitte"></div>
       <div class="portrait-info">
         <h4>Aurélien Dewitte</h4>
-        <p>Conseiller en gestion de patrimoine indépendant</p>
+        <p>Conseiller en gestion de patrimoine à Bordeaux</p>
         <div class="portrait-badges">
           <span class="badge">CNCGP 2023</span>
           <span class="badge">ORIAS MIA</span>
@@ -525,7 +613,7 @@
 <section class="trust-strip">
   <div class="container trust-strip-grid">
     <div class="trust-stat"><span class="num">400+</span><span class="lbl">Familles & dirigeants accompagnés</span></div>
-    <div class="trust-stat"><span class="num">★★★★★</span><span class="lbl">5,0 · 40 avis Google</span></div>
+    <div class="trust-stat"><span class="num">★★★★★</span><span class="lbl">5,0 · 42 avis Google</span></div>
     <div class="trust-stat"><span class="num">24 h</span><span class="lbl">Délai de réponse moyen</span></div>
     <div class="trust-stat"><span class="num">1</span><span class="lbl">Interlocuteur unique, de l'audit au suivi</span></div>
   </div>
@@ -546,6 +634,7 @@
         </div>
         <h3>Audit patrimonial global</h3>
         <p>Cartographie complète de votre situation actuelle et idéale, identification des angles morts, plan d'action pour combler les écarts.</p>
+        <a href="bilan-patrimonial-bordeaux.html" class="expertise-link">Le bilan patrimonial →</a>
       </div>
       <div class="expertise-card">
         <div class="expertise-icon">
@@ -553,6 +642,7 @@
         </div>
         <h3>Optimisation fiscale</h3>
         <p>Diagnostic de votre fiscalité actuelle face à son potentiel optimisé. Mise en place des leviers adaptés : PER, déficit foncier, démembrement, holding, IFI.</p>
+        <a href="defiscalisation-bordeaux.html" class="expertise-link">Réduire vos impôts →</a>
       </div>
       <div class="expertise-card">
         <div class="expertise-icon">
@@ -560,6 +650,7 @@
         </div>
         <h3>Placements & épargne</h3>
         <p>Audit de votre allocation actuelle face à votre profil de risque réel. Arbitrages et nouvelles solutions : assurance-vie, PER, unités de compte (dont SCPI et private equity). Pour une souscription en direct, je travaille avec des partenaires habilités.</p>
+        <a href="placements-epargne-bordeaux.html" class="expertise-link">Placer votre épargne →</a>
       </div>
       <div class="expertise-card">
         <div class="expertise-icon">
@@ -567,6 +658,7 @@
         </div>
         <h3>Immobilier d'investissement</h3>
         <p>Évaluation de votre patrimoine immobilier actuel et de la stratégie cible. Sélection rigoureuse des opportunités : LMNP, nue-propriété, locatif direct, SCPI via l'assurance-vie ou un partenaire habilité.</p>
+        <a href="immobilier-investissement.html" class="expertise-link">LMNP ou nue-propriété ? →</a>
       </div>
       <div class="expertise-card">
         <div class="expertise-icon">
@@ -574,6 +666,7 @@
         </div>
         <h3>Prévoyance & protection</h3>
         <p>Mesure de l'écart entre votre couverture actuelle et le niveau de protection idéal pour vos proches et votre activité : capital décès, invalidité, perte d'autonomie.</p>
+        <a href="prevoyance-dirigeant-bordeaux.html" class="expertise-link">Votre prévoyance →</a>
       </div>
       <div class="expertise-card">
         <div class="expertise-icon">
@@ -581,6 +674,7 @@
         </div>
         <h3>Transmission & succession</h3>
         <p>État des lieux de la transmission actuelle face à votre structure cible : donations, démembrement, pacte Dutreil, assurance-vie pour transmettre sereinement.</p>
+        <a href="transmission-patrimoine-bordeaux.html" class="expertise-link">Transmettre votre patrimoine →</a>
       </div>
     </div>
   </div>
@@ -664,7 +758,7 @@
       <span class="eyebrow">À propos</span>
       <h2>Aurélien Dewitte, votre conseiller à Bordeaux</h2>
       <p>J'exerce le conseil en gestion de patrimoine depuis 2019, et je suis membre de la CNCGP depuis 2023. En sept ans, j'ai accompagné plus de 400 familles, dirigeants et professionnels libéraux, principalement à Bordeaux et en Gironde, où je vis.</p>
-      <p>Mon parcours n'a rien de classique. Avant la gestion de patrimoine, j'ai été électricien et agent de maintenance dans l'industrie et le bâtiment, puis j'ai construit et entretenu des piscines chez des particuliers, avant de travailler en détection de fuites pour des experts d'assurance, des assureurs et des syndics. J'ai ensuite rejoint le réseau Capfinances, puis ID CAP, au sein du même groupe Premium. De ces années de terrain, j'ai gardé le goût du concret, un langage simple et une vraie proximité avec les artisans, les indépendants et les familles que j'accompagne aujourd'hui.</p>
+      <p>Mon parcours n'a rien de classique. Avant la gestion de patrimoine, j'ai été électricien et agent de maintenance dans l'industrie et le bâtiment, puis j'ai construit et entretenu des piscines chez des particuliers, avant de travailler en détection de fuites pour des experts d'assurance, des assureurs et des syndics. J'ai ensuite rejoint le réseau Capfinances, puis ID CAP, au sein du même groupe Premium. De ces années de terrain, j'ai gardé le goût du concret, un langage simple et une vraie proximité avec les artisans, les commerçants et les familles que j'accompagne aujourd'hui.</p>
       <p>Ma conviction est simple : la gestion de patrimoine ne doit pas être réservée aux gros patrimoines. J'accompagne aussi bien un jeune actif qui démarre une épargne à 50 € par mois qu'un dirigeant qui prépare la cession de son entreprise, avec la même exigence.</p>
       <p>Ma façon de travailler : je viens à vous, chez vous, sur votre lieu de travail ou à mon bureau de la rue Surson. Je prends le temps de comprendre votre situation avant de proposer quoi que ce soit, et je reste votre interlocuteur unique dans la durée, avec au minimum un point par an.</p>
       <p class="about-status"><strong>Mon statut, en toute transparence :</strong> mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, ORIAS n° 19 002 406, membre de la CNCGP, sous le contrôle de l'ACPR. Formé au conseil en investissements financiers, je ne suis pas inscrit en qualité de CIF : pour les placements qui relèvent de ce statut (SCPI ou private equity en direct, comptes-titres), je travaille avec des partenaires habilités.</p>
@@ -682,7 +776,7 @@
       <ul class="audience-list">
         <li>
           <span class="check">✓</span>
-          <div><strong>Particuliers & familles</strong><span>Structurer son épargne, préparer sa retraite, organiser sa succession. <a href="cgp-retraites-bordeaux.html">Retraités : mon accompagnement dédié →</a></span></div>
+          <div><strong>Particuliers & familles</strong><span>Structurer son épargne, <a href="preparer-sa-retraite-bordeaux.html">préparer sa retraite</a>, organiser sa succession. <a href="cgp-retraites-bordeaux.html">Retraités : mon accompagnement dédié →</a></span></div>
         </li>
         <li>
           <span class="check">✓</span>
@@ -711,6 +805,29 @@
   </div>
 </section>
 
+<!-- SECTEURS -->
+<section class="section-tight secteurs" id="secteurs">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Où je me déplace</span>
+      <h2>Bordeaux, la métropole et toute la Gironde</h2>
+      <p>Je vous reçois à mon bureau du 20 rue Surson à Bordeaux, je viens chez vous ou sur votre lieu de travail, ou nous échangeons en visio. J'habite le Sud-Gironde : Langon, La Réole et jusqu'à Marmande font aussi partie de mes secteurs.</p>
+    </div>
+    <ul class="secteurs-list">
+      <li><a href="conseiller-patrimoine-merignac.html">Mérignac</a></li>
+      <li><a href="conseiller-patrimoine-pessac.html">Pessac</a></li>
+      <li><a href="conseiller-patrimoine-talence.html">Talence</a></li>
+      <li><a href="conseiller-patrimoine-le-bouscat.html">Le Bouscat</a></li>
+      <li><a href="conseiller-patrimoine-saint-medard-en-jalles.html">Saint-Médard-en-Jalles</a></li>
+      <li><a href="conseiller-patrimoine-libourne.html">Libourne</a></li>
+      <li><a href="conseiller-patrimoine-arcachon.html">Arcachon et le Bassin</a></li>
+      <li><a href="conseiller-patrimoine-langon.html">Langon et le Sud-Gironde</a></li>
+      <li><a href="conseiller-patrimoine-la-reole.html">La Réole</a></li>
+      <li><a href="conseiller-patrimoine-marmande.html">Marmande</a></li>
+    </ul>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="section testimonials" id="temoignages">
   <div class="container">
@@ -719,6 +836,27 @@
       <h2>La confiance se construit dans la durée</h2>
     </div>
     <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>J'ai fait appel à Aurélien Dewitte pour un bilan patrimonial complet. Il a pris le temps de comprendre ma situation avant de me proposer des solutions adaptées […]</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PT</div>
+          <div><strong>Pierre T.</strong><span>Avis Google · septembre 2026</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>J'ai eu l'occasion d'échanger longuement avec Monsieur Dewitte et j'ai particulièrement apprécié la qualité de son écoute, sa disponibilité et le temps qu'il a […]</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AJ</div>
+          <div><strong>Agathe J.</strong><span>Avis Google · septembre 2026</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>Analyse très pertinente de notre situation et propositions concrètes pour avancer. Très bonne approche et bon contact.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FL</div>
+          <div><strong>Fabien L.</strong><span>Avis Google · septembre 2026</span></div>
+        </div>
+      </div>
       <div class="testimonial">
         <p>Super contact avec Aurélien depuis maintenant 3 ans ! C’est un conseiller bienveillant, professionnel, discret et à l’écoute des différents projets ! Je recommande sans hésiter 😊</p>
         <div class="testimonial-author">
@@ -753,7 +891,7 @@
         </svg>
         <div>
           <div class="google-cta-stars">★★★★★</div>
-          <div class="google-cta-text"><strong>5,0 sur 40 avis vérifiés Google</strong><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</div>
+          <div class="google-cta-text"><strong>5,0 sur 42 avis Google</strong><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</div>
         </div>
       </div>
       <a href="https://share.google/KvCwFTLLdypbulPEu" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Voir nos avis sur Google et en laisser un">Voir nos avis Google →</a>
@@ -774,8 +912,8 @@
         <div>Le premier échange de 30 minutes est gratuit et sans engagement. Au-delà, <strong>dans la grande majorité des cas, mon accompagnement reste gratuit pour vous</strong> : je suis rémunéré par les compagnies d'assurance et les partenaires financiers via des commissions, perçues uniquement si vous décidez de mettre en place une solution. Vous bénéficiez ainsi d'un conseil complet — audit, stratégie, mise en œuvre, suivi annuel — sans débourser un centime. Quelques missions très spécifiques peuvent exceptionnellement faire l'objet d'honoraires forfaitaires (audit pur sans souscription, dossier successoral complexe à fort enjeu) ; ils sont toujours présentés et signés avant tout démarrage, conformément au code de déontologie CNCGP.</div>
       </details>
       <details>
-        <summary>Qu'est-ce qu'un CGP « indépendant » concrètement ?</summary>
-        <div>Cela signifie que je ne suis salarié d'aucune banque ni compagnie d'assurance. Je sélectionne pour chaque client, parmi une large gamme de partenaires, les solutions les mieux adaptées à votre profil. Mes recommandations ne sont jamais dictées par un quota commercial. En toute transparence : j'exerce en tant que mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, et je suis rémunéré principalement par commissions, comme expliqué ci-dessus.</div>
+        <summary>Êtes-vous lié à une banque ou à une compagnie d'assurance ?</summary>
+        <div>Non : je ne suis salarié d'aucune banque ni compagnie d'assurance. Je sélectionne pour chaque client, parmi une large gamme de partenaires, les solutions les mieux adaptées à votre profil. Mes recommandations ne sont jamais dictées par un quota commercial. En toute transparence : j'exerce en tant que mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, et je suis rémunéré principalement par commissions, comme expliqué ci-dessus.</div>
       </details>
       <details>
         <summary>Comment se passe un premier rendez-vous ?</summary>
@@ -895,6 +1033,7 @@
           <li><a href="mailto:aurelien.dewitte@id-cap-mia.fr">Écrire un email</a></li>
           <li>Bureau : 20 rue Surson<br>33300 Bordeaux</li>
           <li>Secteurs : <a href="conseiller-patrimoine-merignac.html">Mérignac</a>, <a href="conseiller-patrimoine-pessac.html">Pessac</a>, <a href="conseiller-patrimoine-talence.html">Talence</a>, <a href="conseiller-patrimoine-le-bouscat.html">Le Bouscat</a>, <a href="conseiller-patrimoine-saint-medard-en-jalles.html">Saint-Médard-en-Jalles</a>, <a href="conseiller-patrimoine-libourne.html">Libourne</a>, <a href="conseiller-patrimoine-arcachon.html">Arcachon</a>, <a href="conseiller-patrimoine-langon.html">Langon</a>, <a href="conseiller-patrimoine-la-reole.html">La Réole</a>, <a href="conseiller-patrimoine-marmande.html">Marmande</a></li>
+          <li>Services : <a href="bilan-patrimonial-bordeaux.html">Bilan patrimonial</a>, <a href="defiscalisation-bordeaux.html">Défiscalisation</a>, <a href="preparer-sa-retraite-bordeaux.html">Retraite</a>, <a href="transmission-patrimoine-bordeaux.html">Transmission</a>, <a href="placements-epargne-bordeaux.html">Placements</a>, <a href="prevoyance-dirigeant-bordeaux.html">Prévoyance</a></li>
         </ul>
       </div>
       <div>

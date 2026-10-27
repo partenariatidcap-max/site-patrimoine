@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transmettre à ses proches sans exploser la fiscalité | Aurélien Dewitte — Conseil en gestion de patrimoine</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Transmettre à ses proches sans exploser la fiscalité</title>
 <meta name="description" content="Donations, démembrement, assurance-vie : les principaux leviers pour préparer la transmission de votre patrimoine à vos enfants et à vos proches, sereinement.">
 <meta name="author" content="Aurélien Dewitte">
 <meta name="robots" content="index, follow">
@@ -23,11 +26,52 @@
   "@type": "Article",
   "headline": "Transmettre à ses proches sans exploser la fiscalité",
   "description": "Donations, démembrement, assurance-vie : les principaux leviers pour préparer la transmission de votre patrimoine à vos enfants et à vos proches, sereinement.",
-  "author": {"@type":"Person","name":"Aurélien Dewitte"},
-  "publisher": {"@type":"Organization","name":"Aurélien Dewitte — Conseil en gestion de patrimoine"},
+  "author": {
+    "@type": "Person",
+    "@id": "https://aurelien-dewitte-patrimoine.fr/#aurelien",
+    "name": "Aurélien Dewitte",
+    "url": "https://aurelien-dewitte-patrimoine.fr/#a-propos"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://aurelien-dewitte-patrimoine.fr/#cabinet",
+    "name": "Aurélien Dewitte — Conseil en gestion de patrimoine",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aurelien-dewitte-patrimoine.fr/assets/logo-ad-512.png"
+    }
+  },
   "mainEntityOfPage": "https://aurelien-dewitte-patrimoine.fr/transmission-succession.html",
   "datePublished": "2026-07-02",
-  "dateModified": "2026-10-08"
+  "dateModified": "2026-10-08",
+  "image": "https://aurelien-dewitte-patrimoine.fr/og-image.png",
+  "inLanguage": "fr-FR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://aurelien-dewitte-patrimoine.fr/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": "https://aurelien-dewitte-patrimoine.fr/articles.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Transmettre à ses proches sans exploser la fiscalité",
+      "item": "https://aurelien-dewitte-patrimoine.fr/transmission-succession.html"
+    }
+  ]
 }
 </script>
 
@@ -47,7 +91,7 @@
 
 
 <style>
-:root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#A38346;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5;--shadow:0 4px 24px rgba(20,37,64,.08);--shadow-lg:0 20px 60px rgba(20,37,64,.15)}
+:root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#866A33;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5;--shadow:0 4px 24px rgba(20,37,64,.08);--shadow-lg:0 20px 60px rgba(20,37,64,.15)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
@@ -137,6 +181,26 @@ footer a:hover{color:#fff}
 .example-note{font-size:.85rem;font-style:italic;border-left:3px solid var(--line);padding-left:.9rem}
 @media (max-width:560px){.author-box{flex-direction:column;text-align:center}}
 @media(max-width:900px){.nav{padding:1rem 1.25rem}.nav-links{gap:1rem}.nav-links li{display:none}.nav-links li.nav-outils,.nav-links li:last-child{display:block}.nav-links a{white-space:nowrap}}
+
+/* Menu mobile (assets/nav.js) et barre d'action en bas d'écran */
+.nav-toggle{display:none}
+.mobile-bar{display:none}
+@media (max-width:900px){
+.nav-toggle{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem .9rem;border:1.5px solid var(--navy);border-radius:8px;background:#fff;color:var(--navy);font:600 .92rem 'Inter',system-ui,sans-serif;cursor:pointer}
+.nav-toggle-bars{display:inline-flex;flex-direction:column;gap:3px}
+.nav-toggle-bars span{display:block;width:16px;height:2px;background:var(--navy);border-radius:1px}
+.nav-links{display:none !important}
+.nav-links.open{display:flex !important;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:.25rem 1.25rem 1rem;border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(20,37,64,.08)}
+.nav-links.open li{display:block !important}
+.nav-links.open a{display:block;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+.nav-links.open a::after{display:none}
+.nav-links.open .btn-nav{margin-top:.8rem;border-bottom:0;text-align:center;padding:.8rem 1rem}
+.mobile-bar{display:flex;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom));box-shadow:0 -6px 18px rgba(20,37,64,.08)}
+.mobile-bar a{flex:1;text-align:center;padding:.75rem .5rem;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none}
+.mobile-bar .mb-call{border:1.5px solid var(--navy);color:var(--navy)}
+.mobile-bar .mb-rdv{background:var(--navy);color:#fff}
+body{padding-bottom:76px}
+}
 </style>
 </head>
 <body>
@@ -147,7 +211,7 @@ footer a:hover{color:#fff}
       <span class="logo-mark">AD</span>
       <span>Aurélien Dewitte<small>Conseil en patrimoine</small></span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="/#expertises">Expertises</a></li>
       <li><a href="/#methode">Méthode</a></li>
       <li><a href="articles.html">Articles</a></li>
@@ -155,6 +219,7 @@ footer a:hover{color:#fff}
       <li><a href="/#a-propos">À propos</a></li>
       <li><a href="/#contact" class="btn-nav">Prendre RDV</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks"><span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
   </div>
 </header>
 
@@ -211,11 +276,11 @@ footer a:hover{color:#fff}
 
     </div>
     <div class="author-box">
-      <img src="assets/photo-pro.jpg" alt="Aurélien Dewitte" width="84" height="84" loading="lazy">
+      <img src="/assets/photo-pro-240.jpg" alt="Aurélien Dewitte" width="84" height="84" loading="lazy">
       <p><strong>Aurélien Dewitte</strong>Conseiller en gestion de patrimoine à Bordeaux depuis 2019, membre de la CNCGP. J'accompagne plus de 400 familles, dirigeants et professionnels libéraux en Gironde. <a href="/#a-propos">En savoir plus</a></p>
     </div>
     <div class="related-articles">
-      <h3>📚 Articles connexes</h3>
+      <h3>Articles connexes</h3>
       <ul>
         <li><a href="donation-100000-euros.html">Donation de 100 000 € par parent : le mode d'emploi complet</a></li>
         <li><a href="per-vs-assurance-vie.html">PER ou Assurance-vie : lequel choisir en 2026 ?</a></li>
@@ -258,6 +323,7 @@ footer a:hover{color:#fff}
           <li><a href="mailto:aurelien.dewitte@id-cap-mia.fr">Écrire un email</a></li>
           <li>Bureau : 20 rue Surson<br>33300 Bordeaux</li>
           <li>Secteurs : <a href="conseiller-patrimoine-merignac.html">Mérignac</a>, <a href="conseiller-patrimoine-pessac.html">Pessac</a>, <a href="conseiller-patrimoine-talence.html">Talence</a>, <a href="conseiller-patrimoine-le-bouscat.html">Le Bouscat</a>, <a href="conseiller-patrimoine-saint-medard-en-jalles.html">Saint-Médard-en-Jalles</a>, <a href="conseiller-patrimoine-libourne.html">Libourne</a>, <a href="conseiller-patrimoine-arcachon.html">Arcachon</a>, <a href="conseiller-patrimoine-langon.html">Langon</a>, <a href="conseiller-patrimoine-la-reole.html">La Réole</a>, <a href="conseiller-patrimoine-marmande.html">Marmande</a></li>
+          <li>Services : <a href="bilan-patrimonial-bordeaux.html">Bilan patrimonial</a>, <a href="defiscalisation-bordeaux.html">Défiscalisation</a>, <a href="preparer-sa-retraite-bordeaux.html">Retraite</a>, <a href="transmission-patrimoine-bordeaux.html">Transmission</a>, <a href="placements-epargne-bordeaux.html">Placements</a>, <a href="prevoyance-dirigeant-bordeaux.html">Prévoyance</a></li>
         </ul>
       </div>
       <div>
@@ -276,5 +342,11 @@ footer a:hover{color:#fff}
   </div>
 </footer>
 
+
+<div class="mobile-bar">
+  <a href="tel:+33620880909" class="mb-call">Appeler</a>
+  <a href="https://calendly.com/partenariat-idcap/30min" class="mb-rdv" target="_blank" rel="noopener">Prendre RDV</a>
+</div>
+<script src="/assets/nav.js" defer></script>
 </body>
 </html>

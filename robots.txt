@@ -1,9 +1,7 @@
 User-agent: *
 Allow: /
 
-# Pages légales : non indexées (noindex déjà présent dans le HTML)
-Disallow: /mentions-legales.html
-Disallow: /confidentialite.html
-Disallow: /cookies.html
+# Les pages légales (mentions, confidentialité, cookies) restent accessibles aux robots :
+# elles portent une balise noindex, que Google ne peut lire que s'il peut les visiter.
 
 Sitemap: https://aurelien-dewitte-patrimoine.fr/sitemap.xml
