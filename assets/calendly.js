@@ -1,5 +1,6 @@
 /* Prise de rendez-vous Calendly.
    - Accueil : calendrier intégré dans la section contact (chargé à l'approche).
+     Avec data-lazy (page d'annonces), il n'est chargé qu'au défilement.
    - Autres liens Calendly : le calendrier s'ouvre par-dessus la page.
    - rdv_calendly n'est envoyé qu'à la confirmation d'une réservation
      (message calendly.event_scheduled), une seule fois par invité.
@@ -121,10 +122,11 @@
         if (fb) fb.style.display = 'none';
       });
     };
+    /* data-lazy : chargement seulement quand la section est presque à l'écran */
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         if (entries.some(function (en) { return en.isIntersecting; })) { io.disconnect(); start(); }
-      }, { rootMargin: '600px 0px' });
+      }, { rootMargin: box.hasAttribute('data-lazy') ? '150px 0px' : '600px 0px' });
       io.observe(box.parentNode);
     } else {
       start();
@@ -172,7 +174,9 @@
 
   function init() {
     initInline();
-    if (document.querySelector(SELECTOR)) {
+    /* Pas de préchargement du widget sur une page dont le calendrier est en data-lazy */
+    var lazy = document.querySelector('#calendly-inline[data-lazy]');
+    if (!lazy && document.querySelector(SELECTOR)) {
       window.addEventListener('load', function () { setTimeout(loadWidget, 1500); });
     }
   }
