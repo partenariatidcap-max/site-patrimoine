@@ -70,7 +70,10 @@
     'border:1px solid #C8A35C}' +
     '#adp-consent .adp-yes{background:#C8A35C;color:#1F3A5F}' +
     '#adp-consent .adp-no{background:transparent;color:#FAF7F1}' +
-    '#adp-consent button:focus-visible{outline:2px solid #FAF7F1;outline-offset:2px}';
+    '#adp-consent button:focus-visible{outline:2px solid #FAF7F1;outline-offset:2px}' +
+    /* Sur mobile, bandeau compact : il ne doit pas masquer le bouton principal du haut de page */
+    '@media (max-width:600px){#adp-consent{left:8px;right:8px;bottom:8px;padding:12px 14px;font-size:.82rem;line-height:1.4}' +
+    '#adp-consent p{margin-bottom:8px}#adp-consent button{flex:1 1 0;padding:9px 10px;font-size:.88rem}}';
 
   function showBanner() {
     if (document.getElementById('adp-consent')) return;

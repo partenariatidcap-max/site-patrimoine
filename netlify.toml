@@ -18,3 +18,19 @@
   from = "/bilan-patrimonial-offert"
   to = "/bilan-patrimonial-offert.html"
   status = 200
+
+# En-têtes de sécurité sur tout le site (le site n'est jamais affiché dans un cadre extérieur).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Scripts, photos et icônes : cache d'un jour, puis revalidation en arrière-plan.
+# (Les fichiers ne sont pas versionnés : un cache plus long retarderait les mises à jour.)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
