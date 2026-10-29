@@ -255,6 +255,8 @@
   .hero h1 .accent{color:var(--gold-dark);font-style:italic}
   .hero-tagline{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--navy);margin:-.6rem 0 1.2rem;line-height:1.4}
   .hero-lede{font-size:1.15rem;line-height:1.7;color:var(--ink-soft);margin-bottom:2rem;max-width:560px}
+  .hero-lede a{color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+  .hero-lede a:hover{color:var(--gold-dark)}
   .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
   .hero-trust{display:flex;gap:2rem;flex-wrap:wrap;align-items:center;padding-top:1.8rem;border-top:1px solid var(--line)}
   .trust-item{display:flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--ink-soft)}
@@ -328,7 +330,7 @@
   .secteurs-list a{display:inline-block;padding:.55rem 1rem;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.93rem;font-weight:500;color:var(--navy)}
   .secteurs-list a:hover{border-color:var(--gold);color:var(--gold-dark)}
   .two-col>*,.hero-grid>*,.contact-grid>*{min-width:0}
-  @media (max-width:600px){.hero{padding:2rem 0 3rem}.hero h1{margin-bottom:.8rem}.hero-tagline{margin:-.2rem 0 .9rem}.hero-lede{font-size:1rem;line-height:1.6;margin-bottom:1.4rem}}
+  @media (max-width:600px){.hero{padding:1.25rem 0 3rem}.hero-grid>div>.eyebrow{display:none}.hero h1{margin-bottom:.8rem}.hero-tagline{margin:-.2rem 0 .9rem}.hero-lede{font-size:1rem;line-height:1.6;margin-bottom:1.4rem}}
   .about-linkedin{margin-top:1rem;font-size:.95rem}
   .about-linkedin a{font-weight:600;border-bottom:1px solid var(--gold)}
   .expertise-link{display:inline-block;margin-top:.9rem;font-size:.92rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold)}
@@ -401,7 +403,7 @@
   }
   .testimonial p{font-style:italic;color:var(--ink);position:relative;margin-bottom:1.2rem;line-height:1.6}
   .testimonial-author{display:flex;gap:.9rem;align-items:center;padding-top:1rem;border-top:1px solid var(--line)}
-  .testimonial-avatar{
+  .testimonial-avatar{flex-shrink:0;
     width:42px;height:42px;border-radius:50%;
     background:linear-gradient(135deg,var(--navy),var(--navy-light));
     color:var(--gold-light);
@@ -410,6 +412,8 @@
   }
   .testimonial-author strong{display:block;color:var(--navy);font-size:.95rem}
   .testimonial-author span{font-size:.82rem;color:var(--ink-soft)}
+  .testimonial-group{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.3rem;margin:0 0 .4rem}
+  .testimonial-note{font-size:.85rem;color:var(--ink-soft);margin-bottom:1.5rem;max-width:720px}
 
   /* Google avis CTA */
   .google-cta{
@@ -529,6 +533,16 @@
     .form-grid{grid-template-columns:1fr}
     .mobile-cta{display:block}
     body{padding-bottom:80px}
+    /* Photo dans le premier écran : carte portrait compacte en tête du haut de page */
+    .hero-grid{gap:1rem}
+    .portrait-card,.portrait-card:hover{order:-1;display:flex;align-items:center;transform:none;border-radius:12px}
+    .portrait-photo{flex:0 0 84px;width:84px;aspect-ratio:1;background-image:url('assets/photo-pro-240.jpg')}
+    .portrait-info{padding:.6rem .9rem}
+    .portrait-info h4{font-size:1.05rem;margin-bottom:0}
+    .portrait-info p{font-size:.8rem;margin-bottom:.4rem;line-height:1.35}
+    .portrait-badges{gap:.3rem}
+    .badge{font-size:.62rem;padding:.15rem .4rem}
+    .portrait-badges .badge:nth-child(n+3){display:none}
   }
   @media (max-width:560px){
     .footer-grid{grid-template-columns:1fr}
@@ -586,7 +600,7 @@
       <h1>Conseiller en gestion de patrimoine <span class="accent">à Bordeaux</span></h1>
       <p class="hero-tagline">Votre patrimoine mérite un conseiller qui vous connaît vraiment.</p>
       <p class="hero-lede">
-        Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, transparent sur ma rémunération, et <strong>sans honoraires dans la grande majorité des cas</strong>.
+        Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, <a href="transparence-remuneration.html">transparent sur ma rémunération</a>, et <strong>sans honoraires dans la grande majorité des cas</strong>.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Réserver un premier échange · 30 min gratuit</a>
@@ -610,7 +624,7 @@
           <span>Réponse <strong>sous 24 h</strong></span>
         </div>
         <div class="trust-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg>
           <span><strong>Sans honoraires</strong> dans la grande majorité des cas</span>
         </div>
       </div>
@@ -659,7 +673,7 @@
       </div>
       <div class="expertise-card">
         <div class="expertise-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg>
         </div>
         <h3>Optimisation fiscale</h3>
         <p>Diagnostic de votre fiscalité actuelle face à son potentiel optimisé. Mise en place des leviers adaptés : PER, déficit foncier, démembrement, holding, IFI.</p>
@@ -861,6 +875,8 @@
       <span class="eyebrow">Ce qu'en disent mes clients</span>
       <h2>La confiance se construit dans la durée</h2>
     </div>
+    <h3 class="testimonial-group">Avis publiés sur Google</h3>
+    <p class="testimonial-note">Extraits d'avis laissés par des clients sur ma fiche Google (les plus longs sont abrégés, signalés par […]). Le cabinet ne contrôle pas ces avis : ils sont publiés directement par leurs auteurs sur Google.</p>
     <div class="testimonial-grid">
       <div class="testimonial">
         <p>J'ai fait appel à Aurélien Dewitte pour un bilan patrimonial complet. Il a pris le temps de comprendre ma situation avant de me proposer des solutions adaptées […]</p>
@@ -887,21 +903,21 @@
         <p>Super contact avec Aurélien depuis maintenant 3 ans ! C’est un conseiller bienveillant, professionnel, discret et à l’écoute des différents projets ! Je recommande sans hésiter 😊</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">SN</div>
-          <div><strong>Sophie N.</strong><span>Agent immobilier · Bordeaux</span></div>
+          <div><strong>Sophie N.</strong><span>Avis Google · Agent immobilier · Bordeaux</span></div>
         </div>
       </div>
       <div class="testimonial">
         <p>J’ai laissé Aurélien s’occuper de mon épargne pour ma retraite et pour l’avenir de mes enfants. Je recommande chaleureusement, autant pour les compétences que pour sa sympathie.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">MH</div>
-          <div><strong>Matthieu H.</strong><span>Commercial automobile · Bordeaux</span></div>
+          <div><strong>Matthieu H.</strong><span>Avis Google · Commercial automobile · Bordeaux</span></div>
         </div>
       </div>
       <div class="testimonial">
         <p>Aurélien est très professionnel, bienveillant, à l’écoute des attentes. Je le recommande sans hésiter, il vous apportera une aide et des conseils de grande qualité.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">LD</div>
-          <div><strong>Laure D.</strong><span>Dirigeante d’entreprise · Rouen</span></div>
+          <div><strong>Laure D.</strong><span>Avis Google · Dirigeante d’entreprise · Rouen</span></div>
         </div>
       </div>
     </div>
@@ -1077,9 +1093,11 @@
           <li><a href="mentions-legales.html">Mentions légales</a></li>
           <li><a href="confidentialite.html">Politique de confidentialité</a></li>
           <li><a href="cookies.html">Gestion des cookies</a></li>
+          <li><a href="reclamations.html">Réclamations</a></li>
+          <li><a href="transparence-remuneration.html">Transparence de la rémunération</a></li>
           <li><a href="#" data-consent-open>Paramétrer mes cookies</a></li>
           <li><a href="https://www.orias.fr" target="_blank" rel="noopener">Vérifier sur ORIAS</a></li>
-          <li><a href="https://www.mediation-assurance.org" target="_blank" rel="noopener">Médiation de l'assurance</a></li>
+          <li><a href="https://www.cmap.fr/saisir-cmap-mediation-consommation/" target="_blank" rel="noopener">Médiateur de la consommation (CMAP)</a></li>
         </ul>
       </div>
     </div>
