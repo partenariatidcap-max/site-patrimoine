@@ -12,7 +12,7 @@
     f.src = box.getAttribute('data-src');
     f.title = 'Carte Google de la fiche Aurélien Dewitte, conseil en gestion de patrimoine';
     f.loading = 'lazy';
-    f.referrerPolicy = 'no-referrer-when-downgrade';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
     f.setAttribute('allowfullscreen', '');
     box.innerHTML = '';
     box.appendChild(f);
