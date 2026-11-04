@@ -77,6 +77,7 @@
     if (src) {
       if (src.gclid || /^(cpc|ppc|paid)/i.test(src.utm_medium || '')) return 'Annonce Google' + (src.utm_campaign ? ' (' + src.utm_campaign + ')' : '');
       var parts = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map(function (k) { return src[k]; }).filter(Boolean);
+      if (/fiche/i.test(src.utm_medium || '')) return 'Fiche Google' + (src.utm_campaign ? ' (' + src.utm_campaign + ')' : '');
       if (src.utm_source === 'recommandation') return 'Recommandation' + (src.utm_content ? ' (' + src.utm_content + ')' : '');
       return 'Lien suivi : ' + parts.join(' / ');
     }
