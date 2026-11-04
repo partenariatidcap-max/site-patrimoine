@@ -529,6 +529,16 @@
     z-index:90;border-top:1px solid var(--line);
   }
   .mobile-cta .btn{width:100%}
+  .mobile-cta-row{display:flex;gap:.6rem}
+  .mobile-cta-row .btn-call{flex:0 0 auto;width:auto;padding-left:1.1rem;padding-right:1.1rem}
+  .mobile-cta-row .btn-primary{flex:1}
+  /* Note Google et téléphone dans le premier écran mobile */
+  .hero-quick{display:none}
+  @media (max-width:900px){
+    .hero-quick{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:-.3rem 0 .9rem;font-size:.95rem;font-weight:600}
+    .hero-quick a{color:var(--navy);text-decoration:none}
+    .hero-quick .stars{color:var(--gold)}
+  }
 
   /* MOBILE */
   @media (max-width:900px){
@@ -543,6 +553,7 @@
     .section{padding:3.5rem 0}
     .form-grid{grid-template-columns:1fr}
     .mobile-cta{display:block}
+    .mobile-cta.mobile-cta-row{display:flex}
     body{padding-bottom:80px}
     /* Photo dans le premier écran : carte portrait compacte en tête du haut de page */
     .hero-grid{gap:1rem}
@@ -612,6 +623,7 @@
     <div>
       <span class="eyebrow">Bordeaux · Gironde · Membre CNCGP</span>
       <h1>Conseiller en gestion de patrimoine <span class="accent">à Bordeaux</span></h1>
+      <p class="hero-quick"><a href="https://share.google/KvCwFTLLdypbulPEu" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span> 5,0 · 45 avis Google</a><a href="tel:+33620880909">📞 06 20 88 09 09</a></p>
       <p class="hero-tagline">Votre patrimoine mérite un conseiller qui vous connaît vraiment.</p>
       <p class="hero-lede">
         Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, <a href="transparence-remuneration.html">transparent sur ma rémunération</a>, et <strong>sans honoraires dans la grande majorité des cas</strong>.
@@ -662,7 +674,7 @@
 <section class="trust-strip">
   <div class="container trust-strip-grid">
     <div class="trust-stat"><span class="num">400+</span><span class="lbl">Familles & dirigeants accompagnés</span></div>
-    <div class="trust-stat"><span class="num">★★★★★</span><span class="lbl">5,0 · 42 avis Google</span></div>
+    <div class="trust-stat"><span class="num">★★★★★</span><span class="lbl">5,0 · 45 avis Google</span></div>
     <div class="trust-stat"><span class="num">24 h</span><span class="lbl">Délai de réponse moyen</span></div>
     <div class="trust-stat"><span class="num">1</span><span class="lbl">Interlocuteur unique, de l'audit au suivi</span></div>
   </div>
@@ -872,7 +884,7 @@
     <div class="section-head">
       <span class="eyebrow">Où je me déplace</span>
       <h2>Bordeaux, la Gironde et les départements voisins</h2>
-      <p>Je vous reçois à mon bureau du 20 rue Surson à Bordeaux, je viens chez vous ou sur votre lieu de travail, ou nous échangeons en visio. J'habite le Sud-Gironde : Langon, La Réole et jusqu'à Marmande font aussi partie de mes secteurs, comme la Dordogne et les Landes, où je me déplace pour les rendez-vous importants.</p>
+      <p>Je vous reçois à mon bureau du 20 rue Surson à Bordeaux, je viens chez vous ou sur votre lieu de travail, ou nous échangeons en visio. J'habite le Sud-Gironde : Langon, Bazas, La Réole et jusqu'à Marmande font aussi partie de mes secteurs, comme la Dordogne et les Landes, où je me déplace pour les rendez-vous importants.</p>
     </div>
     <ul class="secteurs-list">
       <li><a href="conseiller-patrimoine-merignac.html">Mérignac</a></li>
@@ -958,7 +970,7 @@
         </svg>
         <div>
           <div class="google-cta-stars">★★★★★</div>
-          <div class="google-cta-text"><strong>5,0 sur 42 avis Google</strong><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</div>
+          <div class="google-cta-text"><strong>5,0 sur 45 avis Google</strong><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</div>
         </div>
       </div>
       <a href="https://share.google/KvCwFTLLdypbulPEu" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Voir nos avis sur Google et en laisser un">Voir nos avis Google →</a>
@@ -1046,6 +1058,7 @@
           <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary calendly-fallback" target="_blank" rel="noopener">Ouvrir le calendrier de RDV</a>
         </div>
         <form action="https://formspree.io/f/xqejaavq" method="POST">
+          <input type="hidden" name="source" value="">
           <h3 style="font-family:'Playfair Display';margin-bottom:1.2rem">Ou écrivez-moi</h3>
           <input type="hidden" name="_subject" value="Nouvelle demande depuis le site">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -1133,7 +1146,8 @@
   </div>
 </footer>
 
-<div class="mobile-cta">
+<div class="mobile-cta mobile-cta-row">
+  <a href="tel:+33620880909" class="btn btn-outline btn-call" aria-label="Appeler le 06 20 88 09 09">📞 Appeler</a>
   <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
 </div>
 

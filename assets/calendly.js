@@ -4,7 +4,9 @@
    - Autres liens Calendly : le calendrier s'ouvre par-dessus la page.
    - rdv_calendly n'est envoyé qu'à la confirmation d'une réservation
      (message calendly.event_scheduled), une seule fois par invité.
-   - La source de la visite (utm_*, gclid) est transmise à Calendly. */
+   - La source de la visite (utm_*, gclid) est transmise à Calendly.
+   - Les formulaires Formspree reçoivent la même source, en clair, dans
+     leur champ caché « source » (jamais la valeur du gclid). */
 (function () {
   var ORIGIN = 'https://calendly.com';
   var SELECTOR = 'a[href*="calendly.com/partenariat-idcap"]';
@@ -68,6 +70,31 @@
     Object.keys(p).forEach(function (k) { u.searchParams.set(k, p[k]); });
     return u.toString();
   }
+
+  /* --- Source lisible pour les formulaires (champ caché name="source") --- */
+  function sourceLabel() {
+    var src = landing || (granted() ? loadStored() : null);
+    if (src) {
+      if (src.gclid || /^(cpc|ppc|paid)/i.test(src.utm_medium || '')) return 'Annonce Google' + (src.utm_campaign ? ' (' + src.utm_campaign + ')' : '');
+      var parts = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map(function (k) { return src[k]; }).filter(Boolean);
+      if (/fiche/i.test(src.utm_medium || '')) return 'Fiche Google' + (src.utm_campaign ? ' (' + src.utm_campaign + ')' : '');
+      if (src.utm_source === 'recommandation') return 'Recommandation' + (src.utm_content ? ' (' + src.utm_content + ')' : '');
+      return 'Lien suivi : ' + parts.join(' / ');
+    }
+    var ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+    if (!ref || ref === location.hostname) return 'Accès direct ou source inconnue';
+    if (/(^|\.)google\./.test(ref)) return 'Recherche Google gratuite ou fiche Google';
+    if (/bing\.|duckduckgo\.|qwant\.|ecosia\.|yahoo\./.test(ref)) return 'Moteur de recherche (' + ref + ')';
+    return 'Site référent : ' + ref;
+  }
+
+  function fillSource() {
+    var label = sourceLabel();
+    document.querySelectorAll('form[action*="formspree.io"] input[name="source"]').forEach(function (i) { i.value = label; });
+  }
+  /* En phase de capture : le champ est à jour avant l'envoi géré par consent.js */
+  document.addEventListener('submit', fillSource, true);
 
   /* --- Chargement du widget Calendly --- */
   var waiting = null;
@@ -174,6 +201,7 @@
 
   function init() {
     initInline();
+    fillSource();
     /* Pas de préchargement du widget sur une page dont le calendrier est en data-lazy */
     var lazy = document.querySelector('#calendly-inline[data-lazy]');
     if (!lazy && document.querySelector(SELECTOR)) {
