@@ -108,6 +108,14 @@
     });
   }
 
+  /* Page recrutement (<body data-adp-context="recrutement">) : les contacts de
+     candidats ont leurs propres événements, pour ne pas être comptés comme des
+     prospects (form_submit et clic_telephone sont des événements clés GA4). */
+  function suffix() {
+    var ctx = document.body && document.body.getAttribute('data-adp-context');
+    return ctx ? '_' + ctx : '';
+  }
+
   /* --- Suivi des prises de contact (les réservations Calendly sont dans calendly.js) --- */
   document.addEventListener('click', function (e) {
     var el = e.target.closest ? e.target.closest('a, [data-consent-open]') : null;
@@ -118,8 +126,8 @@
       return;
     }
     var href = el.getAttribute('href') || '';
-    if (href.indexOf('tel:') === 0) track('clic_telephone', { page: location.pathname });
-    else if (href.indexOf('mailto:') === 0) track('clic_email', { page: location.pathname });
+    if (href.indexOf('tel:') === 0) track('clic_telephone' + suffix(), { page: location.pathname });
+    else if (href.indexOf('mailto:') === 0) track('clic_email' + suffix(), { page: location.pathname });
   });
 
   /* --- Formulaire de contact ---
@@ -139,7 +147,7 @@
     fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
       .then(function (r) {
         if (!r.ok) throw new Error('Formspree ' + r.status);
-        track('form_submit', { method: f.getAttribute('data-form') || 'formulaire_contact', page: location.pathname });
+        track(f.getAttribute('data-adp-event') || 'form_submit', { method: f.getAttribute('data-form') || 'formulaire_contact', page: location.pathname });
         /* data-success="Titre|Texte" : message de confirmation propre à un formulaire */
         var msg = (f.getAttribute('data-success') || '').split('|');
         var title = msg[0] || 'Merci, votre demande est bien envoyée';
