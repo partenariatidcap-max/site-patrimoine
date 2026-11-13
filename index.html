@@ -285,6 +285,9 @@
   .portrait-info h4{font-family:'Playfair Display';color:var(--navy);font-size:1.25rem;margin-bottom:.2rem}
   .portrait-info p{font-size:.9rem;color:var(--ink-soft);margin-bottom:.8rem}
   .portrait-badges{display:flex;gap:.5rem;flex-wrap:wrap}
+  .portrait-link{display:inline-block;font-size:.88rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold);margin-bottom:.8rem}
+  .portrait-link::after{content:'';position:absolute;inset:0}
+  .portrait-link:hover{color:var(--gold-dark)}
   .badge{
     font-size:.7rem;padding:.3rem .6rem;border-radius:3px;
     background:var(--cream);color:var(--navy);
@@ -577,7 +580,8 @@
     .portrait-info{padding:.6rem .9rem}
     .portrait-info h4{font-size:1.05rem;margin-bottom:0}
     .portrait-info p{font-size:.8rem;margin-bottom:.4rem;line-height:1.35}
-    .portrait-info p{margin-bottom:0}
+    .portrait-info p{margin-bottom:.25rem}
+    .portrait-link{font-size:.8rem;margin:0}
     .portrait-badges{display:none}
     /* Boutons du haut : pleine largeur, l'un sous l'autre */
     .hero-ctas{flex-direction:column;gap:.7rem;margin-bottom:1.6rem}
@@ -750,6 +754,7 @@
       <div class="portrait-info">
         <h4>Aurélien Dewitte</h4>
         <p>Conseiller en gestion de patrimoine à Bordeaux</p>
+        <a href="#a-propos" class="portrait-link">Découvrir mon parcours →</a>
         <div class="portrait-badges">
           <span class="badge">CNCGP 2023</span>
           <span class="badge">ORIAS MIA</span>
