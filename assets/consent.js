@@ -147,7 +147,12 @@
     fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
       .then(function (r) {
         if (!r.ok) throw new Error('Formspree ' + r.status);
-        track(f.getAttribute('data-adp-event') || 'form_submit', { method: f.getAttribute('data-form') || 'formulaire_contact', page: location.pathname });
+        var guideField = f.querySelector('[name="guide"]:checked') || f.querySelector('input[type="hidden"][name="guide"]');
+        var guide = guideField ? guideField.value : undefined;
+        var params = { method: f.getAttribute('data-form') || 'formulaire_contact', page: location.pathname };
+        if (guide) params.guide = guide;
+        track(f.getAttribute('data-adp-event') || 'form_submit', params);
+        if (f.hasAttribute('data-guide-form')) { guideDone(f, guide); return; }
         /* data-success="Titre|Texte" : message de confirmation propre à un formulaire */
         var msg = (f.getAttribute('data-success') || '').split('|');
         var title = msg[0] || 'Merci, votre demande est bien envoyée';
@@ -167,6 +172,40 @@
         HTMLFormElement.prototype.submit.call(f);
       });
   });
+
+  /* --- Formulaire « Recevoir le guide » ---
+     Après l'envoi à Formspree (alerte Gmail), les coordonnées partent aussi vers
+     le webhook n8n indiqué dans data-webhook : ajout à la feuille Google Sheets
+     et envoi automatique du guide par email. Le guide est de toute façon
+     proposé en téléchargement immédiat. */
+  var GUIDES = {
+    retraite: { url: '/guides/guide-retraite-2027.pdf', titre: 'Les 10 questions à se poser avant de préparer sa retraite' },
+    transmission: { url: '/guides/guide-transmission-2027.pdf', titre: 'Transmettre son patrimoine en Gironde : le guide pratique 2027' }
+  };
+  function guideDone(f, guide) {
+    var g = GUIDES[guide] || GUIDES.retraite;
+    var hook = f.getAttribute('data-webhook');
+    if (hook) {
+      var data = {};
+      new FormData(f).forEach(function (v, k) { if (k.charAt(0) !== '_') data[k] = v; });
+      data.page = location.pathname;
+      data.date = new Date().toISOString();
+      fetch(hook, { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(function () {});
+    }
+    var done = document.createElement('div');
+    done.className = 'go-done';
+    done.setAttribute('role', 'status');
+    done.innerHTML = '<h3>Merci, votre guide est prêt</h3><p></p>' +
+      '<a class="go-download" download>Télécharger le guide (PDF)</a>' +
+      '<p class="go-meta">' + (hook ? 'Vous le recevez aussi par email dans quelques minutes (pensez à vérifier vos indésirables). ' : '') +
+      'Une question ? <a href="tel:+33620880909">06 20 88 09 09</a></p>';
+    done.querySelector('p').textContent = '« ' + g.titre + ' »';
+    var a = done.querySelector('a.go-download');
+    a.href = g.url;
+    a.addEventListener('click', function () { track('telechargement_guide', { guide: guide, page: location.pathname }); });
+    f.innerHTML = '';
+    f.appendChild(done);
+  }
 
   function init() {
     var choice = readChoice();

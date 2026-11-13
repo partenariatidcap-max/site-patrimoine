@@ -1,0 +1,32 @@
+/* Encart « Recevoir le guide » (guides PDF offerts contre coordonnées) */
+.guide-offer{margin:3rem 0;padding:2rem;background:#1F3A5F;color:#fff;border-radius:14px;font-family:'Inter',sans-serif}
+.guide-offer *{box-sizing:border-box}
+.guide-offer .go-eyebrow{display:block;color:#C8A35C;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.guide-offer h2,.guide-offer h3{font-family:'Playfair Display',serif;color:#fff;font-size:1.6rem;line-height:1.25;margin:0 0 .6rem;border:0;padding:0}
+.guide-offer p{color:#dfe5ee;margin:0 0 1.2rem;font-size:.95rem;line-height:1.55}
+.guide-offer .go-choices{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.2rem;border:0;padding:0}
+.guide-offer .go-choices legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.guide-offer .go-choice{display:flex;gap:.8rem;align-items:center;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.18);border-radius:10px;padding:.7rem;cursor:pointer;transition:border-color .2s,background .2s}
+.guide-offer .go-choice:has(input:checked){border-color:#C8A35C;background:rgba(200,163,92,.14)}
+.guide-offer .go-choice input{accent-color:#C8A35C;flex-shrink:0;margin:0}
+.guide-offer .go-choice img{width:56px;height:auto;border-radius:3px;box-shadow:0 2px 8px rgba(0,0,0,.35);flex-shrink:0}
+.guide-offer .go-choice span{font-size:.88rem;line-height:1.35;color:#fff}
+.guide-offer .go-choice small{display:block;color:#C8A35C;font-size:.75rem;margin-top:.2rem}
+.guide-offer .go-fields{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.guide-offer input[type=text],.guide-offer input[type=email],.guide-offer input[type=tel]{width:100%;padding:.8rem .9rem;border:1px solid rgba(255,255,255,.25);border-radius:8px;background:#fff;color:#1F3A5F;font:inherit;font-size:.95rem}
+.guide-offer input:focus{outline:2px solid #C8A35C;outline-offset:1px}
+.guide-offer .go-consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.45;color:#dfe5ee;margin-top:.8rem;cursor:pointer}
+.guide-offer .go-consent input{margin-top:.2rem;accent-color:#C8A35C;flex-shrink:0}
+.guide-offer a{color:#C8A35C}
+.guide-offer button,.guide-offer .go-download{display:inline-block;width:100%;margin-top:1.1rem;padding:.95rem 1.4rem;background:#C8A35C;color:#1F3A5F;border:0;border-radius:8px;font:inherit;font-weight:700;font-size:1rem;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s}
+.guide-offer button:hover,.guide-offer .go-download:hover{background:#d8b878}
+.guide-offer button:disabled{opacity:.7;cursor:wait}
+.guide-offer .go-meta{font-size:.75rem;color:#aebbd0;margin:.8rem 0 0}
+.guide-offer .go-done{text-align:center;padding:1rem 0}
+.guide-offer .go-done p{margin-bottom:.4rem}
+@media (max-width:640px){
+  .guide-offer{padding:1.5rem 1.1rem;margin:2.2rem 0}
+  .guide-offer .go-choices,.guide-offer .go-fields{grid-template-columns:1fr}
+  .guide-offer h2,.guide-offer h3{font-size:1.35rem}
+}
+#guides .guide-offer{margin:0}
