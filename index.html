@@ -441,9 +441,12 @@
   .google-cta-text strong{color:var(--navy);font-weight:600}
   .google-cta .btn{flex-shrink:0}
   @media (max-width:680px){
-    .google-cta{padding:1.4rem 1.5rem;text-align:center}
-    .google-cta-left{flex-direction:column;text-align:center}
-    .google-cta .btn{width:100%}
+    .google-cta{margin-top:.5rem;padding:1rem 1.1rem;gap:.8rem}
+    .google-cta-left{gap:.8rem;min-width:0}
+    .google-logo{width:32px;height:32px}
+    .google-cta-stars{font-size:1rem;margin-bottom:.2rem}
+    .google-cta-more{display:none}
+    .google-cta .btn{width:100%;padding:.65rem 1rem;font-size:.9rem}
   }
 
   /* FAQ */
@@ -1005,7 +1008,7 @@
         </svg>
         <div>
           <div class="google-cta-stars">★★★★★</div>
-          <div class="google-cta-text"><strong>5,0 sur 45 avis Google</strong><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</div>
+          <div class="google-cta-text"><strong>5,0 sur 45 avis Google</strong><span class="google-cta-more"><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</span></div>
         </div>
       </div>
       <a href="https://share.google/KvCwFTLLdypbulPEu" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Voir nos avis sur Google et en laisser un">Voir nos avis Google →</a>
