@@ -62,3 +62,7 @@
   .guide-offer .go-fields input[type=email],.guide-offer .go-fields input[type=tel]{grid-column:auto}
   .guide-offer .go-choice img{width:48px}
 }
+.guide-offer .go-error{color:#b3261e;font-size:.82rem;font-weight:600;margin:-.3rem 0 .6rem}
+.guide-offer .go-choice input[type=checkbox]{width:18px;height:18px}
+.guide-offer .go-done .go-download{margin:.3rem 0 .9rem}
+.guide-offer .go-done p{margin:.6rem 0 0;color:#1F3A5F;font-weight:500}
