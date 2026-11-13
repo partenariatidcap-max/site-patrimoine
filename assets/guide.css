@@ -31,26 +31,34 @@
 }
 #guides .guide-offer{margin:0}
 
-/* Mobile : même langage que la refonte mobile (encadré blanc compact, titres à gauche) */
-@media (max-width:900px){
-  .guide-offer{background:#fff;color:#2A2A2A;border:1px solid #E6DFD1;border-radius:12px;padding:1.1rem 1rem 1rem;margin:2rem 0;text-align:left}
-  #guides .guide-offer{margin:0}
-  .guide-offer .go-eyebrow{color:#A8853F;font-size:.68rem;margin-bottom:.3rem}
-  .guide-offer h2,.guide-offer h3{color:#1F3A5F;font-size:1.25rem;margin-bottom:.4rem}
-  .guide-offer p{color:#5b6372;font-size:.9rem;line-height:1.5;margin-bottom:.9rem}
-  .guide-offer .go-choices{grid-template-columns:1fr;gap:.5rem;margin-bottom:.8rem}
-  .guide-offer .go-choice{background:#FAF7F1;border:1.5px solid #E6DFD1;padding:.5rem .6rem;gap:.6rem}
-  .guide-offer .go-choice:has(input:checked){border-color:#C8A35C;background:#FBF3E2}
-  .guide-offer .go-choice img{width:38px}
-  .guide-offer .go-choice span{color:#1F3A5F;font-size:.85rem;font-weight:500}
-  .guide-offer .go-choice small{color:#A8853F;font-weight:400}
-  .guide-offer .go-fields{grid-template-columns:1fr 1fr;gap:.5rem}
-  .guide-offer .go-fields input[type=email],.guide-offer .go-fields input[type=tel]{grid-column:1/-1}
-  .guide-offer input[type=text],.guide-offer input[type=email],.guide-offer input[type=tel]{border:1px solid #E6DFD1;padding:.7rem .8rem;font-size:16px}
-  .guide-offer .go-consent{color:#5b6372;font-size:.78rem;margin-top:.6rem}
-  .guide-offer a{color:#A8853F}
-  .guide-offer button,.guide-offer .go-download{margin-top:.8rem;padding:.85rem 1rem;background:#1F3A5F;color:#fff}
-  .guide-offer button:hover,.guide-offer .go-download:hover{background:#16304f}
-  .guide-offer .go-meta{color:#8a8f99;font-size:.72rem;margin-top:.6rem}
-  .guide-offer .go-done h3{color:#1F3A5F}
+/* Encadré clair (même langage que la refonte mobile), sur tous les écrans */
+.guide-offer{background:#fff;color:#2A2A2A;border:1px solid #E6DFD1;border-radius:12px;padding:1.1rem 1rem 1rem;margin:2rem 0;text-align:left}
+#guides .guide-offer{margin:0}
+.guide-offer .go-eyebrow{color:#A8853F;font-size:.68rem;margin-bottom:.3rem}
+.guide-offer h2,.guide-offer h3{color:#1F3A5F;font-size:1.25rem;margin-bottom:.4rem}
+.guide-offer p{color:#5b6372;font-size:.9rem;line-height:1.5;margin-bottom:.9rem}
+.guide-offer .go-choices{grid-template-columns:1fr;gap:.5rem;margin-bottom:.8rem}
+.guide-offer .go-choice{background:#FAF7F1;border:1.5px solid #E6DFD1;padding:.5rem .6rem;gap:.6rem}
+.guide-offer .go-choice:has(input:checked){border-color:#C8A35C;background:#FBF3E2}
+.guide-offer .go-choice img{width:38px}
+.guide-offer .go-choice span{color:#1F3A5F;font-size:.85rem;font-weight:500}
+.guide-offer .go-choice small{color:#A8853F;font-weight:400}
+.guide-offer .go-fields{grid-template-columns:1fr 1fr;gap:.5rem}
+.guide-offer .go-fields input[type=email],.guide-offer .go-fields input[type=tel]{grid-column:1/-1}
+.guide-offer input[type=text],.guide-offer input[type=email],.guide-offer input[type=tel]{border:1px solid #E6DFD1;padding:.7rem .8rem;font-size:16px}
+.guide-offer .go-consent{color:#5b6372;font-size:.78rem;margin-top:.6rem}
+.guide-offer a{color:#A8853F}
+.guide-offer button,.guide-offer .go-download{margin-top:.8rem;padding:.85rem 1rem;background:#1F3A5F;color:#fff}
+.guide-offer button:hover,.guide-offer .go-download:hover{background:#16304f}
+.guide-offer .go-meta{color:#8a8f99;font-size:.72rem;margin-top:.6rem}
+.guide-offer .go-done h3{color:#1F3A5F}
+
+
+/* Ordinateur : un peu plus d'air, choix et champs sur deux colonnes */
+@media (min-width:901px){
+  .guide-offer{padding:1.8rem 2rem;border-left:4px solid #C8A35C}
+  .guide-offer h2,.guide-offer h3{font-size:1.5rem}
+  .guide-offer .go-choices{grid-template-columns:1fr 1fr}
+  .guide-offer .go-fields input[type=email],.guide-offer .go-fields input[type=tel]{grid-column:auto}
+  .guide-offer .go-choice img{width:48px}
 }
