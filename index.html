@@ -554,7 +554,7 @@
   }
 
   .avis-dots{display:none}
-  .hero-lede-m,.lbl-m,.about-toggle,.hero-more,.audience-m{display:none}
+  .hero-lede-m,.lbl-m,.about-toggle,.hero-more,.audience-m,.secteurs-m,.secteurs-dep{display:none}
   .card-date{font-size:.8rem;color:var(--ink-soft)}
   /* MOBILE */
   @media (max-width:900px){
@@ -598,8 +598,16 @@
     .trust-stat .num.stars-num{font-size:.95rem;letter-spacing:.05em;line-height:1.37}
     .trust-stat .lbl{font-size:.72rem;margin-top:.15rem;line-height:1.3}
     /* Villes : pastilles plus petites */
-    .secteurs-list{gap:.3rem}
-    .secteurs-list a{padding:.36rem .55rem;font-size:.74rem;line-height:1.3}
+    .secteurs-list,#secteurs .section-head p:not(.secteurs-m){display:none}
+    #secteurs .section-head{text-align:left;margin-bottom:1.1rem}
+    #secteurs h2{font-size:1.5rem}
+    .secteurs-m{display:block;font-size:.95rem}
+    .secteurs-dep{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .secteurs-dep>div{padding:.75rem 1rem}
+    .secteurs-dep>div+div{border-top:1px solid var(--line)}
+    .secteurs-dep strong{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.2rem}
+    .secteurs-dep p{margin:0;font-size:.92rem;line-height:1.7;color:var(--ink-soft)}
+    .secteurs-dep a{color:var(--navy);font-weight:500;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
     /* Rythme vertical resserré */
     .section{padding:2.6rem 0}
     .section-head{margin-bottom:1.8rem}
@@ -1090,6 +1098,13 @@
       <span class="eyebrow">Où je me déplace</span>
       <h2>Bordeaux, la Gironde et les départements voisins</h2>
       <p>Je vous reçois à mon bureau du 20 rue Surson à Bordeaux, je viens chez vous ou sur votre lieu de travail, ou nous échangeons en visio. J'habite le Sud-Gironde : Langon, Bazas, La Réole et jusqu'à Marmande font aussi partie de mes secteurs, comme la Dordogne et les Landes, où je me déplace pour les rendez-vous importants.</p>
+      <p class="secteurs-m">À mon bureau rue Surson à Bordeaux, chez vous ou en visio. J'habite le Sud-Gironde et je me déplace dans les départements voisins.</p>
+    </div>
+    <div class="secteurs-dep">
+      <div><strong>Gironde</strong><p><a href="conseiller-patrimoine-merignac.html">Mérignac</a> · <a href="conseiller-patrimoine-pessac.html">Pessac</a> · <a href="conseiller-patrimoine-talence.html">Talence</a> · <a href="conseiller-patrimoine-le-bouscat.html">Le Bouscat</a> · <a href="conseiller-patrimoine-saint-medard-en-jalles.html">Saint-Médard</a> · <a href="conseiller-patrimoine-libourne.html">Libourne</a> · <a href="conseiller-patrimoine-arcachon.html">Arcachon</a> · <a href="conseiller-patrimoine-langon.html">Langon</a> · <a href="conseiller-patrimoine-la-reole.html">La Réole</a></p></div>
+      <div><strong>Lot-et-Garonne</strong><p><a href="conseiller-patrimoine-marmande.html">Marmande</a></p></div>
+      <div><strong>Dordogne</strong><p><a href="conseiller-patrimoine-perigueux.html">Périgueux</a> · <a href="conseiller-patrimoine-bergerac.html">Bergerac</a></p></div>
+      <div><strong>Landes</strong><p><a href="conseiller-patrimoine-mont-de-marsan.html">Mont-de-Marsan</a> · <a href="conseiller-patrimoine-dax.html">Dax</a></p></div>
     </div>
     <ul class="secteurs-list">
       <li><a href="conseiller-patrimoine-merignac.html">Mérignac</a></li>
