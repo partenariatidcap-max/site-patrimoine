@@ -597,6 +597,14 @@
     .testimonial-grid .testimonial::before{top:.3rem;left:1rem}
     .testimonial-grid::-webkit-scrollbar{display:none}
     .testimonial-grid .testimonial{flex:0 0 100%;scroll-snap-align:center}
+    .expertise-grid{display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.5rem 0 1rem}
+    .expertise-grid::-webkit-scrollbar{display:none}
+    .expertise-grid .expertise-card{flex:0 0 86%;scroll-snap-align:start;padding:1.5rem 1.3rem;display:flex;flex-direction:column;align-items:flex-start}
+    .expertise-grid .expertise-link{margin-top:auto}
+    .expertise-grid .expertise-card p{margin-bottom:1rem}
+    .expertise-card:hover{transform:none}
+    #expertDots{margin-bottom:0}
+    .expertises .section-head{margin-bottom:1.6rem}
     .avis-dots{display:flex;justify-content:center;gap:.2rem;margin:0 0 1.5rem}
     .avis-dots button{width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center}
     .avis-dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
@@ -722,9 +730,9 @@
     <div class="section-head">
       <span class="eyebrow">Mes domaines d'intervention</span>
       <h2>Une approche patrimoniale 360°</h2>
-      <p>Six domaines traités de manière intégrée, parce qu'une bonne stratégie patrimoniale ne se découpe pas en silos.</p>
+      <p>Six domaines, une seule stratégie.</p>
     </div>
-    <div class="expertise-grid">
+    <div class="expertise-grid" id="expertCarousel">
       <div class="expertise-card">
         <div class="expertise-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H1v3h8v3l4-4-4-4v2zm10-7l-4 4 4 4V13h8v-3h-8V7z"/></svg>
@@ -774,6 +782,7 @@
         <a href="transmission-patrimoine-bordeaux.html" class="expertise-link">Transmettre votre patrimoine →</a>
       </div>
     </div>
+    <div class="avis-dots" id="expertDots" aria-label="Choisir un domaine"></div>
   </div>
 </section>
 
@@ -1212,27 +1221,28 @@
     p.after(b);
   });
 
-  // Avis clients : carrousel sur mobile (points de navigation)
-  (function () {
-    const track = document.getElementById('avisCarousel');
-    const dots = document.getElementById('avisDots');
+  // Carrousels sur mobile (avis clients, domaines) avec points de navigation
+  [['avisCarousel', 'avisDots', 'Avis'], ['expertCarousel', 'expertDots', 'Domaine']].forEach(([trackId, dotsId, label]) => {
+    const track = document.getElementById(trackId);
+    const dots = document.getElementById(dotsId);
     if (!track || !dots) return;
     const cards = Array.from(track.children);
     cards.forEach((card, i) => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.setAttribute('aria-label', 'Avis ' + (i + 1) + ' sur ' + cards.length);
-      b.addEventListener('click', () => track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' }));
+      b.setAttribute('aria-label', label + ' ' + (i + 1) + ' sur ' + cards.length);
+      b.addEventListener('click', () => track.scrollTo({ left: card.offsetLeft - cards[0].offsetLeft, behavior: 'smooth' }));
       dots.appendChild(b);
     });
     const update = () => {
       const step = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 1;
-      const i = Math.round(track.scrollLeft / (step || 1));
+      const max = track.scrollWidth - track.clientWidth;
+      const i = track.scrollLeft >= max - 2 ? cards.length - 1 : Math.round(track.scrollLeft / (step || 1));
       Array.from(dots.children).forEach((d, j) => d.setAttribute('aria-current', j === i ? 'true' : 'false'));
     };
     track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
     update();
-  })();
+  });
 </script>
 
 </body>
