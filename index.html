@@ -320,6 +320,13 @@
     box-shadow:var(--shadow);transition:all .3s;
     border:1px solid transparent;position:relative;
   }
+  @media (min-width:901px){
+    .expertise-grid>.expertise-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:50px 1fr auto;column-gap:1.4rem;align-items:center}
+    .expertise-grid>.expertise-card:first-child .expertise-icon{margin:0;grid-row:span 2}
+    .expertise-grid>.expertise-card:first-child h3{margin:0}
+    .expertise-grid>.expertise-card:first-child p{margin:0;grid-column:2}
+    .expertise-grid>.expertise-card:first-child .expertise-link{grid-column:3;grid-row:1/span 2;margin:0;white-space:nowrap}
+  }
   .expertise-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--gold-light)}
   .expertise-icon{
     width:50px;height:50px;border-radius:10px;
@@ -770,7 +777,7 @@
     <div class="section-head">
       <span class="eyebrow">Mes domaines d'intervention</span>
       <h2>Une approche patrimoniale 360°</h2>
-      <p>Six domaines, une seule stratégie.</p>
+      <p>Tous vos sujets patrimoniaux, une seule stratégie.</p>
     </div>
     <div class="expertise-grid">
       <div class="expertise-card">
@@ -796,6 +803,14 @@
         <h3>Placements & épargne</h3>
         <p>Audit de votre allocation actuelle face à votre profil de risque réel. Arbitrages et nouvelles solutions : assurance-vie, PER, unités de compte (dont SCPI et private equity). Pour une souscription en direct, je travaille avec des partenaires habilités.</p>
         <a href="placements-epargne-bordeaux.html" class="expertise-link">Placer votre épargne →</a>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 15l2.5 2.5L16 13"/></svg>
+        </div>
+        <h3>Préparation de la retraite</h3>
+        <p>Bilan de vos droits futurs, estimation de l'écart avec le niveau de vie souhaité, puis stratégie pour le combler : PER, assurance-vie, immobilier, calendrier de départ.</p>
+        <a href="preparer-sa-retraite-bordeaux.html" class="expertise-link">Préparer votre retraite →</a>
       </div>
       <div class="expertise-card">
         <div class="expertise-icon">
