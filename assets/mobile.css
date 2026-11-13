@@ -1,0 +1,33 @@
+/* Retouches mobiles communes aux pages intérieures (chargé après le style de chaque page) */
+@media (max-width:900px){
+  /* Haut de page plus serré */
+  .article-hero{padding:1.6rem 0 1.4rem}
+  .article-hero h1{margin-bottom:.6rem}
+  .breadcrumbs{font-size:.8rem}
+  .hero-lede{font-size:1rem;line-height:1.6}
+
+  /* Bouton menu : même icône que l'accueil */
+  .nav-toggle{border:0;padding:.4rem;background:none;font-size:0;gap:0}
+  .nav-toggle-bars{gap:5px}
+  .nav-toggle-bars span{width:26px;height:2.5px}
+
+  /* Pied de page compact */
+  footer{padding:2.2rem 0 1.2rem;margin-top:2rem}
+  .footer-grid{grid-template-columns:1fr;gap:1.3rem;margin-bottom:1.3rem}
+  .footer-grid > div:first-child > p{display:none}
+  .footer-logo{margin-bottom:.8rem}
+  footer h4{font-family:'Inter',system-ui,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.5rem}
+  .footer-grid ul{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem}
+  .footer-grid ul li{margin:0;font-size:.85rem;line-height:1.4}
+  .footer-grid ul li a{font-size:.85rem}
+  .footer-grid ul li:has(svg),.footer-grid ul li:has(br){flex-basis:100%}
+  .footer-grid ul li:has(a[href*="merignac"]),.footer-grid ul li:has(a[href*="defiscalisation"]){display:none}
+  .footer-grid > div + div{border-top:1px solid rgba(255,255,255,.1);padding-top:1.1rem}
+  .footer-bottom{font-size:.75rem}
+
+  /* Liste d'articles compacte */
+  .article-card{padding:.85rem 1rem;gap:.25rem;border-radius:10px}
+  .article-card p,.article-card .card-link{display:none}
+  .article-card h3{font-size:1rem;line-height:1.3}
+  .article-card .cat{font-size:.66rem}
+}
