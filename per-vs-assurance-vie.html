@@ -88,7 +88,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
 </script>
-<script src="/assets/consent.js" defer></script>
+<script src="/assets/consent.js?v=2" defer></script>
 <script src="/assets/calendly.js" defer></script>
 
 
@@ -205,6 +205,7 @@ body{padding-bottom:76px}
 }
 </style>
 <link rel="stylesheet" href="/assets/mobile.css">
+<link rel="stylesheet" href="/assets/guide.css?v=4">
 </head>
 <body>
 
@@ -333,6 +334,27 @@ body{padding-bottom:76px}
       <a href="https://calendly.com/partenariat-idcap/30min" class="btn" target="_blank" rel="noopener">Réservez un créneau ici →</a>
     </div>
 
+    <aside class="guide-offer" id="recevoir-le-guide" aria-label="Recevoir le guide gratuit">
+  <span class="go-eyebrow">Guide gratuit · PDF</span>
+  <h2>Recevez gratuitement le guide retraite</h2>
+  <p>« Les 10 questions à se poser avant de préparer sa retraite » : âge de départ, montant de la pension, épargne, fiscalité, protection du conjoint, avec des exemples chiffrés et une check-list. Vous pouvez aussi cocher le second guide.</p>
+  <form action="https://formspree.io/f/xqejaavq" method="POST" data-guide-form data-adp-event="demande_guide" data-form="guide" data-webhook="https://vps-bf10f473.vps.ovh.net/webhook/guide-pdf">
+    <input type="hidden" name="_subject" value="Demande de guide depuis le site">
+    <input type="hidden" name="source" value="">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+    <fieldset class="go-choices"><legend>Guide(s) souhaité(s)</legend><label class="go-choice"><input type="checkbox" name="guide" value="retraite" checked><img src="/guides/couverture-retraite.jpg" alt="" width="56" height="79" loading="lazy"><span>Les 10 questions à se poser avant de préparer sa retraite<small>12 pages · édition 2027</small></span></label><label class="go-choice"><input type="checkbox" name="guide" value="transmission"><img src="/guides/couverture-transmission.jpg" alt="" width="56" height="79" loading="lazy"><span>Transmettre son patrimoine en Gironde : le guide pratique 2027<small>12 pages · succession, donation</small></span></label></fieldset><p class="go-error" role="alert" hidden>Cochez au moins un guide.</p>
+    <div class="go-fields">
+      <input type="text" name="prenom" placeholder="Prénom" autocomplete="given-name" required aria-label="Prénom">
+      <input type="text" name="nom" placeholder="Nom" autocomplete="family-name" required aria-label="Nom">
+      <input type="email" name="email" placeholder="Email" autocomplete="email" required aria-label="Email">
+      <input type="tel" name="telephone" placeholder="Téléphone (facultatif)" autocomplete="tel" aria-label="Téléphone (facultatif)">
+    </div>
+    <label class="go-consent"><input type="checkbox" name="accord_guide" value="oui" required><span>J'accepte que mes coordonnées soient utilisées pour m'envoyer le guide par email.</span></label>
+    <label class="go-consent"><input type="checkbox" name="accord_recontact" value="oui"><span>J'accepte qu'Aurélien Dewitte me recontacte par email ou téléphone pour échanger sur ma situation (facultatif).</span></label>
+    <button type="submit">Recevoir le guide</button>
+    <p class="go-meta">Vos données ne sont jamais cédées et vous pouvez retirer votre accord à tout moment (<a href="/confidentialite.html">politique de confidentialité</a>). Guide à visée pédagogique, sans conseil personnalisé.</p>
+  </form>
+</aside>
     <div class="author-box">
       <img src="/assets/photo-pro-240.jpg" alt="Aurélien Dewitte" width="84" height="84" loading="lazy">
       <p><strong>Aurélien Dewitte</strong>Conseiller en gestion de patrimoine à Bordeaux depuis 2019, membre de la CNCGP. J'accompagne plus de 400 familles, dirigeants et professionnels libéraux en Gironde. <a href="/#a-propos">En savoir plus</a> · <a href="https://www.linkedin.com/in/aur%C3%A9lien-dewitte-gestiondepatrimoine/" target="_blank" rel="noopener me">LinkedIn</a></p>

@@ -137,6 +137,12 @@
   document.addEventListener('submit', function (e) {
     var f = e.target;
     if (!f || (f.getAttribute('action') || '').indexOf('formspree.io') === -1) return;
+    if (f.hasAttribute('data-guide-form') && !f.querySelector('[name="guide"]:checked')) {
+      e.preventDefault();
+      var err = f.querySelector('.go-error');
+      if (err) err.hidden = false;
+      return;
+    }
     if (!window.fetch || !window.FormData) return;
     e.preventDefault();
     if (f.getAttribute('data-sending')) return;
@@ -147,7 +153,11 @@
     fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
       .then(function (r) {
         if (!r.ok) throw new Error('Formspree ' + r.status);
-        track(f.getAttribute('data-adp-event') || 'form_submit', { method: f.getAttribute('data-form') || 'formulaire_contact', page: location.pathname });
+        var guide = Array.prototype.map.call(f.querySelectorAll('[name="guide"]:checked'), function (i) { return i.value; }).join(',') || undefined;
+        var params = { method: f.getAttribute('data-form') || 'formulaire_contact', page: location.pathname };
+        if (guide) params.guide = guide;
+        track(f.getAttribute('data-adp-event') || 'form_submit', params);
+        if (f.hasAttribute('data-guide-form')) { guideDone(f, guide); return; }
         /* data-success="Titre|Texte" : message de confirmation propre à un formulaire */
         var msg = (f.getAttribute('data-success') || '').split('|');
         var title = msg[0] || 'Merci, votre demande est bien envoyée';
@@ -167,6 +177,51 @@
         HTMLFormElement.prototype.submit.call(f);
       });
   });
+
+  /* --- Formulaire « Recevoir le guide » ---
+     Après l'envoi à Formspree (alerte Gmail), les coordonnées partent aussi vers
+     le webhook n8n indiqué dans data-webhook : ajout à la feuille Google Sheets
+     et envoi automatique du guide par email. Le guide est de toute façon
+     proposé en téléchargement immédiat. */
+  var GUIDES = {
+    retraite: { url: '/guides/guide-retraite-2027.pdf', titre: 'Les 10 questions à se poser avant de préparer sa retraite' },
+    transmission: { url: '/guides/guide-transmission-2027.pdf', titre: 'Transmettre son patrimoine en Gironde : le guide pratique 2027' }
+  };
+  function guideDone(f, guide) {
+    var list = (guide || 'retraite').split(',').filter(function (k) { return GUIDES[k]; });
+    var hook = f.getAttribute('data-webhook');
+    if (hook) {
+      var data = {};
+      new FormData(f).forEach(function (v, k) { if (k.charAt(0) !== '_' && k !== 'guide') data[k] = v; });
+      data.guide = list.join(',');
+      data.page = location.pathname;
+      data.date = new Date().toISOString();
+      fetch(hook, { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(function () {});
+    }
+    var done = document.createElement('div');
+    done.className = 'go-done';
+    done.setAttribute('role', 'status');
+    done.innerHTML = '<h3>' + (list.length > 1 ? 'Merci, vos guides sont prêts' : 'Merci, votre guide est prêt') + '</h3>';
+    list.forEach(function (k) {
+      var p = document.createElement('p');
+      p.textContent = '« ' + GUIDES[k].titre + ' »';
+      var a = document.createElement('a');
+      a.className = 'go-download';
+      a.setAttribute('download', '');
+      a.href = GUIDES[k].url;
+      a.textContent = list.length > 1 ? 'Télécharger le guide ' + (k === 'retraite' ? 'retraite' : 'transmission') + ' (PDF)' : 'Télécharger le guide (PDF)';
+      a.addEventListener('click', function () { track('telechargement_guide', { guide: k, page: location.pathname }); });
+      done.appendChild(p);
+      done.appendChild(a);
+    });
+    var meta = document.createElement('p');
+    meta.className = 'go-meta';
+    meta.innerHTML = (hook ? 'Vous ' + (list.length > 1 ? 'les' : 'le') + ' recevez aussi par email dans quelques minutes (pensez à vérifier vos indésirables). ' : '') +
+      'Une question ? <a href="tel:+33620880909">06 20 88 09 09</a>';
+    done.appendChild(meta);
+    f.innerHTML = '';
+    f.appendChild(done);
+  }
 
   function init() {
     var choice = readChoice();

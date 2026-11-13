@@ -42,3 +42,10 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# Guides PDF offerts contre coordonnées : pas d'indexation par les moteurs
+# (ils restent accessibles par le lien de téléchargement et l'email envoyé par n8n).
+[[headers]]
+  for = "/guides/*.pdf"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
