@@ -554,7 +554,8 @@
   }
 
   .avis-dots{display:none}
-  .hero-lede-m,.lbl-m,.about-toggle,.hero-more{display:none}
+  .hero-lede-m,.lbl-m,.about-toggle,.hero-more,.audience-m{display:none}
+  .card-date{font-size:.8rem;color:var(--ink-soft)}
   /* MOBILE */
   @media (max-width:900px){
     .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1.2rem;box-shadow:var(--shadow);border-bottom:1px solid var(--line)}
@@ -628,6 +629,14 @@
     .about-pedago > p:not(.pedago-note){display:none}
     /* Pourquoi un CGP : déjà dit ailleurs, masqué sur mobile */
     .why-card{display:none}
+    #pour-qui h2{font-size:1.5rem}
+    .audience-list{display:none}
+    .audience-m{display:block;list-style:none;margin:1.2rem 0 0;padding:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .audience-m li+li{border-top:1px solid var(--line)}
+    .audience-m a{display:flex;flex-direction:column;padding:.8rem 2.4rem .8rem 1rem;position:relative;text-decoration:none}
+    .audience-m a::after{content:'›';position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--gold-dark)}
+    .audience-m strong{color:var(--navy);font-weight:600;font-size:.98rem}
+    .audience-m span{color:var(--ink-soft);font-size:.85rem}
     #pour-qui .two-col{gap:0}
     /* Articles : titres seulement */
     .articles-grid{gap:.7rem}
@@ -1018,6 +1027,13 @@
           <div><strong>Investisseurs avertis</strong><span>Diversification via les unités de compte de l'assurance-vie et du PER (SCPI, private equity), et en direct avec des partenaires habilités.</span></div>
         </li>
       </ul>
+      <ul class="audience-m">
+        <li><a href="bilan-patrimonial-bordeaux.html"><strong>Particuliers & familles</strong><span>Épargne, retraite, succession</span></a></li>
+        <li><a href="cgp-retraites-bordeaux.html"><strong>Retraités</strong><span>Revenus, transmission, dépendance</span></a></li>
+        <li><a href="cgp-chefs-entreprise-bordeaux.html"><strong>Chefs d'entreprise</strong><span>Rémunération, holding, cession</span></a></li>
+        <li><a href="cgp-professions-liberales-bordeaux.html"><strong>Professions libérales</strong><span>Fiscalité, prévoyance, immobilier</span></a></li>
+        <li><a href="placements-epargne-bordeaux.html"><strong>Investisseurs avertis</strong><span>Diversification, SCPI, private equity</span></a></li>
+      </ul>
     </div>
     <div class="why-card">
       <span class="eyebrow">Pourquoi un CGP plutôt que sa banque ?</span>
@@ -1044,18 +1060,21 @@
 <a href="loi-de-finances-2027-epargne.html" class="article-card">
   <span class="cat">FISCALITÉ & ÉPARGNE</span>
   <h3>Loi de finances 2027 et épargne : ce qui est voté, ce qui ne l'est pas</h3>
+  <span class="card-date"><time datetime="2026-11-09">Mis à jour le 9 novembre 2026</time></span>
   <p>Flat tax, assurance-vie, PER, dons d'argent, retraités : ce qui est déjà en vigueur, ce que propose le budget 2027, et ce qu'il est utile de faire avant le 31 décembre.</p>
   <span class="card-link">Lire l'article →</span>
 </a>
 <a href="donation-100000-euros.html" class="article-card">
   <span class="cat">TRANSMISSION</span>
   <h3>Donation 100 000 € par parent : le mode d'emploi complet</h3>
+  <span class="card-date"><time datetime="2026-10-06">6 octobre 2026</time></span>
   <p>L'abattement de 100 000 € par parent et par enfant tous les 15 ans, le don TEPA, le démembrement, le Pacte Dutreil : tout ce qu'il faut savoir pour transmettre jusqu'à 1,2 M€ en franchise fiscale.</p>
   <span class="card-link">Lire l'article →</span>
 </a>
 <a href="per-vs-assurance-vie.html" class="article-card">
   <span class="cat">COMPARATIF</span>
   <h3>PER ou Assurance-vie : lequel choisir en 2026 ?</h3>
+  <span class="card-date"><time datetime="2026-09-15">15 septembre 2026</time></span>
   <p>Fiscalité, disponibilité, transmission : le comparatif détaillé pour choisir la bonne enveloppe selon votre tranche d'imposition et votre horizon. Cas concrets par profil.</p>
   <span class="card-link">Lire l'article →</span>
 </a>
