@@ -401,7 +401,9 @@
   .why-list li::before{content:'✓';color:var(--gold-light);font-weight:bold;font-size:1.1rem}
 
   /* TESTIMONIALS */
-  .testimonials{background:var(--cream)}
+  .testimonials{background:#fff}
+  .testimonials .testimonial{border:1px solid var(--line)}
+  #articles{background:var(--cream)}
   .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
   .testimonial{
     background:#fff;border-radius:12px;padding:2rem;
@@ -534,7 +536,7 @@
     z-index:90;border-top:1px solid var(--line);
   }
   .mobile-cta .btn{width:100%}
-  .mobile-cta-row{display:flex;gap:.6rem}
+  .mobile-cta-row{gap:.6rem}
   .mobile-cta-row .btn-call{flex:0 0 auto;width:auto;padding-left:1.1rem;padding-right:1.1rem}
   .mobile-cta-row .btn-primary{flex:1}
   /* Note Google et téléphone dans le premier écran mobile */
@@ -546,6 +548,7 @@
   }
 
   .avis-dots{display:none}
+  .hero-lede-m,.lbl-m,.about-toggle{display:none}
   /* MOBILE */
   @media (max-width:900px){
     .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1.2rem;box-shadow:var(--shadow);border-bottom:1px solid var(--line)}
@@ -590,6 +593,37 @@
     /* Villes : pastilles plus petites */
     .secteurs-list{gap:.3rem}
     .secteurs-list a{padding:.36rem .55rem;font-size:.74rem;line-height:1.3}
+    /* Rythme vertical resserré */
+    .section{padding:2.6rem 0}
+    .section-head{margin-bottom:1.8rem}
+    /* Bouton et introduction du haut, version courte */
+    .hero-lede-d{display:none}
+    .lbl-d{display:none}
+    .hero-lede-m{display:block}
+    .lbl-m{display:inline}
+    /* Méthode : frise verticale compacte */
+    .method-grid{grid-template-columns:1fr;gap:0;margin-top:1rem;border-left:2px solid var(--gold-light);margin-left:18px;padding-left:0}
+    .step{display:grid;grid-template-columns:36px 1fr;column-gap:.9rem;text-align:left;padding:.55rem 0;margin-left:-19px}
+    .step-num{width:36px;height:36px;font-size:1rem;border-width:2px;margin:0;grid-row:span 2;box-shadow:none}
+    .step h4{margin:0;font-size:1rem;align-self:end}
+    .step p{font-size:.85rem;margin:0}
+    /* À propos allégé */
+    .about-grid{gap:1.2rem}
+    .about-grid>.about-photo{max-width:140px;border-radius:50%;aspect-ratio:1;box-shadow:var(--shadow)}
+    .about-more:not(.open){display:none}
+    .about-toggle{display:inline-block;background:none;border:0;padding:0;margin:-.3rem 0 1rem;font:inherit;font-weight:600;font-size:.92rem;color:var(--gold-dark);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+    .about-pedago > p:not(.pedago-note){display:none}
+    /* Pourquoi un CGP : déjà dit ailleurs, masqué sur mobile */
+    .why-card{display:none}
+    #pour-qui .two-col{gap:0}
+    /* Articles : titres seulement */
+    .articles-grid{gap:.7rem}
+    .article-card{padding:1rem 1.1rem;gap:.35rem}
+    .article-card p,.article-card .card-link{display:none}
+    .article-card h3{font-size:1.02rem}
+    /* Contact : sans le bloc carte (lien « voir le plan » conservé) */
+    .contact-info > div{margin-bottom:1.1rem}
+    .contact-info > div:has(.carte-fiche){display:none}
     /* Avis : carrousel, un avis à la fois */
     .testimonial-grid{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:.5rem 0 1rem}
     .testimonial-grid .testimonial{box-shadow:0 2px 10px rgba(31,58,95,.08);padding:1.6rem 1.4rem}
@@ -597,13 +631,14 @@
     .testimonial-grid .testimonial::before{top:.3rem;left:1rem}
     .testimonial-grid::-webkit-scrollbar{display:none}
     .testimonial-grid .testimonial{flex:0 0 100%;scroll-snap-align:center}
-    .expertise-grid{display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.5rem 0 1rem}
-    .expertise-grid::-webkit-scrollbar{display:none}
-    .expertise-grid .expertise-card{flex:0 0 86%;scroll-snap-align:start;padding:1.5rem 1.3rem;display:flex;flex-direction:column;align-items:flex-start}
-    .expertise-grid .expertise-link{margin-top:auto}
-    .expertise-grid .expertise-card p{margin-bottom:1rem}
-    .expertise-card:hover{transform:none}
-    #expertDots{margin-bottom:0}
+    /* Domaines : liste compacte, une ligne par domaine */
+    .expertise-grid{gap:.6rem}
+    .expertise-card,.expertise-card:hover{display:grid;grid-template-columns:40px 1fr;column-gap:.9rem;align-items:center;padding:.85rem 1rem;transform:none;border-radius:10px}
+    .expertise-icon{width:40px;height:40px;margin:0;grid-row:span 2;border-radius:8px}
+    .expertise-icon svg{width:20px;height:20px}
+    .expertise-card h3{font-size:1.02rem;margin:0;line-height:1.25}
+    .expertise-card p{display:none}
+    .expertise-link{margin-top:.15rem;font-size:.85rem;justify-self:start}
     .expertises .section-head{margin-bottom:1.6rem}
     .avis-dots{display:flex;justify-content:center;gap:.2rem;margin:0 0 1.5rem}
     .avis-dots button{width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center}
@@ -612,6 +647,10 @@
   }
   @media (max-width:560px){
     .footer-grid{grid-template-columns:1fr}
+    .footer-grid{gap:1.4rem}
+    .footer-grid ul{display:grid;grid-template-columns:1fr 1fr;gap:.45rem 1rem}
+    .footer-grid ul li{margin:0;font-size:.85rem;line-height:1.35}
+    .footer-grid ul li:has(a[href*="merignac"]),.footer-grid ul li:has(a[href*="defiscalisation"]){display:none}
   }
   .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem}
   .article-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.7rem;display:flex;flex-direction:column;gap:.85rem;transition:transform .2s, box-shadow .2s;text-decoration:none}
@@ -669,11 +708,12 @@
       <h1>Conseiller en gestion de patrimoine <span class="accent">à Bordeaux</span></h1>
       <p class="hero-quick"><a href="https://share.google/KvCwFTLLdypbulPEu" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span> 5,0 · 45 avis Google</a><a href="tel:+33620880909">📞 06 20 88 09 09</a></p>
       <p class="hero-tagline">Votre patrimoine mérite un conseiller qui vous connaît vraiment.</p>
-      <p class="hero-lede">
+      <p class="hero-lede hero-lede-d">
         Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, <a href="transparence-remuneration.html">transparent sur ma rémunération</a>, et <strong>sans honoraires dans la grande majorité des cas</strong>.
       </p>
+      <p class="hero-lede hero-lede-m">Depuis 2019, j'accompagne particuliers, dirigeants et professions libérales en Gironde. Libre du choix de mes partenaires, <a href="transparence-remuneration.html">transparent sur ma rémunération</a>.</p>
       <div class="hero-ctas">
-        <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener">Réserver un premier échange · 30 min gratuit</a>
+        <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener"><span class="lbl-d">Réserver un premier échange · 30 min gratuit</span><span class="lbl-m">Réserver 30 min offertes</span></a>
         <a href="#expertises" class="btn btn-outline">Voir mes expertises</a>
       </div>
       <div class="hero-trust">
@@ -732,7 +772,7 @@
       <h2>Une approche patrimoniale 360°</h2>
       <p>Six domaines, une seule stratégie.</p>
     </div>
-    <div class="expertise-grid" id="expertCarousel">
+    <div class="expertise-grid">
       <div class="expertise-card">
         <div class="expertise-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H1v3h8v3l4-4-4-4v2zm10-7l-4 4 4 4V13h8v-3h-8V7z"/></svg>
@@ -782,7 +822,82 @@
         <a href="transmission-patrimoine-bordeaux.html" class="expertise-link">Transmettre votre patrimoine →</a>
       </div>
     </div>
-    <div class="avis-dots" id="expertDots" aria-label="Choisir un domaine"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="temoignages">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Ce qu'en disent mes clients</span>
+      <h2>La confiance se construit dans la durée</h2>
+    </div>
+    <h3 class="testimonial-group">Avis publiés sur Google</h3>
+    <p class="testimonial-note">Publiés par mes clients sur ma fiche Google, sans contrôle du cabinet.</p>
+    <div class="testimonial-grid" id="avisCarousel">
+
+      <div class="testimonial">
+        <p>J'ai fait appel à Aurélien Dewitte pour un bilan patrimonial complet. Il a pris le temps de comprendre ma situation avant de me proposer des solutions adaptées (assurance vie, PER…). Un conseiller disponible, pédagogue et de bon conseil, que je recommande à Bordeaux et en Gironde.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PT</div>
+          <div><strong>Pierre T.</strong><span>Avis Google · septembre 2026</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>J’ai eu l’occasion d’échanger longuement avec Monsieur Dewitte et j’ai particulièrement apprécié la qualité de son écoute, sa disponibilité et le temps qu’il a consacré à ma situation.<br><br>Il a pris le temps de répondre à mes questions, de m’expliquer les différentes possibilités et de tenir compte de mes réflexions et de mes hésitations.<br><br>J’ai également beaucoup apprécié le soin apporté à notre rendez-vous, d’autant qu’il s’était déplacé spécialement pour me rencontrer et a pris largement le temps nécessaire pour que nous puissions échanger sereinement.<br><br>Un conseiller disponible, attentif et très agréable dans les échanges. Je le remercie sincèrement pour son accompagnement et sa gentillesse.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AJ</div>
+          <div><strong>Agathe J.</strong><span>Avis Google · septembre 2026</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>Analyse très pertinente de notre situation et propositions concrètes pour avancer. Très bonne approche et bon contact.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FL</div>
+          <div><strong>Fabien L.</strong><span>Avis Google · septembre 2026</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>Super contact avec Aurélien depuis maintenant 3 ans ! C’est un conseiller bienveillant, professionnel, discret et à l’écoute des différents projets ! Je recommande sans hésiter 😊</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SN</div>
+          <div><strong>Sophie N.</strong><span>Avis Google · Agent immobilier · Bordeaux</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>J’ai laissé Aurélien s’occuper de mon épargne pour ma retraite et pour l’avenir de mes enfants. Je recommande chaleureusement, autant pour les compétences que pour sa sympathie.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MH</div>
+          <div><strong>Matthieu H.</strong><span>Avis Google · Commercial automobile · Bordeaux</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p>Aurélien est très professionnel, bienveillant, à l’écoute des attentes. Je le recommande sans hésiter, il vous apportera une aide et des conseils de grande qualité.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LD</div>
+          <div><strong>Laure D.</strong><span>Avis Google · Dirigeante d’entreprise · Rouen</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="avis-dots" id="avisDots" aria-label="Choisir un avis"></div>
+
+    <!-- Encart Google Business -->
+    <div class="google-cta">
+      <div class="google-cta-left">
+        <svg class="google-logo" viewBox="0 0 48 48" width="44" height="44" aria-label="Google">
+          <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917"/>
+          <path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691"/>
+          <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44"/>
+          <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917"/>
+        </svg>
+        <div>
+          <div class="google-cta-stars">★★★★★</div>
+          <div class="google-cta-text"><strong>5,0 sur 45 avis Google</strong><span class="google-cta-more"><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</span></div>
+        </div>
+      </div>
+      <a href="https://share.google/KvCwFTLLdypbulPEu" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Voir nos avis sur Google et en laisser un">Voir nos avis Google →</a>
+    </div>
   </div>
 </section>
 
@@ -864,9 +979,12 @@
       <span class="eyebrow">À propos</span>
       <h2>Aurélien Dewitte, votre conseiller à Bordeaux</h2>
       <p>J'exerce le conseil en gestion de patrimoine depuis 2019, et je suis membre de la CNCGP depuis 2023. En sept ans, j'ai accompagné plus de 400 familles, dirigeants et professionnels libéraux, principalement à Bordeaux et en Gironde, où je vis.</p>
+      <div class="about-more" id="aboutMore">
       <p>Mon parcours n'a rien de classique. Avant la gestion de patrimoine, j'ai été électricien et agent de maintenance dans l'industrie et le bâtiment, puis j'ai construit et entretenu des piscines chez des particuliers, avant de travailler en détection de fuites pour des experts d'assurance, des assureurs et des syndics. J'ai ensuite rejoint le réseau Capfinances, puis ID CAP, au sein du même groupe Premium. De ces années de terrain, j'ai gardé le goût du concret, un langage simple et une vraie proximité avec les artisans, les commerçants et les familles que j'accompagne aujourd'hui.</p>
       <p>Ma conviction est simple : la gestion de patrimoine ne doit pas être réservée aux gros patrimoines. J'accompagne aussi bien un jeune actif qui démarre une épargne à 50 € par mois qu'un dirigeant qui prépare la cession de son entreprise, avec la même exigence.</p>
       <p>Ma façon de travailler : je viens à vous, chez vous, sur votre lieu de travail ou à mon bureau de la rue Surson. Je prends le temps de comprendre votre situation avant de proposer quoi que ce soit, et je reste votre interlocuteur unique dans la durée, avec au minimum un point par an.</p>
+      </div>
+      <button type="button" class="about-toggle" aria-controls="aboutMore" aria-expanded="false">Lire la suite</button>
       <p class="about-status"><strong>Mon statut, en toute transparence :</strong> mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, ORIAS n° 19 002 406, membre de la CNCGP, sous le contrôle de l'ACPR. Formé au conseil en investissements financiers, je ne suis pas inscrit en qualité de CIF : pour les placements qui relèvent de ce statut (SCPI ou private equity en direct, comptes-titres), je travaille avec des partenaires habilités.</p>
       <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener">Échanger 30 minutes avec moi</a>
       <p class="about-linkedin"><a href="https://www.linkedin.com/in/aur%C3%A9lien-dewitte-gestiondepatrimoine/" target="_blank" rel="noopener me">Voir mon parcours sur LinkedIn →</a></p>
@@ -947,82 +1065,6 @@
       <li><a href="conseiller-patrimoine-mont-de-marsan.html">Mont-de-Marsan</a></li>
       <li><a href="conseiller-patrimoine-dax.html">Dax</a></li>
     </ul>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section testimonials" id="temoignages">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Ce qu'en disent mes clients</span>
-      <h2>La confiance se construit dans la durée</h2>
-    </div>
-    <h3 class="testimonial-group">Avis publiés sur Google</h3>
-    <p class="testimonial-note">Publiés par mes clients sur ma fiche Google, sans contrôle du cabinet.</p>
-    <div class="testimonial-grid" id="avisCarousel">
-
-      <div class="testimonial">
-        <p>J'ai fait appel à Aurélien Dewitte pour un bilan patrimonial complet. Il a pris le temps de comprendre ma situation avant de me proposer des solutions adaptées (assurance vie, PER…). Un conseiller disponible, pédagogue et de bon conseil, que je recommande à Bordeaux et en Gironde.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">PT</div>
-          <div><strong>Pierre T.</strong><span>Avis Google · septembre 2026</span></div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <p>J’ai eu l’occasion d’échanger longuement avec Monsieur Dewitte et j’ai particulièrement apprécié la qualité de son écoute, sa disponibilité et le temps qu’il a consacré à ma situation.<br><br>Il a pris le temps de répondre à mes questions, de m’expliquer les différentes possibilités et de tenir compte de mes réflexions et de mes hésitations.<br><br>J’ai également beaucoup apprécié le soin apporté à notre rendez-vous, d’autant qu’il s’était déplacé spécialement pour me rencontrer et a pris largement le temps nécessaire pour que nous puissions échanger sereinement.<br><br>Un conseiller disponible, attentif et très agréable dans les échanges. Je le remercie sincèrement pour son accompagnement et sa gentillesse.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AJ</div>
-          <div><strong>Agathe J.</strong><span>Avis Google · septembre 2026</span></div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <p>Analyse très pertinente de notre situation et propositions concrètes pour avancer. Très bonne approche et bon contact.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">FL</div>
-          <div><strong>Fabien L.</strong><span>Avis Google · septembre 2026</span></div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <p>Super contact avec Aurélien depuis maintenant 3 ans ! C’est un conseiller bienveillant, professionnel, discret et à l’écoute des différents projets ! Je recommande sans hésiter 😊</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SN</div>
-          <div><strong>Sophie N.</strong><span>Avis Google · Agent immobilier · Bordeaux</span></div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <p>J’ai laissé Aurélien s’occuper de mon épargne pour ma retraite et pour l’avenir de mes enfants. Je recommande chaleureusement, autant pour les compétences que pour sa sympathie.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">MH</div>
-          <div><strong>Matthieu H.</strong><span>Avis Google · Commercial automobile · Bordeaux</span></div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <p>Aurélien est très professionnel, bienveillant, à l’écoute des attentes. Je le recommande sans hésiter, il vous apportera une aide et des conseils de grande qualité.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">LD</div>
-          <div><strong>Laure D.</strong><span>Avis Google · Dirigeante d’entreprise · Rouen</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="avis-dots" id="avisDots" aria-label="Choisir un avis"></div>
-
-    <!-- Encart Google Business -->
-    <div class="google-cta">
-      <div class="google-cta-left">
-        <svg class="google-logo" viewBox="0 0 48 48" width="44" height="44" aria-label="Google">
-          <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C12.955 4 4 12.955 4 24s8.955 20 20 20s20-8.955 20-20c0-1.341-.138-2.65-.389-3.917"/>
-          <path fill="#FF3D00" d="m6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4C16.318 4 9.656 8.337 6.306 14.691"/>
-          <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44"/>
-          <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917"/>
-        </svg>
-        <div>
-          <div class="google-cta-stars">★★★★★</div>
-          <div class="google-cta-text"><strong>5,0 sur 45 avis Google</strong><span class="google-cta-more"><br>Lisez ce que disent mes clients, ou ajoutez votre propre avis.</span></div>
-        </div>
-      </div>
-      <a href="https://share.google/KvCwFTLLdypbulPEu" class="btn btn-primary" target="_blank" rel="noopener" aria-label="Voir nos avis sur Google et en laisser un">Voir nos avis Google →</a>
-    </div>
   </div>
 </section>
 
@@ -1207,6 +1249,14 @@
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
+  // À propos : « Lire la suite » sur mobile
+  document.querySelectorAll('.about-toggle').forEach(b => b.addEventListener('click', () => {
+    const more = document.getElementById(b.getAttribute('aria-controls'));
+    const open = more.classList.toggle('open');
+    b.textContent = open ? 'Réduire' : 'Lire la suite';
+    b.setAttribute('aria-expanded', String(open));
+  }));
+
   // Avis longs : « Voir plus » au-delà de 6 lignes
   document.querySelectorAll('.testimonial > p').forEach(p => {
     p.classList.add('avis-court');
@@ -1222,7 +1272,7 @@
   });
 
   // Carrousels sur mobile (avis clients, domaines) avec points de navigation
-  [['avisCarousel', 'avisDots', 'Avis'], ['expertCarousel', 'expertDots', 'Domaine']].forEach(([trackId, dotsId, label]) => {
+  [['avisCarousel', 'avisDots', 'Avis']].forEach(([trackId, dotsId, label]) => {
     const track = document.getElementById(trackId);
     const dots = document.getElementById(dotsId);
     if (!track || !dots) return;
