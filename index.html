@@ -424,6 +424,8 @@
   .testimonial-author strong{display:block;color:var(--navy);font-size:.95rem}
   .testimonial-author span{font-size:.82rem;color:var(--ink-soft)}
   .testimonial-group{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.3rem;margin:0 0 .4rem}
+  .testimonial p.avis-court{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:.4rem}
+  .avis-plus{background:none;border:0;padding:.3rem 0;margin:0 0 .8rem;font:inherit;font-size:.85rem;font-weight:600;color:var(--gold-dark);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
   .testimonial-note{font-size:.85rem;color:var(--ink-soft);margin-bottom:1.5rem;max-width:720px}
 
   /* Google avis CTA */
@@ -943,7 +945,7 @@
       <h2>La confiance se construit dans la durée</h2>
     </div>
     <h3 class="testimonial-group">Avis publiés sur Google</h3>
-    <p class="testimonial-note">Extraits d'avis laissés par des clients sur ma fiche Google (les plus longs sont abrégés, signalés par […]). Le cabinet ne contrôle pas ces avis : ils sont publiés directement par leurs auteurs sur Google.</p>
+    <p class="testimonial-note">Publiés par mes clients sur ma fiche Google, sans contrôle du cabinet.</p>
     <div class="testimonial-grid" id="avisCarousel">
 
       <div class="testimonial">
@@ -1191,6 +1193,20 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Avis longs : « Voir plus » au-delà de 6 lignes
+  document.querySelectorAll('.testimonial > p').forEach(p => {
+    p.classList.add('avis-court');
+    if (p.scrollHeight <= p.clientHeight + 2) { p.classList.remove('avis-court'); return; }
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'avis-plus'; b.textContent = 'Voir plus'; b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', () => {
+      const open = p.classList.toggle('avis-court') === false;
+      b.textContent = open ? 'Voir moins' : 'Voir plus';
+      b.setAttribute('aria-expanded', String(open));
+    });
+    p.after(b);
+  });
 
   // Avis clients : carrousel sur mobile (points de navigation)
   (function () {
