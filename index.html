@@ -285,9 +285,6 @@
   .portrait-info h4{font-family:'Playfair Display';color:var(--navy);font-size:1.25rem;margin-bottom:.2rem}
   .portrait-info p{font-size:.9rem;color:var(--ink-soft);margin-bottom:.8rem}
   .portrait-badges{display:flex;gap:.5rem;flex-wrap:wrap}
-  .portrait-link{font-weight:600;color:var(--gold-dark);white-space:nowrap;text-decoration:underline;text-underline-offset:2px}
-  .portrait-link::after{content:'';position:absolute;inset:0}
-  .portrait-link:hover{color:var(--gold-dark)}
   .badge{
     font-size:.7rem;padding:.3rem .6rem;border-radius:3px;
     background:var(--cream);color:var(--navy);
@@ -557,7 +554,7 @@
   }
 
   .avis-dots{display:none}
-  .hero-lede-m,.lbl-m,.about-toggle{display:none}
+  .hero-lede-m,.lbl-m,.about-toggle,.hero-more{display:none}
   /* MOBILE */
   @media (max-width:900px){
     .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1.2rem;box-shadow:var(--shadow);border-bottom:1px solid var(--line)}
@@ -608,7 +605,14 @@
     /* Bouton et introduction du haut, version courte */
     .hero-lede-d{display:none}
     .lbl-d{display:none}
-    .hero-lede-m{display:block}
+    .hero-lede-m{display:block;margin-bottom:.5rem}
+    .hero-more{display:inline-block;background:none;border:0;padding:0;margin:0 0 1.4rem;font:inherit;font-weight:600;font-size:.95rem;color:var(--gold-dark);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+    #aboutSlot #a-propos{padding:0 0 1.4rem;background:none}
+    #aboutSlot #a-propos:not(.open){display:none}
+    #aboutSlot .container{padding:0}
+    #aboutSlot .about-photo,#aboutSlot .about-toggle,#aboutSlot .eyebrow{display:none}
+    #aboutSlot .about-more{display:block}
+    #aboutSlot h2{font-size:1.35rem;margin-bottom:.8rem}
     .lbl-m{display:inline}
     /* Méthode : frise verticale compacte */
     .method-grid{grid-template-columns:1fr;gap:0;margin-top:1rem;border-left:2px solid var(--gold-light);margin-left:18px;padding-left:0}
@@ -721,6 +725,8 @@
         Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, <a href="transparence-remuneration.html">transparent sur ma rémunération</a>, et <strong>sans honoraires dans la grande majorité des cas</strong>.
       </p>
       <p class="hero-lede hero-lede-m">Depuis 2019, j'accompagne particuliers, dirigeants et professions libérales en Gironde. Libre du choix de mes partenaires, <a href="transparence-remuneration.html">transparent sur ma rémunération</a>.</p>
+      <button type="button" class="hero-more" aria-controls="a-propos" aria-expanded="false">Lire plus</button>
+      <div id="aboutSlot"></div>
       <div class="hero-ctas">
         <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener"><span class="lbl-d">Réserver un premier échange · 30 min gratuit</span><span class="lbl-m">Réserver 30 min offertes</span></a>
         <a href="#expertises" class="btn btn-outline">Voir mes expertises</a>
@@ -752,7 +758,7 @@
       <div class="portrait-photo" aria-label="Portrait professionnel d'Aurélien Dewitte"></div>
       <div class="portrait-info">
         <h4>Aurélien Dewitte</h4>
-        <p>Conseiller en gestion de patrimoine à Bordeaux <a href="#a-propos" class="portrait-link">Lire plus</a></p>
+        <p>Conseiller en gestion de patrimoine à Bordeaux</p>
         <div class="portrait-badges">
           <span class="badge">CNCGP 2023</span>
           <span class="badge">ORIAS MIA</span>
@@ -1265,6 +1271,16 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Mobile : la section À propos se déplie sous le texte d'accueil (« Lire plus »)
+  const heroMore = document.querySelector('.hero-more'), slot = document.getElementById('aboutSlot'), about = document.getElementById('a-propos');
+  if (heroMore && slot && about && matchMedia('(max-width:900px)').matches) {
+    slot.appendChild(about);
+    const setOpen = open => { about.classList.toggle('open', open); heroMore.textContent = open ? 'Réduire' : 'Lire plus'; heroMore.setAttribute('aria-expanded', String(open)); };
+    heroMore.addEventListener('click', () => { const open = !about.classList.contains('open'); setOpen(open); if (!open) heroMore.scrollIntoView({block:'center'}); });
+    document.querySelectorAll('a[href="#a-propos"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); setOpen(true); heroMore.scrollIntoView({behavior:'smooth', block:'start'}); }));
+    if (location.hash === '#a-propos') setOpen(true);
+  }
 
   // À propos : « Lire la suite » sur mobile
   document.querySelectorAll('.about-toggle').forEach(b => b.addEventListener('click', () => {
