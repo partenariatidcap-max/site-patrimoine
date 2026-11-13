@@ -150,6 +150,8 @@
   function initInline() {
     var box = document.getElementById('calendly-inline');
     if (!box) return;
+    /* data-desktop-only : sur mobile, pas de calendrier intégré (trop haut) ; le bouton ouvre la fenêtre Calendly */
+    if (box.hasAttribute('data-desktop-only') && window.matchMedia && window.matchMedia('(max-width:900px)').matches) return;
     var start = function () {
       loadWidget(function () {
         window.Calendly.initInlineWidget({
