@@ -115,15 +115,29 @@
     if (cb) waiting.push(cb);
   }
 
-  /* Liens : la source est ajoutée à l'adresse ; si le widget est prêt, le
-     calendrier s'ouvre sur la page, sinon dans un nouvel onglet comme avant. */
+  /* Liens : la source est ajoutée à l'adresse et le calendrier s'ouvre par-dessus
+     la page. Si le widget n'est pas encore chargé, il est chargé à ce moment-là ;
+     s'il ne répond pas (réseau, bloqueur), la page Calendly s'ouvre à la place. */
   document.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest(SELECTOR) : null;
     if (!a) return;
     a.href = withSource(a.href);
-    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0 || !window.Calendly) return;
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
     e.preventDefault();
-    window.Calendly.initPopupWidget({ url: a.href });
+    var url = a.href;
+    if (window.Calendly) { window.Calendly.initPopupWidget({ url: url }); return; }
+    var done = false;
+    var timer = setTimeout(function () {
+      if (done) return;
+      done = true;
+      location.href = url;
+    }, 4000);
+    loadWidget(function () {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      window.Calendly.initPopupWidget({ url: url });
+    });
   });
 
   ['pointerover', 'touchstart', 'focusin'].forEach(function (type) {

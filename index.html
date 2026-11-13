@@ -540,6 +540,7 @@
     .hero-quick .stars{color:var(--gold)}
   }
 
+  .avis-dots{display:none}
   /* MOBILE */
   @media (max-width:900px){
     .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1.5rem;gap:1.2rem;box-shadow:var(--shadow);border-bottom:1px solid var(--line)}
@@ -562,9 +563,36 @@
     .portrait-info{padding:.6rem .9rem}
     .portrait-info h4{font-size:1.05rem;margin-bottom:0}
     .portrait-info p{font-size:.8rem;margin-bottom:.4rem;line-height:1.35}
-    .portrait-badges{gap:.3rem}
-    .badge{font-size:.62rem;padding:.15rem .4rem}
-    .portrait-badges .badge:nth-child(n+3){display:none}
+    .portrait-info p{margin-bottom:0}
+    .portrait-badges{display:none}
+    /* Boutons du haut : pleine largeur, l'un sous l'autre */
+    .hero-ctas{flex-direction:column;gap:.7rem;margin-bottom:1.6rem}
+    .hero-ctas .btn{width:100%}
+    /* Réassurance : ORIAS, CNCGP, Gironde sur une seule rangée */
+    .hero-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;padding-top:1.1rem}
+    .hero-trust .trust-desktop{display:none}
+    .trust-item{flex-direction:column;gap:.3rem;text-align:center;font-size:.76rem;line-height:1.3}
+    .trust-item svg{width:18px;height:18px}
+    /* Bandeau des chiffres plus compact */
+    .trust-strip{padding:1.6rem 0}
+    .trust-strip-grid{gap:1.1rem .8rem}
+    .trust-stat .num{font-size:1.6rem}
+    .trust-stat .num.stars-num{font-size:1.15rem;letter-spacing:.05em;line-height:1.4}
+    .trust-stat .lbl{font-size:.78rem;margin-top:.25rem;line-height:1.35}
+    /* Villes : pastilles plus petites */
+    .secteurs-list{gap:.3rem}
+    .secteurs-list a{padding:.36rem .55rem;font-size:.74rem;line-height:1.3}
+    /* Avis : carrousel, un avis à la fois */
+    .testimonial-grid{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:.5rem 0 1rem}
+    .testimonial-grid .testimonial{box-shadow:0 2px 10px rgba(31,58,95,.08);padding:1.6rem 1.4rem}
+    .testimonial-grid .testimonial p{margin-top:1rem}
+    .testimonial-grid .testimonial::before{top:.3rem;left:1rem}
+    .testimonial-grid::-webkit-scrollbar{display:none}
+    .testimonial-grid .testimonial{flex:0 0 100%;scroll-snap-align:center}
+    .avis-dots{display:flex;justify-content:center;gap:.2rem;margin:0 0 1.5rem}
+    .avis-dots button{width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .avis-dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
+    .avis-dots button[aria-current="true"]::before{background:var(--gold);transform:scale(1.25)}
   }
   @media (max-width:560px){
     .footer-grid{grid-template-columns:1fr}
@@ -608,7 +636,7 @@
         <li class="nav-outils"><a href="outils.html">Outils</a></li>
         <li><a href="#a-propos">À propos</a></li>
         <li><a href="#temoignages">Avis clients</a></li>
-        <li><a href="#contact" class="btn btn-primary" style="padding:.65rem 1.2rem">Prendre RDV</a></li>
+        <li><a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" style="padding:.65rem 1.2rem" target="_blank" rel="noopener">Prendre RDV</a></li>
       </ul>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -629,7 +657,7 @@
         Basé en Gironde et disponible partout en France, j'accompagne depuis 2019 les particuliers, dirigeants et professions libérales dans la structuration, la protection et le développement de leur patrimoine. Libre du choix de mes partenaires, <a href="transparence-remuneration.html">transparent sur ma rémunération</a>, et <strong>sans honoraires dans la grande majorité des cas</strong>.
       </p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Réserver un premier échange · 30 min gratuit</a>
+        <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener">Réserver un premier échange · 30 min gratuit</a>
         <a href="#expertises" class="btn btn-outline">Voir mes expertises</a>
       </div>
       <div class="hero-trust">
@@ -645,11 +673,11 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
           <span><strong>Cabinet</strong> en Gironde</span>
         </div>
-        <div class="trust-item">
+        <div class="trust-item trust-desktop">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <span>Réponse <strong>sous 24 h</strong></span>
         </div>
-        <div class="trust-item">
+        <div class="trust-item trust-desktop">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg>
           <span><strong>Sans honoraires</strong> dans la grande majorité des cas</span>
         </div>
@@ -674,7 +702,7 @@
 <section class="trust-strip">
   <div class="container trust-strip-grid">
     <div class="trust-stat"><span class="num">400+</span><span class="lbl">Familles & dirigeants accompagnés</span></div>
-    <div class="trust-stat"><span class="num">★★★★★</span><span class="lbl">5,0 · 45 avis Google</span></div>
+    <div class="trust-stat"><span class="num stars-num">★★★★★</span><span class="lbl">5,0 · 45 avis Google</span></div>
     <div class="trust-stat"><span class="num">24 h</span><span class="lbl">Délai de réponse moyen</span></div>
     <div class="trust-stat"><span class="num">1</span><span class="lbl">Interlocuteur unique, de l'audit au suivi</span></div>
   </div>
@@ -914,7 +942,8 @@
     </div>
     <h3 class="testimonial-group">Avis publiés sur Google</h3>
     <p class="testimonial-note">Extraits d'avis laissés par des clients sur ma fiche Google (les plus longs sont abrégés, signalés par […]). Le cabinet ne contrôle pas ces avis : ils sont publiés directement par leurs auteurs sur Google.</p>
-    <div class="testimonial-grid">
+    <div class="testimonial-grid" id="avisCarousel">
+
       <div class="testimonial">
         <p>J'ai fait appel à Aurélien Dewitte pour un bilan patrimonial complet. Il a pris le temps de comprendre ma situation avant de me proposer des solutions adaptées […]</p>
         <div class="testimonial-author">
@@ -958,6 +987,8 @@
         </div>
       </div>
     </div>
+
+    <div class="avis-dots" id="avisDots" aria-label="Choisir un avis"></div>
 
     <!-- Encart Google Business -->
     <div class="google-cta">
@@ -1149,7 +1180,7 @@
 
 <div class="mobile-cta mobile-cta-row">
   <a href="tel:+33620880909" class="btn btn-outline btn-call" aria-label="Appeler le 06 20 88 09 09">📞 Appeler</a>
-  <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+  <a href="https://calendly.com/partenariat-idcap/30min" class="btn btn-primary" target="_blank" rel="noopener">Prendre rendez-vous</a>
 </div>
 
 <script>
@@ -1158,6 +1189,28 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Avis clients : carrousel sur mobile (points de navigation)
+  (function () {
+    const track = document.getElementById('avisCarousel');
+    const dots = document.getElementById('avisDots');
+    if (!track || !dots) return;
+    const cards = Array.from(track.children);
+    cards.forEach((card, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Avis ' + (i + 1) + ' sur ' + cards.length);
+      b.addEventListener('click', () => track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' }));
+      dots.appendChild(b);
+    });
+    const update = () => {
+      const step = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 1;
+      const i = Math.round(track.scrollLeft / (step || 1));
+      Array.from(dots.children).forEach((d, j) => d.setAttribute('aria-current', j === i ? 'true' : 'false'));
+    };
+    track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+    update();
+  })();
 </script>
 
 </body>
