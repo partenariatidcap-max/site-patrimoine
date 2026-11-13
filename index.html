@@ -652,9 +652,12 @@
     .articles-grid .article-card p,.articles-grid .article-card .card-link{display:none}
     .articles-grid .article-card h3{font-size:1rem;line-height:1.3}
     .articles-grid .article-card .cat{font-size:.66rem}
-    .faq details{margin-bottom:.5rem;border-radius:10px}
-    .faq summary{padding:.8rem 1rem;font-size:.95rem;gap:.8rem}
-    .faq details > div{padding:0 1rem 1rem;font-size:.92rem}
+    .faq{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .faq details{margin:0;border:0;border-radius:0;box-shadow:none!important}
+    .faq details+details{border-top:1px solid var(--line)}
+    .faq summary{padding:.7rem 1rem;font-size:.9rem;line-height:1.35;gap:.8rem}
+    .faq summary::after{font-size:1.25rem}
+    .faq details > div{padding:0 1rem .9rem;font-size:.88rem;line-height:1.6}
     .secteurs-dep .secteurs-plus{margin:0;padding:.75rem 1rem;border-top:1px solid var(--line);background:var(--cream);font-size:.85rem;color:var(--ink-soft);line-height:1.5}
     /* Contact : sans le bloc carte (lien « voir le plan » conservé) */
     .contact-info{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
@@ -1151,27 +1154,27 @@
     </div>
     <div class="faq">
       <details>
-        <summary>Combien coûte un accompagnement patrimonial ?</summary>
+        <summary>Combien coûte un accompagnement patrimonial&nbsp;?</summary>
         <div>Le premier échange de 30 minutes est gratuit et sans engagement. Au-delà, <strong>dans la grande majorité des cas, mon accompagnement se fait sans honoraires</strong> : je suis rémunéré par les compagnies d'assurance et les partenaires financiers via des commissions, perçues uniquement si vous décidez de mettre en place une solution. Vous bénéficiez ainsi d'un conseil complet (audit, stratégie, mise en œuvre, suivi annuel) sans honoraires dans la grande majorité des cas. Quelques missions très spécifiques peuvent exceptionnellement faire l'objet d'honoraires forfaitaires (audit pur sans souscription, dossier successoral complexe à fort enjeu) ; ils sont toujours présentés et signés avant tout démarrage, conformément au code de déontologie CNCGP.</div>
       </details>
       <details>
-        <summary>Êtes-vous lié à une banque ou à une compagnie d'assurance ?</summary>
+        <summary>Êtes-vous lié à une banque ou à une compagnie d'assurance&nbsp;?</summary>
         <div>Non : je ne suis salarié d'aucune banque ni compagnie d'assurance. Je sélectionne pour chaque client, parmi une large gamme de partenaires, les solutions les mieux adaptées à votre profil. Mes recommandations ne sont jamais dictées par un quota commercial. En toute transparence : j'exerce en tant que mandataire d'intermédiaire en assurance (MIA) pour le compte d'ID CAP, et je suis rémunéré principalement par commissions, comme expliqué ci-dessus.</div>
       </details>
       <details>
-        <summary>Comment se passe un premier rendez-vous ?</summary>
+        <summary>Comment se passe un premier rendez-vous&nbsp;?</summary>
         <div>Le premier rendez-vous dure environ 30 minutes, par téléphone ou en visioconférence. Il se déroule en trois temps. <strong>D'abord, je me présente</strong> ainsi que le cabinet, ses partenaires et son cadre réglementaire. <strong>Ensuite, nous définissons ensemble votre situation idéale</strong> — vos projets, vos objectifs patrimoniaux à court et long terme. <strong>Enfin, nous établissons votre situation actuelle</strong> : organisation patrimoniale, revenus, fiscalité, contraintes spécifiques. Ce premier échange sert à collecter les informations nécessaires à l'étude de votre dossier. <strong>Un second rendez-vous est ensuite organisé pour vous présenter un bilan complet et des recommandations concrètes</strong> — sans aucun engagement de votre part.</div>
       </details>
       <details>
-        <summary>À partir de quel patrimoine est-ce pertinent ?</summary>
+        <summary>À partir de quel patrimoine est-ce pertinent&nbsp;?</summary>
         <div><strong>Aucun seuil minimum.</strong> Mon ambition est de rendre la gestion de patrimoine accessible à tous, quel que soit votre niveau de revenus ou de patrimoine. Mon premier contrat d'épargne pour un nouveau client peut démarrer à <strong>50 €/mois</strong>. L'accompagnement s'adapte aussi bien aux jeunes actifs qui commencent à se constituer un patrimoine qu'aux dirigeants préparant la cession de leur entreprise. Le bon moment pour s'occuper de son patrimoine, c'est dès que l'on commence à se poser la question.</div>
       </details>
       <details>
-        <summary>Travaillez-vous à distance ?</summary>
+        <summary>Travaillez-vous à distance&nbsp;?</summary>
         <div>Oui. <strong>Je viens à votre rencontre</strong> : à votre domicile, sur votre lieu de travail, ou dans mon bureau accessible au <strong>20 rue Surson, 33300 Bordeaux</strong>. Pour les échanges à distance ou si vous habitez en dehors de la métropole bordelaise, les rendez-vous se font en <strong>visioconférence</strong>, partout en France. Mon siège social est situé à Pujols-sur-Ciron (sud-Gironde) — c'est ma résidence personnelle, je privilégie toujours le déplacement vers vous ou un rendez-vous au bureau de Bordeaux.</div>
       </details>
       <details>
-        <summary>Quelles garanties réglementaires ?</summary>
+        <summary>Quelles garanties réglementaires&nbsp;?</summary>
         <div>Je suis inscrit à l'ORIAS sous le n° 19 002 406 en qualité de Mandataire d'Intermédiaire en Assurance, mandataire d'ID CAP. Membre de la CNCGP depuis 2023. Mon activité est soumise au contrôle de l'ACPR. Je ne suis pas inscrit en qualité de conseiller en investissements financiers (CIF) : les placements qui relèvent de ce statut sont proposés par l'intermédiaire de partenaires habilités. Responsabilité civile professionnelle MSIG Europe SE : 1 565 000 € par sinistre.</div>
       </details>
     </div>
