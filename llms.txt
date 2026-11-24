@@ -41,20 +41,21 @@ Statut réglementaire :
 - Gironde : [Bordeaux](https://aurelien-dewitte-patrimoine.fr/), [Mérignac](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-merignac.html), [Pessac](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-pessac.html), [Talence](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-talence.html), [Le Bouscat](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-le-bouscat.html), [Saint-Médard-en-Jalles](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-saint-medard-en-jalles.html), [Libourne](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-libourne.html), [Arcachon](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-arcachon.html), [Langon](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-langon.html), [La Réole](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-la-reole.html)
 - Lot-et-Garonne : [Marmande](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-marmande.html)
 - Dordogne : [Périgueux](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-perigueux.html), [Bergerac](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-bergerac.html)
-- Landes : [Mont-de-Marsan](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-mont-de-marsan.html), [Dax](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-dax.html)
+- Landes : [Mont-de-Marsan](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-mont-de-marsan.html), [Dax](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-dax.html), [Hossegor](https://aurelien-dewitte-patrimoine.fr/conseiller-patrimoine-hossegor.html)
 
 ## Outils gratuits
 
 - [Simulateur PER](https://aurelien-dewitte-patrimoine.fr/simulateur-per.html)
 - [Ma tranche d'imposition](https://aurelien-dewitte-patrimoine.fr/ma-tranche-imposition.html)
-- [Simulateur donation et succession](https://aurelien-dewitte-patrimoine.fr/simulateur-donation-succession.html)
+- [Simulateur droits de succession et de donation](https://aurelien-dewitte-patrimoine.fr/simulateur-donation-succession.html)
 - [Quiz patrimoine](https://aurelien-dewitte-patrimoine.fr/quiz-patrimoine.html)
 
 ## Guides et articles
 
 - [Questions fréquentes sur le patrimoine](https://aurelien-dewitte-patrimoine.fr/questions-patrimoine.html)
 - [Glossaire du patrimoine](https://aurelien-dewitte-patrimoine.fr/glossaire-patrimoine.html)
-- [Calendrier fiscal](https://aurelien-dewitte-patrimoine.fr/calendrier-fiscal.html)
+- [Date de déclaration d'impôts 2027 et calendrier fiscal](https://aurelien-dewitte-patrimoine.fr/calendrier-fiscal.html)
+- [Déficit foncier à Bordeaux](https://aurelien-dewitte-patrimoine.fr/deficit-foncier-bordeaux.html)
 - [Loi de finances 2027 et épargne](https://aurelien-dewitte-patrimoine.fr/loi-de-finances-2027-epargne.html)
 - [PER ou assurance-vie ?](https://aurelien-dewitte-patrimoine.fr/per-vs-assurance-vie.html)
 - [Donner 100 000 € à ses enfants](https://aurelien-dewitte-patrimoine.fr/donation-100000-euros.html)
