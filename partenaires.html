@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Google Analytics -->
+<!-- Google Analytics et Google Ads ne sont chargés qu'après consentement : voir assets/consent.js -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+</script>
+<script src="/assets/consent.js" defer></script>
+<script src="/assets/calendly.js" defer></script>
+
+
+<title>Mes partenaires notaires et experts-comptables | Aurélien Dewitte — Conseil en gestion de patrimoine</title>
+<meta name="description" content="Les notaires et experts-comptables de Bordeaux et de Gironde avec qui je travaille pour accompagner mes clients : transmission, création d'entreprise, succession.">
+<!-- BROUILLON : noindex, absente du sitemap et du menu tant qu'aucun cabinet n'a donné son accord écrit. -->
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1F3A5F;--navy-dark:#142540;--navy-light:#2E5A89;--gold:#C8A35C;--gold-light:#D4B97D;--gold-dark:#866A33;--cream:#FAF7F1;--paper:#FFFFFF;--ink:#1A2238;--ink-soft:#4A5468;--line:#E5E0D5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.25;color:var(--navy)}
+  h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem;letter-spacing:-.02em}
+  h2{font-size:1.5rem;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--gold-light)}
+  h3{font-size:1.1rem;margin:1.5rem 0 .6rem;color:var(--gold-dark)}
+  p,li{color:var(--ink-soft);margin-bottom:.9rem}
+  a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold-light);text-underline-offset:3px}
+  a:hover{color:var(--gold-dark)}
+  ul,ol{padding-left:1.4rem;margin-bottom:1rem}
+  li{margin-bottom:.4rem}
+  strong{color:var(--ink)}
+  .container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:.7rem;font-family:'Playfair Display';font-weight:700;font-size:1.25rem;color:var(--navy);text-decoration:none}
+  .logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 4px 12px rgba(20,37,64,.2)}
+  .logo small{display:block;font-size:.7rem;font-weight:400;color:var(--ink-soft);font-family:'Inter';letter-spacing:.05em;text-transform:uppercase;margin-top:-2px}
+  .back-link{font-size:.92rem;color:var(--ink-soft);text-decoration:none}
+  .back-link:hover{color:var(--gold-dark)}
+  .hero-legal{background:linear-gradient(180deg,var(--cream),#fff);padding:3.5rem 0 2rem;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--gold-dark);font-weight:600;margin-bottom:.8rem}
+  .meta{font-size:.85rem;color:var(--ink-soft);margin-top:.8rem;padding-top:.8rem;border-top:1px dashed var(--line)}
+  main{padding:3rem 0 5rem}
+  .info-block{background:var(--cream);border-left:4px solid var(--gold);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin:1.2rem 0}
+  .info-block p:last-child{margin-bottom:0}
+  table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.92rem}
+  th,td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:var(--cream);color:var(--navy);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;width:35%}
+  footer{background:var(--navy-dark);color:rgba(255,255,255,.7);padding:2.5rem 0;text-align:center;font-size:.88rem}
+  footer a{color:var(--gold-light);text-decoration:none}
+  footer a:hover{color:#fff}
+  .footer-links{margin-top:.8rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+  @media (max-width:600px){h2{font-size:1.3rem}.hero-legal{padding:2.5rem 0 1.5rem}th{width:auto}}
+  .partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin:1.2rem 0 1.5rem}
+  .partner-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:1.3rem 1.4rem;box-shadow:0 2px 10px rgba(20,37,64,.05)}
+  .partner-card h3{margin:0 0 .3rem;color:var(--navy);font-size:1.08rem}
+  .partner-card .where{font-size:.85rem;color:var(--gold-dark);font-weight:600;margin-bottom:.6rem}
+  .partner-card p{font-size:.93rem;margin-bottom:.6rem}
+  .partner-card a{font-size:.9rem}
+  .todo{background:#FFF6D6;border:1px dashed #C9A227;color:#6B5310;border-radius:8px;padding:.9rem 1.1rem;font-size:.9rem;margin:1rem 0}
+  .todo p{color:#6B5310;margin:0}
+  .cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;padding:.8rem 1.4rem;border-radius:6px;font-weight:600;margin-top:.5rem}
+  .cta:hover{background:var(--gold-dark);color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="/" class="logo">
+      <span class="logo-mark">AD</span>
+      <span>Aurélien Dewitte<small>Conseil en patrimoine</small></span>
+    </a>
+    <a href="/" class="back-link">← Retour à l'accueil</a>
+  </div>
+</header>
+
+<section class="hero-legal">
+  <div class="container">
+    <span class="eyebrow">Réseau de professionnels</span>
+    <h1>Mes partenaires notaires et experts-comptables</h1>
+    <p>Une donation, une succession, une création de société ou la cession d'une entreprise demandent souvent plusieurs regards. Je travaille avec des notaires et des experts-comptables de Bordeaux et de Gironde, chacun dans son métier, pour que mes clients avancent avec des interlocuteurs qui se connaissent.</p>
+    <div class="meta">Dernière mise à jour : [mois année]</div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <div class="todo"><p><strong>Brouillon.</strong> Les cartes ci-dessous sont des emplacements vides. Chaque cabinet n'y figurera qu'avec son accord écrit, son texte et son lien validés. Cet encadré disparaîtra à la mise en ligne.</p></div>
+
+    <h2>Qui fait quoi</h2>
+    <table>
+      <tr><th>Le notaire</th><td>Rédige et authentifie les actes : donation, testament, contrat de mariage, vente immobilière, règlement de succession.</td></tr>
+      <tr><th>L'expert-comptable</th><td>Tient les comptes de l'entreprise, établit les déclarations fiscales et sociales, conseille sur la forme de la société et la rémunération du dirigeant.</td></tr>
+      <tr><th>Le conseiller en gestion de patrimoine</th><td>Réalise le bilan patrimonial, propose des solutions d'épargne, de retraite et de prévoyance, et en assure le suivi dans la durée.</td></tr>
+    </table>
+
+    <h2>Les notaires</h2>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <h3>[Nom du cabinet]</h3>
+        <div class="where">Notaire · [Ville]</div>
+        <p>[Deux lignes de présentation, rédigées ou validées par le cabinet : ses domaines, sa clientèle.]</p>
+        <a href="#" rel="noopener" target="_blank">Site du cabinet</a>
+      </div>
+      <div class="partner-card">
+        <h3>[Nom du cabinet]</h3>
+        <div class="where">Notaire · [Ville]</div>
+        <p>[Deux lignes de présentation, rédigées ou validées par le cabinet : ses domaines, sa clientèle.]</p>
+        <a href="#" rel="noopener" target="_blank">Site du cabinet</a>
+      </div>
+    </div>
+
+    <h2>Les experts-comptables</h2>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <h3>[Nom du cabinet]</h3>
+        <div class="where">Expert-comptable · [Ville]</div>
+        <p>[Deux lignes de présentation, rédigées ou validées par le cabinet : ses domaines, sa clientèle.]</p>
+        <a href="#" rel="noopener" target="_blank">Site du cabinet</a>
+      </div>
+      <div class="partner-card">
+        <h3>[Nom du cabinet]</h3>
+        <div class="where">Expert-comptable · [Ville]</div>
+        <p>[Deux lignes de présentation, rédigées ou validées par le cabinet : ses domaines, sa clientèle.]</p>
+        <a href="#" rel="noopener" target="_blank">Site du cabinet</a>
+      </div>
+    </div>
+
+    <h2>Comment nous travaillons ensemble</h2>
+    <ul>
+      <li><strong>Chacun reste dans son métier.</strong> Je ne rédige pas d'actes et ne tiens pas de comptabilité ; mes partenaires ne proposent pas de placements à ma place.</li>
+      <li><strong>Vous restez libre.</strong> Je peux vous indiquer un ou plusieurs noms, vous choisissez votre notaire et votre expert-comptable. Si vous en avez déjà un, je travaille avec lui.</li>
+      <li><strong>Aucune rémunération entre nous.</strong> Ni commission ni rétrocession : nos recommandations reposent uniquement sur la confiance et la qualité du travail.</li>
+      <li><strong>Avec votre accord.</strong> Les informations ne circulent entre nous que si vous l'acceptez.</li>
+    </ul>
+
+    <div class="info-block">
+      <p>Vous êtes notaire ou expert-comptable en Gironde et souhaitez échanger ? Écrivez-moi à <a href="mailto:aurelien.dewitte@id-cap-mia.fr">aurelien.dewitte@id-cap-mia.fr</a> ou appelez le <a href="tel:+33620880909">06 20 88 09 09</a>.</p>
+    </div>
+
+    <p><a class="cta" href="/#contact">Prendre rendez-vous pour un bilan patrimonial</a></p>
+
+    <p style="margin-top:2.5rem">Voir aussi : <a href="transmission-patrimoine-bordeaux.html">Transmettre son patrimoine</a> · <a href="cgp-chefs-entreprise-bordeaux.html">Chefs d'entreprise</a> · <a href="transparence-remuneration.html">Transparence de ma rémunération</a></p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Aurélien Dewitte · SIRET 848 640 298 00032 · ORIAS n° 19 002 406 · Membre CNCGP</div>
+    <div><a href="/">Accueil</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="cookies.html">Cookies</a> · <a href="reclamations.html">Réclamations</a> · <a href="transparence-remuneration.html">Transparence de la rémunération</a> · <a href="#" data-consent-open>Paramétrer mes cookies</a></div>
+    <div>Décode ton Patrimoine : <a href="https://www.youtube.com/@Decodetonpatrimoine" target="_blank" rel="noopener me" aria-label="YouTube (Décode ton Patrimoine)" title="YouTube" style="display:inline-flex;vertical-align:middle;margin-right:.6rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.instagram.com/decode_ton_patrimoine" target="_blank" rel="noopener me" aria-label="Instagram (Décode ton Patrimoine)" title="Instagram" style="display:inline-flex;vertical-align:middle;margin-right:.6rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a href="https://www.tiktok.com/@decode_ton_patrimoine" target="_blank" rel="noopener me" aria-label="TikTok (Décode ton Patrimoine)" title="TikTok" style="display:inline-flex;vertical-align:middle;margin-right:.6rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.facebook.com/decodetonpatrimoine" target="_blank" rel="noopener me" aria-label="Facebook (Décode ton Patrimoine)" title="Facebook" style="display:inline-flex;vertical-align:middle;margin-right:.6rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>(contenus éducatifs, sans conseil personnalisé)</div>
+  </div>
+</footer>
+
+</body>
+</html>
